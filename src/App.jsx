@@ -12,20 +12,156 @@ export default function WebsiteLiveStarter() {
   const [playNowColor, setPlayNowColor] = useState("#dc2626"); // Default red
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Simple hash router so each section is its own 'page'
+  // Metadata configuration for each route
+  const pageMetadata = {
+    'home': {
+      title: 'JUWA777 Download - Free App for Android & iOS',
+      description: 'Download Juwa777 app for Android and iOS. Visit juwa777.com to get the latest Juwa777 APK. Free social casino app with slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
+      image: 'https://juwa777.com/logo.png',
+      url: 'https://juwa777.com/'
+    },
+    'games': {
+      title: 'Juwa777 Games - Free Casino Games | Slots, Fish Games & Keno',
+      description: 'Play over 100 free casino games on Juwa777 including slots, fish shooting games, and keno. Entertainment only. No real-money gambling. 18+.',
+      image: 'https://juwa777.com/logo.png',
+      url: 'https://juwa777.com/games'
+    },
+    'about': {
+      title: 'About Juwa777 - Free Social Casino Games Platform',
+      description: 'Learn about Juwa777, a free social casino app offering slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
+      image: 'https://juwa777.com/logo.png',
+      url: 'https://juwa777.com/about'
+    },
+    'blog': {
+      title: 'Juwa777 Blog - Guides, Tips & News | Free Casino Games',
+      description: 'Read the latest Juwa777 blog posts with guides, tips, and news about free social casino games. Entertainment only. No real-money gambling. 18+.',
+      image: 'https://juwa777.com/logo.png',
+      url: 'https://juwa777.com/blog'
+    },
+    'blog-origin-of-juwa': {
+      title: 'The Origin of Juwa: How Juwa777 Came to Life | Juwa777 Blog',
+      description: 'Discover the fascinating story of how Juwa777 was born during the COVID-19 pandemic, from the Sanskrit word "Juwa" to becoming one of the largest online gaming platforms in the United States.',
+      image: 'https://juwa777.com/blog imgae/welcome to fabulous juwa online.png',
+      url: 'https://juwa777.com/blog-origin-of-juwa'
+    },
+    'blog-download-juwa-777': {
+      title: 'Download Juwa 777 App: Complete Installation Guide | Juwa777 Blog',
+      description: 'Step-by-step instructions to download and install Juwa 777 on your Android or iOS device. Get started with over 100 exciting games today.',
+      image: 'https://juwa777.com/blog imgae/download juwa now.png',
+      url: 'https://juwa777.com/blog-download-juwa-777'
+    },
+    'blog-juwa-no-deposit-bonus': {
+      title: 'Juwa 777 No Deposit Bonus: Welcome Offers and Bonus Guide | Juwa777 Blog',
+      description: 'Discover how to maximize your Juwa 777 experience with welcome bonuses, reload offers, and referral rewards. Learn about wagering requirements and bonus terms.',
+      image: 'https://juwa777.com/blog imgae/ultra big win with juwa.png',
+      url: 'https://juwa777.com/blog-juwa-no-deposit-bonus'
+    },
+    'blog-juwa-777-app-troubleshooting': {
+      title: 'Juwa 777 App Troubleshooting: Common Issues and Solutions | Juwa777 Blog',
+      description: 'Solve common installation and performance issues with the Juwa 777 app. Learn troubleshooting tips, optimization techniques, and how to get the best experience.',
+      image: 'https://juwa777.com/blog imgae/boost you gaming fun with juwa.png',
+      url: 'https://juwa777.com/blog-juwa-777-app-troubleshooting'
+    },
+    'contact': {
+      title: 'Contact Juwa777 - Get Help & Support | juwa777.com',
+      description: 'Contact Juwa777 for support, questions, or assistance. Get help with downloading, installation, or gameplay. Entertainment only. No real-money gambling. 18+.',
+      image: 'https://juwa777.com/logo.png',
+      url: 'https://juwa777.com/contact'
+    },
+    'faq': {
+      title: 'Juwa777 FAQ - Frequently Asked Questions | juwa777.com',
+      description: 'Find answers to frequently asked questions about Juwa777 app download, installation, gameplay, and more. Entertainment only. No real-money gambling. 18+.',
+      image: 'https://juwa777.com/logo.png',
+      url: 'https://juwa777.com/faq'
+    }
+  };
+
+  // Path-based router for clean URLs (e.g., /home instead of /#home)
   const [route, setRoute] = useState("home");
+  
+  // Update meta tags when route changes
+  useEffect(() => {
+    const metadata = pageMetadata[route] || pageMetadata['home'];
+    const baseUrl = 'https://juwa777.com';
+    
+    // Update document title
+    document.title = metadata.title;
+    
+    // Update or create meta tags
+    const updateMetaTag = (property, content) => {
+      let element = document.querySelector(`meta[property="${property}"]`) || document.querySelector(`meta[name="${property}"]`);
+      if (!element) {
+        element = document.createElement('meta');
+        if (property.startsWith('og:') || property.startsWith('article:')) {
+          element.setAttribute('property', property);
+        } else {
+          element.setAttribute('name', property);
+        }
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
+
+    // Update Open Graph tags
+    updateMetaTag('og:title', metadata.title);
+    updateMetaTag('og:description', metadata.description);
+    updateMetaTag('og:image', metadata.image);
+    updateMetaTag('og:url', metadata.url);
+    updateMetaTag('og:type', 'website');
+    updateMetaTag('og:site_name', 'Juwa777');
+    
+    // Update Twitter tags
+    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:title', metadata.title);
+    updateMetaTag('twitter:description', metadata.description);
+    updateMetaTag('twitter:image', metadata.image);
+    
+    // Update description meta tag
+    updateMetaTag('description', metadata.description);
+    
+    // Update canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', metadata.url);
+  }, [route]);
+
   useEffect(() => {
     const sync = () => {
-      const newRoute = window.location.hash.replace('#','') || 'home';
+      // Get pathname and remove leading slash, default to 'home'
+      let path = window.location.pathname.replace(/^\//, '');
+      // Handle root path "/" as "home"
+      if (path === '' || path === '/') {
+        path = 'home';
+      }
+      const newRoute = path;
       console.log('Route changing to:', newRoute);
       setRoute(newRoute);
       // Scroll to top when route changes
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     sync();
-    window.addEventListener('hashchange', sync);
-    return () => window.removeEventListener('hashchange', sync);
+    // Listen for popstate (back/forward buttons) and custom pushstate events
+    window.addEventListener('popstate', sync);
+    // Custom event for programmatic navigation
+    window.addEventListener('pushstate', sync);
+    return () => {
+      window.removeEventListener('popstate', sync);
+      window.removeEventListener('pushstate', sync);
+    };
   }, []);
+
+  // Helper function to navigate programmatically
+  const navigate = (path) => {
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    // Handle root navigation
+    const finalPath = cleanPath === 'home' ? '/' : `/${cleanPath}`;
+    window.history.pushState({}, '', finalPath);
+    window.dispatchEvent(new Event('pushstate'));
+  };
 
   // Controls
   const [tagline, setTagline] = useState("BE A BIG WINNER WITH OUR HOT JACKPOT");
@@ -744,7 +880,7 @@ export default function WebsiteLiveStarter() {
               <div
                 key={post.id}
                 onClick={() => {
-                  window.location.hash = `#blog-${post.id}`;
+                  navigate(`blog-${post.id}`);
                 }}
                 className="cursor-pointer"
               >
@@ -858,7 +994,7 @@ export default function WebsiteLiveStarter() {
                 <Settings2 className="h-5 w-5 text-red-600 flex-shrink-0" />
                 <div>
                   <div className="text-xs text-neutral-500 dark:text-neutral-400">Version</div>
-                  <div className="font-semibold text-neutral-900 dark:text-white">v1.0.66</div>
+                  <div className="font-semibold text-neutral-900 dark:text-white">Latest</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-3 bg-neutral-50 dark:bg-neutral-900/50 rounded-lg">
@@ -938,7 +1074,7 @@ export default function WebsiteLiveStarter() {
                     Locate and Initiate Installation
                   </h3>
                   <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
-                    Once the download completes, navigate to your device's Downloads folder. You'll find the APK file named something like "juwa777-v1.0.66.apk". Tap on the file to begin the installation process. Your device may prompt you with a security warning—this is normal for applications installed outside of official app stores.
+                    Once the download completes, navigate to your device's Downloads folder. You'll find the APK file named something like "juwa777.apk". Tap on the file to begin the installation process. Your device may prompt you with a security warning—this is normal for applications installed outside of official app stores.
                   </p>
                 </div>
               </div>
@@ -1100,7 +1236,7 @@ export default function WebsiteLiveStarter() {
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">Conclusion</h2>
             <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
-              Juwa 777 APK is an Android application that you can also get for iOS devices. It is a Juwa Game slot application where you can play different games in different slots and earn real money. The app offers over 100 exciting games including slots, fish shooting games, keno, and more. Download the latest version (v1.0.66) today and enjoy playing 14+ unique games. The installation process is quick and straightforward—follow the steps outlined above, and you'll be playing in minutes. Start your gaming journey with Juwa 777 and experience the thrill of social casino gaming!
+              Juwa 777 APK is an Android application that you can also get for iOS devices. It is a Juwa Game slot application where you can play different games in different slots and earn real money. The app offers over 100 exciting games including slots, fish shooting games, keno, and more. Download the latest version today and enjoy playing 14+ unique games. The installation process is quick and straightforward—follow the steps outlined above, and you'll be playing in minutes. Start your gaming journey with Juwa 777 and experience the thrill of social casino gaming!
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
@@ -1812,7 +1948,7 @@ export default function WebsiteLiveStarter() {
         {/* Introduction */}
         <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
           <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            After successfully downloading and installing the Juwa 777 app (v1.0.66), you may encounter some common issues or want to optimize your experience for the best performance. This comprehensive troubleshooting guide covers the most frequent problems users face, along with proven solutions and optimization tips to ensure smooth gameplay and maximum enjoyment of your Juwa 777 experience.
+            After successfully downloading and installing the Juwa 777 app, you may encounter some common issues or want to optimize your experience for the best performance. This comprehensive troubleshooting guide covers the most frequent problems users face, along with proven solutions and optimization tips to ensure smooth gameplay and maximum enjoyment of your Juwa 777 experience.
           </p>
         </div>
 
@@ -1993,7 +2129,7 @@ export default function WebsiteLiveStarter() {
                   <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <div className="font-semibold text-neutral-900 dark:text-white">Keep App Updated</div>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Always use the latest version (currently v1.0.66) which includes performance optimizations.</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Always use the latest version which includes performance optimizations.</p>
                   </div>
                 </div>
               </div>
@@ -2426,12 +2562,12 @@ export default function WebsiteLiveStarter() {
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
             <Rocket className="h-8 w-8 text-red-600" />
-            The Journey Continues: Juwa 2.0
+            The Journey Continues: Juwa777
           </h2>
           <Card className="mb-4 border-l-4 border-l-red-600 dark:border-l-red-500">
             <CardContent className="p-6">
               <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
-                And the journey is not over yet. With the release of Juwa 2, the Juwa platform keeps growing and getting better.
+                And the journey is not over yet. Juwa777 continues to grow and evolve, bringing new games and features to players across the United States.
               </p>
               <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
                 Check out Juwa777 today and be part of the next chapter of Juwa's story.
@@ -2645,7 +2781,7 @@ export default function WebsiteLiveStarter() {
           </Card>
           <div className="space-y-4">
             <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Live chat</div><p className="text-sm text-neutral-600 dark:text-neutral-300">Chat with an agent 24/7.</p></CardContent></Card>
-              <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Email support</div><p className="text-sm text-neutral-600 dark:text-neutral-300">support@juwa777.com</p></CardContent></Card>
+              <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Email support</div><p className="text-sm text-neutral-600 dark:text-neutral-300">support@juwagame.com</p></CardContent></Card>
             <a href="#faq" className="block group">
               <Card className="border border-neutral-200/60 dark:border-neutral-800/60 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:border-red-500 dark:hover:border-red-500 active:bg-red-50 dark:active:bg-red-900/20 active:border-red-500 transition-all duration-200 hover:shadow-md active:shadow-lg">
                 <CardContent className="p-5">
@@ -2772,16 +2908,16 @@ export default function WebsiteLiveStarter() {
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
-                <a href="#home" className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
-                <a href="#games" className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
-                <a href="#about" className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
-                <a href="#blog" className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
-                <a href="#contact" className={route==='contact' ? 'font-bold text-red-600' : 'hover:underline'}>Contact</a>
+                <a href="/home" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
+                <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
+                <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
+                <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
+                <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className={route==='contact' ? 'font-bold text-red-600' : 'hover:underline'}>Contact</a>
               </div>
               
               {/* Desktop Buttons */}
               <div className="hidden md:flex items-center gap-3">
-                <Button variant="outline" className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50" onClick={() => window.location.hash = '#faq'}>
+                <Button variant="outline" className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50" onClick={() => navigate('faq')}>
                   FAQ
                 </Button>
                 <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr', '_blank')}>
@@ -2809,12 +2945,12 @@ export default function WebsiteLiveStarter() {
             {mobileMenuOpen && (
               <div className="md:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
                 <div className="px-5 py-4 space-y-3">
-                  <a href="#home" className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`} onClick={() => setMobileMenuOpen(false)}>Home</a>
-                  <a href="#games" className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`} onClick={() => setMobileMenuOpen(false)}>Games</a>
-                  <a href="#about" className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`} onClick={() => setMobileMenuOpen(false)}>About</a>
-                  <a href="#blog" className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`} onClick={() => setMobileMenuOpen(false)}>Blog</a>
-                  <a href="#contact" className={`block py-2 text-sm ${route==='contact' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`} onClick={() => setMobileMenuOpen(false)}>Contact</a>
-                  <a href="#faq" className={`block py-2 text-sm ${route==='faq' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`} onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+                  <a href="/home" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
+                  <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Games</a>
+                  <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>About</a>
+                  <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Blog</a>
+                  <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='contact' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Contact</a>
+                  <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='faq' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>FAQ</a>
                 </div>
               </div>
             )}

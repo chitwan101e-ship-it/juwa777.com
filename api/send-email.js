@@ -72,7 +72,7 @@ export default async function handler(req, res) {
           </div>
           <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 30px 0;">
           <p style="color: #666; font-size: 12px;">
-            This email was sent from the contact form on juwagame.com
+            This email was sent from the contact form on juwa777.com
           </p>
         </div>
       `,
@@ -88,7 +88,7 @@ Message:
 ${message}
 
 ---
-This email was sent from the contact form on juwagame.com
+This email was sent from the contact form on juwa777.com
       `
     };
 
