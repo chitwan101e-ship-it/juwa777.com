@@ -1,26 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "vite",
-  "redirects": [
-    {
-      "source": "https://juwa777.com/:path*",
-      "destination": "https://www.juwa777.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "http://juwa777.com/:path*",
-      "destination": "https://www.juwa777.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "http://www.juwa777.com/:path*",
-      "destination": "https://www.juwa777.com/:path*",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/(.*)",
@@ -32,7 +10,7 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "X-Content-Type-Options",
+          "key": "X-Content-Type-Type-Options",
           "value": "nosniff"
         },
         {
