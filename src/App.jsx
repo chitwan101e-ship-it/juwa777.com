@@ -17,62 +17,62 @@ export default function WebsiteLiveStarter() {
     'home': {
       title: 'Juwa777.com Download - Free Juwa777 App for Android & iOS | Official Site',
       description: 'Download Juwa777 app from juwa777.com for Android and iOS. Get the latest Juwa777 APK free. Official download site with slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
-      image: 'https://juwa777.com/logo.png',
-      url: 'https://juwa777.com/'
+      image: 'https://www.juwa777.com/logo.png',
+      url: 'https://www.juwa777.com/'
     },
     'games': {
       title: 'Juwa777 Games - Free Casino Games | Slots, Fish Games & Keno',
       description: 'Play over 100 free casino games on Juwa777 including slots, fish shooting games, and keno. Entertainment only. No real-money gambling. 18+.',
-      image: 'https://juwa777.com/logo.png',
-      url: 'https://juwa777.com/games'
+      image: 'https://www.juwa777.com/logo.png',
+      url: 'https://www.juwa777.com/games'
     },
     'about': {
       title: 'About Juwa777 - Free Social Casino Games Platform',
       description: 'Learn about Juwa777, a free social casino app offering slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
-      image: 'https://juwa777.com/logo.png',
-      url: 'https://juwa777.com/about'
+      image: 'https://www.juwa777.com/logo.png',
+      url: 'https://www.juwa777.com/about'
     },
     'blog': {
       title: 'Juwa777 Blog - Guides, Tips & News | Free Casino Games',
       description: 'Read the latest Juwa777 blog posts with guides, tips, and news about free social casino games. Entertainment only. No real-money gambling. 18+.',
-      image: 'https://juwa777.com/logo.png',
-      url: 'https://juwa777.com/blog'
+      image: 'https://www.juwa777.com/logo.png',
+      url: 'https://www.juwa777.com/blog'
     },
     'blog-origin-of-juwa': {
       title: 'The Origin of Juwa: How Juwa777 Came to Life | Juwa777 Blog',
       description: 'Discover the fascinating story of how Juwa777 was born during the COVID-19 pandemic, from the Sanskrit word "Juwa" to becoming one of the largest online gaming platforms in the United States.',
-      image: 'https://juwa777.com/blog imgae/welcome to fabulous juwa online.png',
-      url: 'https://juwa777.com/blog-origin-of-juwa'
+      image: 'https://www.juwa777.com/blog imgae/welcome to fabulous juwa online.png',
+      url: 'https://www.juwa777.com/blog-origin-of-juwa'
     },
     'blog-download-juwa-777': {
       title: 'Download Juwa 777 App: Complete Installation Guide | Juwa777 Blog',
       description: 'Step-by-step instructions to download and install Juwa 777 on your Android or iOS device. Get started with over 100 exciting games today.',
-      image: 'https://juwa777.com/blog imgae/download juwa now.png',
-      url: 'https://juwa777.com/blog-download-juwa-777'
+      image: 'https://www.juwa777.com/blog imgae/download juwa now.png',
+      url: 'https://www.juwa777.com/blog-download-juwa-777'
     },
     'blog-juwa-no-deposit-bonus': {
       title: 'Juwa 777 No Deposit Bonus: Welcome Offers and Bonus Guide | Juwa777 Blog',
       description: 'Discover how to maximize your Juwa 777 experience with welcome bonuses, reload offers, and referral rewards. Learn about wagering requirements and bonus terms.',
-      image: 'https://juwa777.com/blog imgae/ultra big win with juwa.png',
-      url: 'https://juwa777.com/blog-juwa-no-deposit-bonus'
+      image: 'https://www.juwa777.com/blog imgae/ultra big win with juwa.png',
+      url: 'https://www.juwa777.com/blog-juwa-no-deposit-bonus'
     },
     'blog-juwa-777-app-troubleshooting': {
       title: 'Juwa 777 App Troubleshooting: Common Issues and Solutions | Juwa777 Blog',
       description: 'Solve common installation and performance issues with the Juwa 777 app. Learn troubleshooting tips, optimization techniques, and how to get the best experience.',
-      image: 'https://juwa777.com/blog imgae/boost you gaming fun with juwa.png',
-      url: 'https://juwa777.com/blog-juwa-777-app-troubleshooting'
+      image: 'https://www.juwa777.com/blog imgae/boost you gaming fun with juwa.png',
+      url: 'https://www.juwa777.com/blog-juwa-777-app-troubleshooting'
     },
     'contact': {
       title: 'Contact Juwa777 - Get Help & Support | juwa777.com',
       description: 'Contact Juwa777 for support, questions, or assistance. Get help with downloading, installation, or gameplay. Entertainment only. No real-money gambling. 18+.',
-      image: 'https://juwa777.com/logo.png',
-      url: 'https://juwa777.com/contact'
+      image: 'https://www.juwa777.com/logo.png',
+      url: 'https://www.juwa777.com/contact'
     },
     'faq': {
       title: 'Juwa777 FAQ - Frequently Asked Questions | juwa777.com',
       description: 'Find answers to frequently asked questions about Juwa777 app download, installation, gameplay, and more. Entertainment only. No real-money gambling. 18+.',
-      image: 'https://juwa777.com/logo.png',
-      url: 'https://juwa777.com/faq'
+      image: 'https://www.juwa777.com/logo.png',
+      url: 'https://www.juwa777.com/faq'
     }
   };
 
@@ -82,7 +82,7 @@ export default function WebsiteLiveStarter() {
   // Update meta tags when route changes
   useEffect(() => {
     const metadata = pageMetadata[route] || pageMetadata['home'];
-    const baseUrl = 'https://juwa777.com';
+    const baseUrl = 'https://www.juwa777.com';
     
     // Update document title
     document.title = metadata.title;
@@ -2694,6 +2694,14 @@ export default function WebsiteLiveStarter() {
           <img src={logoUrl} alt="Logo" className="h-32 md:h-40 w-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white text-center">Contact & Support</h2>
         </div>
+        <div className="mb-8 text-center max-w-3xl mx-auto">
+          <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+            We're here to help! Whether you have questions about downloading the Juwa777 app, need assistance with your account, or want to learn more about our games and features, our support team is ready to assist you. Get in touch with us through any of the methods below, and we'll respond as quickly as possible.
+          </p>
+          <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            For quick answers to common questions, check out our <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-red-600 hover:text-red-700 underline">FAQ page</a> or browse our <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="text-red-600 hover:text-red-700 underline">blog posts</a> for detailed guides and tips.
+          </p>
+        </div>
         <div className="mt-6 grid md:grid-cols-2 gap-5">
           <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
             <CardContent className="p-6 space-y-4">
@@ -2782,12 +2790,30 @@ export default function WebsiteLiveStarter() {
           <div className="space-y-4">
             <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Live chat</div><p className="text-sm text-neutral-600 dark:text-neutral-300">Chat with an agent 24/7.</p></CardContent></Card>
               <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Email support</div><p className="text-sm text-neutral-600 dark:text-neutral-300">juwa@juwa777.com</p></CardContent></Card>
-            <a href="#faq" className="block group">
+            <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="block group">
               <Card className="border border-neutral-200/60 dark:border-neutral-800/60 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:border-red-500 dark:hover:border-red-500 active:bg-red-50 dark:active:bg-red-900/20 active:border-red-500 transition-all duration-200 hover:shadow-md active:shadow-lg">
                 <CardContent className="p-5">
                   <div className="font-semibold text-neutral-900 dark:text-white group-hover:text-red-600 group-active:text-red-600 transition-colors duration-200">FAQ</div>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300">Payouts, verification, and responsible play.</p>
                   <div className="mt-2 text-xs text-red-600 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">Tap to view FAQ →</div>
+                </CardContent>
+              </Card>
+            </a>
+            <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="block group">
+              <Card className="border border-neutral-200/60 dark:border-neutral-800/60 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:border-red-500 dark:hover:border-red-500 active:bg-red-50 dark:active:bg-red-900/20 active:border-red-500 transition-all duration-200 hover:shadow-md active:shadow-lg">
+                <CardContent className="p-5">
+                  <div className="font-semibold text-neutral-900 dark:text-white group-hover:text-red-600 group-active:text-red-600 transition-colors duration-200">Blog & Guides</div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">Download guides, troubleshooting tips, and bonus information.</p>
+                  <div className="mt-2 text-xs text-red-600 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">View blog posts →</div>
+                </CardContent>
+              </Card>
+            </a>
+            <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="block group">
+              <Card className="border border-neutral-200/60 dark:border-neutral-800/60 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:border-red-500 dark:hover:border-red-500 active:bg-red-50 dark:active:bg-red-900/20 active:border-red-500 transition-all duration-200 hover:shadow-md active:shadow-lg">
+                <CardContent className="p-5">
+                  <div className="font-semibold text-neutral-900 dark:text-white group-hover:text-red-600 group-active:text-red-600 transition-colors duration-200">Browse Games</div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">Explore over 100 free casino games including slots, fish games, and keno.</p>
+                  <div className="mt-2 text-xs text-red-600 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">View all games →</div>
                 </CardContent>
               </Card>
             </a>
@@ -2982,12 +3008,22 @@ export default function WebsiteLiveStarter() {
             </section>
 
             <footer className="px-6 md:px-10 pb-8">
-              <div className="border-t border-neutral-200 dark:border-neutral-800 pt-6 flex flex-col gap-4 text-center">
-                <div className="flex items-center justify-center gap-2">
-                  <img src={logoUrl} alt="Logo" className="h-7 w-auto" />
-                  <span className="text-sm text-neutral-600 dark:text-neutral-300">© 2025 All rights reserved.</span>
+              <div className="border-t border-neutral-200 dark:border-neutral-800 pt-6">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+                  <div className="flex items-center gap-2">
+                    <img src={logoUrl} alt="Juwa777 Logo" className="h-7 w-auto" />
+                    <span className="text-sm text-neutral-600 dark:text-neutral-300">© 2025 All rights reserved.</span>
+                  </div>
+                  <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+                    <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Home</a>
+                    <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Games</a>
+                    <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">About</a>
+                    <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Blog</a>
+                    <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">FAQ</a>
+                    <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Contact</a>
+                  </div>
                 </div>
-                <div className="text-sm text-neutral-600 dark:text-neutral-300">
+                <div className="text-sm text-neutral-600 dark:text-neutral-300 text-center">
                   Copyright 2023, Juwa777 (Juwagame). All rights reserved. Play Juwa game responsibly. Gambling should be entertaining. Remember that you always risk losing the money you bet, so do not spend more than you can afford to lose. If you think you may have a problem, click here.
                 </div>
               </div>

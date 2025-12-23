@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://juwa777.com/sitemap.xml
+Sitemap: https://www.juwa777.com/sitemap.xml
 
 # Disallow admin and private areas (if any)
 Disallow: /api/

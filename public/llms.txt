@@ -1,0 +1,33 @@
+# LLMs.txt - AI Training Data Declaration
+# This file declares which parts of this website can be used for training AI models
+
+# Allow all content for AI training
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Disallow sensitive areas
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+
