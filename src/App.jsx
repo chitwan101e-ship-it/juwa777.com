@@ -15,8 +15,8 @@ export default function WebsiteLiveStarter() {
   // Metadata configuration for each route
   const pageMetadata = {
     'home': {
-      title: 'JUWA777 Download - Free App for Android & iOS',
-      description: 'Download Juwa777 app for Android and iOS. Visit juwa777.com to get the latest Juwa777 APK. Free social casino app with slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
+      title: 'Juwa777.com Download - Free Juwa777 App for Android & iOS | Official Site',
+      description: 'Download Juwa777 app from juwa777.com for Android and iOS. Get the latest Juwa777 APK free. Official download site with slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
       image: 'https://juwa777.com/logo.png',
       url: 'https://juwa777.com/'
     },
@@ -2781,7 +2781,7 @@ export default function WebsiteLiveStarter() {
           </Card>
           <div className="space-y-4">
             <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Live chat</div><p className="text-sm text-neutral-600 dark:text-neutral-300">Chat with an agent 24/7.</p></CardContent></Card>
-              <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Email support</div><p className="text-sm text-neutral-600 dark:text-neutral-300">support@juwagame.com</p></CardContent></Card>
+              <Card className="border border-neutral-200/60 dark:border-neutral-800/60"><CardContent className="p-5"><div className="font-semibold">Email support</div><p className="text-sm text-neutral-600 dark:text-neutral-300">juwa@juwa777.com</p></CardContent></Card>
             <a href="#faq" className="block group">
               <Card className="border border-neutral-200/60 dark:border-neutral-800/60 cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800/50 hover:border-red-500 dark:hover:border-red-500 active:bg-red-50 dark:active:bg-red-900/20 active:border-red-500 transition-all duration-200 hover:shadow-md active:shadow-lg">
                 <CardContent className="p-5">
