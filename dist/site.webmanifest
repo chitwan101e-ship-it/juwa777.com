@@ -1,0 +1,28 @@
+{
+  "name": "Juwa777 - Free Social Casino Games",
+  "short_name": "Juwa777",
+  "description": "Download Juwa777 app for Android and iOS. Free social casino app with slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#171717",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
+
