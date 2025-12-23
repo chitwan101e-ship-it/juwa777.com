@@ -15,8 +15,8 @@ export default function WebsiteLiveStarter() {
   // Metadata configuration for each route
   const pageMetadata = {
     'home': {
-      title: 'Juwa777.com Download - Free Juwa777 App for Android & iOS | Official Site',
-      description: 'Download Juwa777 app from juwa777.com for Android and iOS. Get the latest Juwa777 APK free. Official download site with slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
+      title: 'Juwa777 – Free Social Gaming App for Android & iOS | Official Site',
+      description: 'Juwa777 is a free social gaming app for Android and iOS featuring slots, fish games, and keno. For entertainment purposes only. 18+ only.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/'
     },
@@ -205,7 +205,7 @@ export default function WebsiteLiveStarter() {
             <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr', '_blank')}>
               <Sparkles className="h-4 w-4 mr-2" /> Play Now
             </Button>
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" onClick={() => window.open('https://dl.juwa777.com/', '_blank')}>Download Juwa Now</Button>
+            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" onClick={() => window.open('https://dl.juwa777.com/', '_blank')}>Get Started</Button>
           </div>
         </div>
       </section>
@@ -3023,8 +3023,13 @@ export default function WebsiteLiveStarter() {
                     <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Contact</a>
                   </div>
                 </div>
-                <div className="text-sm text-neutral-600 dark:text-neutral-300 text-center">
-                  Copyright 2023, Juwa777 (Juwagame). All rights reserved. Play Juwa game responsibly. Gambling should be entertaining. Remember that you always risk losing the money you bet, so do not spend more than you can afford to lose. If you think you may have a problem, click here.
+                <div className="text-sm text-neutral-600 dark:text-neutral-300 text-center space-y-2">
+                  <div className="font-semibold text-red-600 dark:text-red-400 text-base mb-2">
+                    ⚠️ 18+ Only | For Entertainment Purposes Only | Play Responsibly
+                  </div>
+                  <div>
+                    Copyright 2023, Juwa777 (Juwagame). All rights reserved. This is a free social gaming platform. No real-money gambling, deposits, withdrawals, or cash payouts available. All gameplay is virtual. 18+ only.
+                  </div>
                 </div>
               </div>
             </footer>
