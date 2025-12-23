@@ -4,6 +4,23 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
+  "redirects": [
+    {
+      "source": "https://juwa777.com/:path*",
+      "destination": "https://www.juwa777.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "http://juwa777.com/:path*",
+      "destination": "https://www.juwa777.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "http://www.juwa777.com/:path*",
+      "destination": "https://www.juwa777.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
