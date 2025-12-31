@@ -15,26 +15,26 @@ export default function WebsiteLiveStarter() {
   // Metadata configuration for each route
   const pageMetadata = {
     'home': {
-      title: 'Juwa777 – Free Social Gaming App for Android & iOS | Official Site',
-      description: 'Juwa777 is a free social gaming app for Android and iOS featuring slots, fish games, and keno. For entertainment purposes only. 18+ only.',
+      title: 'Juwa777 – Free Social Gaming App | Slots, Fish Games & Keno',
+      description: 'Play free Juwa777 games including slots, fish shooting, and keno. Free social gaming app for Android and iOS. Entertainment only. 18+.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/'
     },
     'games': {
-      title: 'Juwa777 Games - Free Casino Games | Slots, Fish Games & Keno',
-      description: 'Play over 100 free casino games on Juwa777 including slots, fish shooting games, and keno. Entertainment only. No real-money gambling. 18+.',
+      title: 'Juwa777 Games – Free Slots, Fish Shooting & Keno Games',
+      description: 'Play free Juwa777 games: slots, fish shooting games, and keno. No download required. Free social gaming for entertainment. 18+ only.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/games'
     },
     'about': {
-      title: 'About Juwa777 - Free Social Casino Games Platform',
-      description: 'Learn about Juwa777, a free social casino app offering slots, fish games, and keno. Entertainment only. No real-money gambling. 18+.',
+      title: 'About Juwa777 – Free Social Gaming Platform',
+      description: 'Learn about Juwa777, a free social gaming platform offering slots, fish games, and keno. Entertainment purposes only. 18+.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/about'
     },
     'blog': {
-      title: 'Juwa777 Blog - Guides, Tips & News | Free Casino Games',
-      description: 'Read the latest Juwa777 blog posts with guides, tips, and news about free social casino games. Entertainment only. No real-money gambling. 18+.',
+      title: 'Juwa777 Blog – Gaming Tips, Guides & Updates',
+      description: 'Read Juwa777 gaming blog for tips, guides, and updates about free social casino games. Learn about slots, fish games, and more.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/blog'
     },
@@ -63,14 +63,14 @@ export default function WebsiteLiveStarter() {
       url: 'https://www.juwa777.com/blog-juwa-777-app-troubleshooting'
     },
     'contact': {
-      title: 'Contact Juwa777 - Get Help & Support | juwa777.com',
-      description: 'Contact Juwa777 for support, questions, or assistance. Get help with downloading, installation, or gameplay. Entertainment only. No real-money gambling. 18+.',
+      title: 'Contact Juwa777 – Customer Support & Help',
+      description: 'Contact Juwa777 support team for help with your free social gaming account. Get customer support and assistance.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/contact'
     },
     'faq': {
-      title: 'Juwa777 FAQ - Frequently Asked Questions | juwa777.com',
-      description: 'Find answers to frequently asked questions about Juwa777 app download, installation, gameplay, and more. Entertainment only. No real-money gambling. 18+.',
+      title: 'Juwa777 FAQ – Frequently Asked Questions',
+      description: 'Find answers to frequently asked questions about Juwa777 free social gaming app. Get help with games, account, and more.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/faq'
     }
@@ -198,7 +198,7 @@ export default function WebsiteLiveStarter() {
         
         <div className="relative max-w-4xl z-30">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
-            BE A BIG WINNER WITH OUR<br />HOT JACKPOT
+            Juwa777 – Free Social Gaming App for Android & iOS
           </h1>
           <p className="mt-4 text-neutral-300 text-base md:text-lg">{heroDesc}</p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -355,9 +355,27 @@ export default function WebsiteLiveStarter() {
         </div>
       </section>
 
-      {/* Partners Carousel */}
+      {/* Introduction Section - Expanded Content */}
+      <section className="px-6 md:px-10 py-12 bg-neutral-950">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">Welcome to Juwa777 – Your Free Social Gaming Destination</h2>
+          <div className="space-y-4 text-neutral-300 text-base md:text-lg leading-relaxed">
+            <p>
+              Juwa777 is a premier free social gaming platform designed for Android and iOS devices. Our platform offers an extensive collection of over 100 exciting games, including classic slots, thrilling fish shooting games, and engaging keno experiences. All gameplay is completely free and designed for entertainment purposes only.
+            </p>
+            <p>
+              Whether you're a fan of traditional slot machines, enjoy the action-packed excitement of fish shooting games, or prefer the strategic gameplay of keno, Juwa777 has something for every gaming enthusiast. Our platform provides a safe, secure, and enjoyable gaming environment where players can experience the thrill of casino-style games without any real-money gambling or cash payouts.
+            </p>
+            <p>
+              Access Juwa777 directly through your web browser on any Android or iOS device. No app download or installation is required, making it easy to start playing instantly. Simply visit our website, create your free account, and begin exploring our vast collection of social gaming experiences. Browse our <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">complete games library</a> or learn more <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-red-400 hover:text-red-300 underline">about our platform</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Official Support Carousel */}
       <section className="px-6 md:px-10 py-10 bg-neutral-950">
-        <h2 className="text-center text-3xl md:text-4xl font-extrabold text-white mb-6">Our Official Facebook Partners</h2>
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold text-white mb-6">Our Official Facebook Support</h2>
         {(() => {
           const slides = [
             { img: "/partner1.png", blocks: [
@@ -438,6 +456,33 @@ export default function WebsiteLiveStarter() {
             </div>
           );
         })()}
+      </section>
+
+      {/* Game Categories Section - Expanded */}
+      <section className="px-6 md:px-10 py-12 bg-neutral-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 text-center">Explore Our Game Categories</h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-neutral-800 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-white mb-3">Slot Games</h3>
+              <p className="text-neutral-300 leading-relaxed">
+                Experience the excitement of classic and modern slot games with various themes, paylines, and bonus features. Our slot collection includes everything from traditional fruit machines to adventure-themed slots with immersive graphics and engaging gameplay mechanics. <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">View all slot games</a>.
+              </p>
+            </div>
+            <div className="bg-neutral-800 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-white mb-3">Fish Shooting Games</h3>
+              <p className="text-neutral-300 leading-relaxed">
+                Dive into action-packed fish shooting games where skill and strategy combine for thrilling gameplay. These games feature vibrant underwater worlds, various fish species with different point values, and exciting bonus rounds that keep the action fast-paced and engaging. <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">Explore fish games</a>.
+              </p>
+            </div>
+            <div className="bg-neutral-800 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-white mb-3">Keno Games</h3>
+              <p className="text-neutral-300 leading-relaxed">
+                Enjoy the strategic gameplay of keno, a lottery-style game where you select numbers and watch as winning numbers are drawn. Our keno games offer multiple betting options and various game modes to suit different playing styles and preferences. <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">Try keno games</a>.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Our Games Section */}
@@ -575,6 +620,42 @@ export default function WebsiteLiveStarter() {
           </div>
         </div>
       </section>
+
+      {/* How to Get Started Section */}
+      <section className="px-6 md:px-10 py-12 bg-neutral-950">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-8 text-center">How to Get Started with Juwa777</h2>
+          <div className="space-y-6">
+            <div className="bg-neutral-800 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center">1</span>
+                Visit Our Website
+              </h3>
+              <p className="text-neutral-300 leading-relaxed">
+                Open your web browser on any Android or iOS device and navigate to the Juwa777 website. Our platform is optimized for mobile devices, ensuring a smooth and responsive gaming experience on smartphones and tablets.
+              </p>
+            </div>
+            <div className="bg-neutral-800 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center">2</span>
+                Create Your Free Account
+              </h3>
+              <p className="text-neutral-300 leading-relaxed">
+                Sign up for a free account through our simple registration process. Provide basic information to create your profile, and you'll be ready to start playing within minutes. No credit card or payment information is required.
+              </p>
+            </div>
+            <div className="bg-neutral-800 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                <span className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center">3</span>
+                Start Playing Games
+              </h3>
+              <p className="text-neutral-300 leading-relaxed">
+                Browse our extensive <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">game library</a> and choose from slots, fish games, keno, and more. Each game offers unique features, themes, and gameplay mechanics. All games are free to play and designed for entertainment purposes only. Need help? Check our <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-red-400 hover:text-red-300 underline">FAQ page</a> or <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-400 hover:text-red-300 underline">contact support</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 
@@ -681,6 +762,13 @@ export default function WebsiteLiveStarter() {
     return (
     <section className="px-6 md:px-10 py-12">
         <div className="w-full">
+          {/* Page H1 */}
+          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-6 text-center">
+            Play Free Juwa777 Games – Slots, Fish Games & Keno
+          </h1>
+          <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8 text-center max-w-3xl mx-auto">
+            Discover over 100 exciting free social gaming experiences. Play slots, fish shooting games, and keno for entertainment purposes only. No download required.
+          </p>
           {/* Filter Buttons */}
           <div className="flex gap-2 mb-8">
             {filters.map((filter) => (
@@ -747,6 +835,7 @@ export default function WebsiteLiveStarter() {
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col items-center mb-8">
           <img src={logoUrl} alt="Logo" className="h-32 md:h-40 w-auto mb-6" />
+          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-4">About Juwa777 – Your Free Social Gaming Platform</h1>
           <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white text-center">Safe, Fair & Rewarding</h2>
         </div>
         <p className="mt-3 text-neutral-700 dark:text-neutral-300 text-center">Juwa777 is a mobile gaming platform offering over 100 exciting games—including slots, fish shooting, and keno—designed to bring players nonstop entertainment and rewards. We offer fun, skill-based games with sweepstakes entries—play for entertainment and a chance to win prizes. With features like Spin Wheel bonuses, cashback, and hourly lucky draws, Juwa777 delivers a fun and rewarding experience every time you play. Our mission is to provide safe, accessible, and engaging gameplay with unmatched customer service, backed by fast performance, fair RNG, and secure payments.</p>
@@ -871,7 +960,7 @@ export default function WebsiteLiveStarter() {
       <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-4">Blog & Guides</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-4">Juwa777 Gaming Blog – Tips, Guides & Latest Updates</h1>
             <p className="text-lg text-neutral-600 dark:text-neutral-300">Expert tips, guides, and insights to enhance your Juwa777 gaming experience</p>
           </div>
           
@@ -2692,7 +2781,7 @@ export default function WebsiteLiveStarter() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center mb-8">
           <img src={logoUrl} alt="Logo" className="h-32 md:h-40 w-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white text-center">Contact & Support</h2>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-4">Contact Juwa777 Support Team</h1>
         </div>
         <div className="mb-8 text-center max-w-3xl mx-auto">
           <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
@@ -2887,7 +2976,7 @@ export default function WebsiteLiveStarter() {
             <span className="mx-2">&gt;</span>
             <span className="text-neutral-600 dark:text-neutral-300">FAQ</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white text-center">Frequently Asked Questions</h2>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-4">Frequently Asked Questions About Juwa777</h1>
               </div>
               <div>
             {faqData.map((item, index) => (
@@ -3014,13 +3103,23 @@ export default function WebsiteLiveStarter() {
                     <img src={logoUrl} alt="Juwa777 Logo" className="h-7 w-auto" />
                     <span className="text-sm text-neutral-600 dark:text-neutral-300">© 2025 All rights reserved.</span>
                   </div>
-                  <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-                    <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Home</a>
-                    <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Games</a>
-                    <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">About</a>
-                    <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Blog</a>
-                    <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">FAQ</a>
-                    <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Contact</a>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm mb-4">
+                    <div>
+                      <div className="font-semibold text-neutral-900 dark:text-white mb-2">Navigation</div>
+                      <div className="space-y-1">
+                        <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Home</a>
+                        <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Games</a>
+                        <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">About</a>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-neutral-900 dark:text-white mb-2">Resources</div>
+                      <div className="space-y-1">
+                        <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Blog</a>
+                        <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">FAQ</a>
+                        <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Contact</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="text-sm text-neutral-600 dark:text-neutral-300 text-center space-y-2">
@@ -3038,19 +3137,19 @@ export default function WebsiteLiveStarter() {
       </div>
 
       {/* Floating Social Icons - Stacked */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-2 md:gap-3">
         {/* Telegram Icon */}
         <a
           href="https://t.me/Juwabrosofficial"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white dark:bg-neutral-800 rounded-full p-3 shadow-2xl hover:shadow-[#40B3E0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border-2 border-[#40B3E0]"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#40B3E0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#40B3E0] md:border-2 relative"
           aria-label="Join us on Telegram"
         >
           <img 
             src="/telegram-svgrepo-com.svg" 
             alt="Telegram" 
-            className="w-14 h-14 group-hover:scale-105 transition-transform duration-300"
+            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
           />
           {/* Pulse animation */}
           <span className="absolute inset-0 rounded-full bg-[#40B3E0] animate-ping opacity-30"></span>
@@ -3061,16 +3160,50 @@ export default function WebsiteLiveStarter() {
           href="https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white dark:bg-neutral-800 rounded-full p-3 shadow-2xl hover:shadow-[#0866ff]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border-2 border-[#0866ff]"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#0866ff]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#0866ff] md:border-2 relative"
           aria-label="Chat with us on Messenger"
         >
           <img 
             src="/Messenger_Icon_Primary_Blue.svg" 
             alt="Messenger" 
-            className="w-14 h-14 group-hover:scale-105 transition-transform duration-300"
+            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
           />
           {/* Pulse animation */}
           <span className="absolute inset-0 rounded-full bg-[#0866ff] animate-ping opacity-30"></span>
+        </a>
+
+        {/* WhatsApp Icon */}
+        <a
+          href="https://wa.me/yourwhatsappnumber"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#25D366] md:border-2 relative"
+          aria-label="Contact us on WhatsApp"
+        >
+          <img 
+            src="/whatsapp-white.svg" 
+            alt="WhatsApp" 
+            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
+          />
+          {/* Pulse animation */}
+          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"></span>
+        </a>
+
+        {/* Signal Icon */}
+        <a
+          href="https://signal.me/#p/juwabros.777"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#3A76F0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#3A76F0] md:border-2 relative"
+          aria-label="Contact us on Signal"
+        >
+          <img 
+            src="/signal-white.svg" 
+            alt="Signal" 
+            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
+          />
+          {/* Pulse animation */}
+          <span className="absolute inset-0 rounded-full bg-[#3A76F0] animate-ping opacity-30"></span>
         </a>
       </div>
 
