@@ -367,7 +367,7 @@ export default function WebsiteLiveStarter() {
               Whether you're a fan of traditional slot machines, enjoy the action-packed excitement of fish shooting games, or prefer the strategic gameplay of keno, Juwa777 has something for every gaming enthusiast. Our platform provides a safe, secure, and enjoyable gaming environment where players can experience the thrill of casino-style games without any real-money gambling or cash payouts.
             </p>
             <p>
-              To play Juwa777 games, download and install our app on your Android or iOS device. Once you have the app installed, you can access our entire game library and start playing. Simply download the app, create your free account, and begin exploring our vast collection of social gaming experiences. Browse our <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">complete games library</a> or learn more <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-red-400 hover:text-red-300 underline">about our platform</a>.
+              To play Juwa777 games, download and install our app on your Android or iOS device. Once you have the app installed, you can access our entire game library and start playing. Simply download the app, create your free account, and begin exploring our vast collection of social gaming experiences. Browse our <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">complete games library</a>, learn more <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-red-400 hover:text-red-300 underline">about our platform</a>, check our <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-red-400 hover:text-red-300 underline">FAQ page</a> for common questions, or <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-400 hover:text-red-300 underline">contact our support team</a> if you need help.
             </p>
           </div>
         </div>
@@ -565,7 +565,7 @@ export default function WebsiteLiveStarter() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Free social slots and casino-style games</h2>
-            <p className="text-neutral-300 text-base md:text-lg">Juwa777 offers over 200 social casino games to choose from. Play the best Juwa game collection including slots, fish games, keno, and instant win games. There is always something new to play on Juwagame.</p>
+            <p className="text-neutral-300 text-base md:text-lg">Juwa777 offers over 200 social casino games to choose from. Play the best Juwa777 game collection including slots, fish games, keno, and instant win games. There is always something new to play on Juwa777.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="rounded-3xl p-6 md:p-8 bg-gradient-to-b from-pink-500 to-pink-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] flex flex-col items-center justify-center text-center min-h-[200px]">
@@ -959,14 +959,14 @@ export default function WebsiteLiveStarter() {
               Juwa777 is a premier free social gaming platform designed for Android and iOS devices. Our mobile gaming platform offers over 100 exciting games, including classic slots, action-packed fish shooting games, and strategic keno experiences. All games are completely free to play and designed for entertainment purposes only.
             </p>
             <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-              We provide fun, skill-based gaming experiences that bring players nonstop entertainment. Our platform features engaging gameplay mechanics, immersive graphics, and exciting bonus features. With features like Spin Wheel bonuses, cashback rewards, and hourly lucky draws, Juwa777 delivers a fun and rewarding experience every time you play.
+              We provide fun, skill-based gaming experiences that bring players nonstop entertainment. Our platform features engaging gameplay mechanics, immersive graphics, and exciting bonus features. With features like Spin Wheel bonuses, cashback rewards, and hourly lucky draws, Juwa777 delivers a fun and rewarding experience every time you play. Explore our <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-600 hover:text-red-700 underline">game collection</a> or read our <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="text-red-600 hover:text-red-700 underline">blog</a> for gaming tips and updates.
             </p>
           </div>
 
           <div className="bg-white dark:bg-neutral-800 rounded-xl p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Our Mission</h2>
             <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
-              Our mission is to provide safe, accessible, and engaging gameplay with unmatched customer service. We believe that gaming should be fun, fair, and accessible to everyone. That's why we've created a platform where players can enjoy casino-style games without any real-money gambling or cash payouts.
+              Our mission is to provide safe, accessible, and engaging gameplay with unmatched customer service. We believe that gaming should be fun, fair, and accessible to everyone. That's why we've created a platform where players can enjoy casino-style games without any real-money gambling or cash payouts. If you have questions, check our <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-red-600 hover:text-red-700 underline">FAQ page</a> or <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-600 hover:text-red-700 underline">contact our support team</a>.
             </p>
             <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
               We're committed to delivering fast performance, fair RNG (Random Number Generator) systems, and secure gameplay. Our platform is designed to comply with sweepstakes laws, ensuring that all players can enjoy our games responsibly. We prioritize player safety, fair play, and responsible gaming practices.
@@ -3172,7 +3172,7 @@ export default function WebsiteLiveStarter() {
       },
       {
         question: "What should I do if a game isn't loading?",
-        answer: "If a game isn't loading, try these troubleshooting steps: Check your internet connection, refresh the page, clear your browser cache, try a different browser, or restart your device. If problems persist, contact our support team through the Contact page with details about the issue, including which game and device you're using."
+        answer: "If a game isn't loading, try these troubleshooting steps: Check your internet connection, refresh the page, clear your browser cache, try a different browser, or restart your device. If problems persist, contact our support team through the Contact page with details about the issue, including which game and device you're using. You can also browse our blog for troubleshooting guides."
       }
     ];
 
@@ -3369,7 +3369,7 @@ export default function WebsiteLiveStarter() {
                     ⚠️ 18+ Only | For Entertainment Purposes Only | Play Responsibly
                   </div>
                   <div>
-                    Copyright 2023, Juwa777 (Juwagame). All rights reserved.
+                    Copyright 2023, Juwa777. All rights reserved.
                   </div>
                 </div>
               </div>
