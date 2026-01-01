@@ -367,7 +367,7 @@ export default function WebsiteLiveStarter() {
               Whether you're a fan of traditional slot machines, enjoy the action-packed excitement of fish shooting games, or prefer the strategic gameplay of keno, Juwa777 has something for every gaming enthusiast. Our platform provides a safe, secure, and enjoyable gaming environment where players can experience the thrill of casino-style games without any real-money gambling or cash payouts.
             </p>
             <p>
-              Access Juwa777 directly through your web browser on any Android or iOS device. No app download or installation is required, making it easy to start playing instantly. Simply visit our website, create your free account, and begin exploring our vast collection of social gaming experiences. Browse our <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">complete games library</a> or learn more <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-red-400 hover:text-red-300 underline">about our platform</a>.
+              To play Juwa777 games, download and install our app on your Android or iOS device. Once you have the app installed, you can access our entire game library and start playing. Simply download the app, create your free account, and begin exploring our vast collection of social gaming experiences. Browse our <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">complete games library</a> or learn more <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-red-400 hover:text-red-300 underline">about our platform</a>.
             </p>
           </div>
         </div>
@@ -629,10 +629,10 @@ export default function WebsiteLiveStarter() {
             <div className="bg-neutral-800 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
                 <span className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center">1</span>
-                Visit Our Website
+                Download the App
               </h3>
               <p className="text-neutral-300 leading-relaxed">
-                Open your web browser on any Android or iOS device and navigate to the Juwa777 website. Our platform is optimized for mobile devices, ensuring a smooth and responsive gaming experience on smartphones and tablets.
+                Download and install the Juwa777 app on your Android or iOS device. Visit our website to get the download link for your device. The app is required to access and play all games. Our app is optimized for mobile devices, ensuring a smooth and responsive gaming experience on smartphones and tablets.
               </p>
             </div>
             <div className="bg-neutral-800 rounded-xl p-6">
@@ -641,7 +641,7 @@ export default function WebsiteLiveStarter() {
                 Create Your Free Account
               </h3>
               <p className="text-neutral-300 leading-relaxed">
-                Sign up for a free account through our simple registration process. Provide basic information to create your profile, and you'll be ready to start playing within minutes. No credit card or payment information is required.
+                Once the app is installed, sign up for a free account through our simple registration process. Provide basic information to create your profile, and you'll be ready to start playing within minutes. No credit card or payment information is required.
               </p>
             </div>
             <div className="bg-neutral-800 rounded-xl p-6">
@@ -767,8 +767,81 @@ export default function WebsiteLiveStarter() {
             Play Free Juwa777 Games – Slots, Fish Games & Keno
           </h1>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8 text-center max-w-3xl mx-auto">
-            Discover over 100 exciting free social gaming experiences. Play slots, fish shooting games, and keno for entertainment purposes only. No download required.
+            Discover over 100 exciting free social gaming experiences. Play slots, fish shooting games, and keno for entertainment purposes only. Download our app to start playing.
           </p>
+
+          {/* Games Introduction Content */}
+          <div className="max-w-4xl mx-auto mb-12 space-y-6">
+            <div className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Explore Our Free Social Gaming Collection</h2>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                Juwa777 offers an extensive library of over 100 free social casino games designed for entertainment purposes only. Our gaming platform features three main categories: classic slot games, action-packed fish shooting games, and strategic keno games. All games are completely free to play. Download our app to access and play all games.
+              </p>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                Whether you enjoy the spinning reels of slot machines, the fast-paced action of fish shooting games, or the strategic number selection of keno, our diverse game collection has something for every gaming enthusiast. Each game category offers unique gameplay mechanics, engaging graphics, and entertaining features that provide hours of fun.
+              </p>
+            </div>
+
+            {/* Game Categories Detailed */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-gradient-to-br from-pink-500 via-pink-600 to-pink-700 rounded-xl p-6 text-white shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] border-2 border-pink-400/30">
+                <h3 className="text-xl font-bold mb-3">Slot Games</h3>
+                <p className="text-white/90 leading-relaxed text-sm mb-4">
+                  Experience classic and modern slot games with various themes, paylines, and bonus features. Our slot collection includes traditional fruit machines, adventure-themed slots, and progressive jackpot games. Each slot game features immersive graphics, engaging sound effects, and exciting bonus rounds.
+                </p>
+                <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-200 hover:text-white underline text-sm font-medium inline-block">View all slot games →</a>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-lime-500 rounded-xl p-6 text-white shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] border-2 border-emerald-400/30">
+                <h3 className="text-xl font-bold mb-3">Fish Shooting Games</h3>
+                <p className="text-white/90 leading-relaxed text-sm mb-4">
+                  Dive into action-packed fish shooting games where skill and strategy combine for thrilling gameplay. These arcade-style games feature vibrant underwater worlds, various fish species with different point values, and exciting bonus rounds. Perfect for players who enjoy fast-paced, skill-based gaming experiences.
+                </p>
+                <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-200 hover:text-white underline text-sm font-medium inline-block">Explore fish games →</a>
+              </div>
+              <div className="bg-gradient-to-br from-sky-400 via-sky-500 to-blue-600 rounded-xl p-6 text-white shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] border-2 border-sky-400/30">
+                <h3 className="text-xl font-bold mb-3">Keno Games</h3>
+                <p className="text-white/90 leading-relaxed text-sm mb-4">
+                  Enjoy the strategic gameplay of keno, a lottery-style game where you select numbers and watch as winning numbers are drawn. Our keno games offer multiple betting options, various game modes, and different number selection strategies. Ideal for players who prefer thoughtful, strategic gameplay.
+                </p>
+                <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-200 hover:text-white underline text-sm font-medium inline-block">Try keno games →</a>
+              </div>
+            </div>
+
+            {/* How to Play Section */}
+            <div className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">How to Play Juwa777 Games</h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Download the App</h3>
+                    <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                      First, download and install the Juwa777 app on your Android or iOS device. The app is required to access and play all games. Visit our website to get the download link for your device.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Choose Your Game Category</h3>
+                    <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                      Once the app is installed, browse our game collection using the filter buttons. Select from All Games, Slots, Fish Games, Keno, Hot Games, or New Games to find the perfect gaming experience for you.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Select and Play a Game</h3>
+                    <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                      Click on any game to start playing. Each game displays its name and RTP (Return to Player) percentage. All games are free to play and designed for entertainment purposes only. No real-money gambling or cash payouts are available.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Filter Buttons */}
           <div className="flex gap-2 mb-8">
             {filters.map((filter) => (
@@ -799,7 +872,7 @@ export default function WebsiteLiveStarter() {
                     <div className="aspect-square relative">
                       <img
                         src={`/Games/${image}`}
-                        alt={gameName}
+                        alt={`${gameName} - Free ${selectedFilter === 'All' ? 'social casino' : selectedFilter.toLowerCase()} game on Juwa777`}
                         className="w-full h-full object-contain"
                         onError={(e) => {
                           console.log('Failed to load image:', `/Games/${image}`);
@@ -825,6 +898,47 @@ export default function WebsiteLiveStarter() {
               })}
             </div>
           )}
+
+          {/* Game Features Section */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <div className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-6">Why Play Juwa777 Games?</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-semibold text-neutral-900 dark:text-white mb-2 flex items-center gap-2">
+                    <span className="text-red-600">✓</span> Free to Play
+                  </h3>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                    All games are completely free to play. No registration fees, no hidden costs, and no payment required. Enjoy unlimited gameplay for entertainment purposes only.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-neutral-900 dark:text-white mb-2 flex items-center gap-2">
+                    <span className="text-red-600">✓</span> Easy App Access
+                  </h3>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                    Download our app on your Android or iOS device to access all games. Once installed, you can start playing immediately. The app provides optimized performance and the best gaming experience.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-neutral-900 dark:text-white mb-2 flex items-center gap-2">
+                    <span className="text-red-600">✓</span> Diverse Game Selection
+                  </h3>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                    Choose from over 100 different games across multiple categories. From classic slots to action-packed fish games and strategic keno, there's something for every player.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-neutral-900 dark:text-white mb-2 flex items-center gap-2">
+                    <span className="text-red-600">✓</span> Mobile Optimized
+                  </h3>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                    All games are optimized for mobile devices, ensuring smooth gameplay on smartphones and tablets. Enjoy the same great gaming experience on any screen size.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     );
@@ -838,7 +952,57 @@ export default function WebsiteLiveStarter() {
           <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-4">About Juwa777 – Your Free Social Gaming Platform</h1>
           <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white text-center">Safe, Fair & Rewarding</h2>
         </div>
-        <p className="mt-3 text-neutral-700 dark:text-neutral-300 text-center">Juwa777 is a mobile gaming platform offering over 100 exciting games—including slots, fish shooting, and keno—designed to bring players nonstop entertainment and rewards. We offer fun, skill-based games with sweepstakes entries—play for entertainment and a chance to win prizes. With features like Spin Wheel bonuses, cashback, and hourly lucky draws, Juwa777 delivers a fun and rewarding experience every time you play. Our mission is to provide safe, accessible, and engaging gameplay with unmatched customer service, backed by fast performance, fair RNG, and secure payments.</p>
+        <div className="mt-6 space-y-6">
+          <div className="bg-white dark:bg-neutral-800 rounded-xl p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Welcome to Juwa777</h2>
+            <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+              Juwa777 is a premier free social gaming platform designed for Android and iOS devices. Our mobile gaming platform offers over 100 exciting games, including classic slots, action-packed fish shooting games, and strategic keno experiences. All games are completely free to play and designed for entertainment purposes only.
+            </p>
+            <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              We provide fun, skill-based gaming experiences that bring players nonstop entertainment. Our platform features engaging gameplay mechanics, immersive graphics, and exciting bonus features. With features like Spin Wheel bonuses, cashback rewards, and hourly lucky draws, Juwa777 delivers a fun and rewarding experience every time you play.
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-neutral-800 rounded-xl p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Our Mission</h2>
+            <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+              Our mission is to provide safe, accessible, and engaging gameplay with unmatched customer service. We believe that gaming should be fun, fair, and accessible to everyone. That's why we've created a platform where players can enjoy casino-style games without any real-money gambling or cash payouts.
+            </p>
+            <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              We're committed to delivering fast performance, fair RNG (Random Number Generator) systems, and secure gameplay. Our platform is designed to comply with sweepstakes laws, ensuring that all players can enjoy our games responsibly. We prioritize player safety, fair play, and responsible gaming practices.
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-neutral-800 rounded-xl p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">What Makes Us Different</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Free Social Gaming</h3>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                  Unlike traditional online casinos, Juwa777 offers completely free social gaming experiences. All gameplay is virtual and designed for entertainment purposes only.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Easy App Access</h3>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                  To play Juwa777 games, you'll need to download and install our app on your Android or iOS device. Once installed, you can access our entire game library and start playing. The app provides the best gaming experience with optimized performance.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Diverse Game Collection</h3>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                  With over 100 games across multiple categories, we offer something for every gaming enthusiast. From classic slot machines to action-packed fish shooting games and strategic keno, our diverse collection ensures endless entertainment.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Mobile Optimized</h3>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                  Our platform is fully optimized for mobile devices, ensuring smooth gameplay on smartphones and tablets. Enjoy the same great gaming experience whether you're on Android or iOS.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="mt-8 grid md:grid-cols-3 gap-4">
           <Card className="bg-gradient-to-br from-green-500 to-green-700 border-green-600">
             <CardContent className="p-8 flex items-center justify-between min-h-[140px]">
@@ -846,7 +1010,7 @@ export default function WebsiteLiveStarter() {
                 <div className="font-semibold text-white text-lg">Safe</div>
                 <p className="text-sm text-white/90 mt-3">Register through our official Facebook account, install the app, fund your account, and start winning.</p>
               </div>
-              <img src="/how it works.png" alt="Safe" className="w-28 h-28 flex-shrink-0" />
+              <img src="/how it works.png" alt="Safe and secure gaming platform with account protection" className="w-28 h-28 flex-shrink-0" />
             </CardContent>
           </Card>
           <Card className="bg-gradient-to-br from-blue-500 to-blue-700 border-blue-600">
@@ -855,7 +1019,7 @@ export default function WebsiteLiveStarter() {
                 <div className="font-semibold text-white text-lg">Fair</div>
                 <p className="text-sm text-white/90 mt-3">Designed to comply with sweepstakes laws; no purchase necessary offers available.</p>
               </div>
-              <img src="/fair.png" alt="Fair" className="w-28 h-28 flex-shrink-0" />
+              <img src="/fair.png" alt="Fair gaming with RNG and sweepstakes compliance" className="w-28 h-28 flex-shrink-0" />
             </CardContent>
           </Card>
           <Card className="bg-gradient-to-br from-orange-500 to-orange-700 border-orange-600">
@@ -865,7 +1029,7 @@ export default function WebsiteLiveStarter() {
                 <p className="text-sm text-white/90 mt-3">Fast verification and multiple withdrawal options for eligible prize wins.</p>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <img src="/pouts.png" alt="Payouts" className="w-36 h-36 flex-shrink-0" />
+                <img src="/pouts.png" alt="Fast and secure prize redemption options" className="w-36 h-36 flex-shrink-0" />
               </div>
             </CardContent>
           </Card>
@@ -2785,11 +2949,37 @@ export default function WebsiteLiveStarter() {
         </div>
         <div className="mb-8 text-center max-w-3xl mx-auto">
           <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
-            We're here to help! Whether you have questions about downloading the Juwa777 app, need assistance with your account, or want to learn more about our games and features, our support team is ready to assist you. Get in touch with us through any of the methods below, and we'll respond as quickly as possible.
+            We're here to help! Whether you have questions about accessing Juwa777 games, need assistance with your account, or want to learn more about our free social gaming platform and features, our support team is ready to assist you. Get in touch with us through any of the methods below, and we'll respond as quickly as possible.
           </p>
-          <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
             For quick answers to common questions, check out our <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-red-600 hover:text-red-700 underline">FAQ page</a> or browse our <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="text-red-600 hover:text-red-700 underline">blog posts</a> for detailed guides and tips.
           </p>
+        </div>
+
+        {/* Contact Information Section */}
+        <div className="mb-8 bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-6 text-center">How to Reach Us</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-3">Support Hours</h3>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm mb-2">
+                Our customer support team is available to assist you with any questions or concerns about the Juwa777 free social gaming platform.
+              </p>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
+                We typically respond to inquiries within 24-48 hours. For urgent matters, please use the contact form below with detailed information about your issue.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-3">What We Can Help With</h3>
+              <ul className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm space-y-2">
+                <li>• Questions about accessing and playing games</li>
+                <li>• Account-related inquiries</li>
+                <li>• Technical support and troubleshooting</li>
+                <li>• Information about our game collection</li>
+                <li>• General platform questions</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="mt-6 grid md:grid-cols-2 gap-5">
           <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
@@ -2926,43 +3116,63 @@ export default function WebsiteLiveStarter() {
     const faqData = [
       {
         question: "What is Juwa777?",
-        answer: "Juwa777 is a mobile casino-style gaming application for Android (with guidance for iOS), offering a wide range of interactive games that combine chance, skill, and excitement."
+        answer: "Juwa777 is a free social gaming platform designed for Android and iOS devices. Our platform offers over 100 exciting games including classic slots, action-packed fish shooting games, and strategic keno experiences. All games are completely free to play and designed for entertainment purposes only. No real-money gambling, deposits, withdrawals, or cash payouts are available. Juwa777 provides a safe, secure, and enjoyable gaming environment where players can experience casino-style games without any financial risk."
       },
       {
         question: "How many games are available in Juwa777?",
-        answer: "Juwa777 offers over 100 games to choose from, including: 🎰 Slot games with multiple themes and paylines, 🐟 Fish shooting games, 🎲 Keno games and other varieties. This diversity ensures there's something for every type of player."
+        answer: "Juwa777 offers over 100 free social casino games across multiple categories. Our game collection includes slot games with various themes and paylines, fish shooting games with vibrant underwater worlds, and keno games with multiple betting options. This diverse selection ensures there's something for every type of player, whether you prefer classic slot machines, action-packed arcade games, or strategic number-based games."
       },
       {
         question: "Is Juwa777 free to use?",
-        answer: "Yes, the app is free to download and play. Some content or features may require in-app purchases or virtual credits."
+        answer: "Yes, Juwa777 is completely free to use. All games are free to play and require no payment, registration fees, or hidden costs. To play games, you'll need to download and install our app on your Android or iOS device. Once the app is installed, you can access our entire game library and start playing. All gameplay is for entertainment purposes only."
       },
       {
-        question: "Is it safe to install Juwa777?",
-        answer: "The APK provided on the official site is checked, but downloading apps outside of Google Play or App Store always carries some risk. Users are advised to: Keep antivirus software active, Review app permissions before installing."
+        question: "Do I need to download an app to play Juwa777?",
+        answer: "Yes, you need to download and install the Juwa777 app on your Android or iOS device to play games. The app is required to access our game library. Visit our website to get the download link for your device. Once installed, you can start playing all games immediately."
       },
       {
-        question: "How do I download and install the app on Android?",
-        answer: "1. Visit the official website and download the latest APK file. 2. Enable 'Install Unknown Apps' in your Android settings. 3. Locate and open the APK file to install. 4. Follow on-screen prompts."
+        question: "What types of games does Juwa777 offer?",
+        answer: "Juwa777 offers three main game categories: Slot Games featuring classic and modern themes with various paylines and bonus features; Fish Shooting Games with action-packed underwater gameplay where skill and strategy combine; and Keno Games with lottery-style number selection and multiple betting options. Each category offers unique gameplay mechanics, engaging graphics, and entertaining features."
       },
       {
-        question: "What about iOS users?",
-        answer: "iOS users can refer to the iOS installation guide available on the official Juwa777 site for step-by-step instructions."
+        question: "Is Juwa777 safe to use?",
+        answer: "Yes, Juwa777 is a safe and secure free social gaming platform. We prioritize player safety and data protection. Our platform uses secure connections and follows best practices for online gaming. All games are for entertainment purposes only, with no real-money gambling or financial transactions. We recommend playing responsibly and ensuring gaming is permitted under your local laws."
       },
       {
-        question: "Can I play Juwa777 games outside the app?",
-        answer: "Currently, Juwa777 is primarily available through the mobile app. Future updates may expand play options."
+        question: "Can I play Juwa777 on my mobile device?",
+        answer: "Yes, Juwa777 is fully optimized for mobile devices including Android smartphones and tablets, as well as iOS devices like iPhones and iPads. You need to download and install our app on your mobile device to play games. The app is designed to work seamlessly on mobile devices, ensuring smooth gameplay and responsive controls."
+      },
+      {
+        question: "What are the system requirements for Juwa777?",
+        answer: "Juwa777 has minimal system requirements. You need an Android or iOS device with internet connectivity. Download and install our app on your device to access games. Our app is optimized for mobile devices and works on most smartphones and tablets. The app handles all system requirements automatically."
+      },
+      {
+        question: "How do I get started with Juwa777?",
+        answer: "Getting started with Juwa777 is simple. First, download and install the Juwa777 app on your Android or iOS device. Visit our website to get the download link. Once the app is installed, browse our game collection and select any game you'd like to play. All games are free to access and require no registration or payment. Simply click on a game and start playing immediately. For more detailed instructions, check our blog posts or contact our support team."
+      },
+      {
+        question: "Are there any age restrictions for Juwa777?",
+        answer: "Yes, Juwa777 is for players 18 years and older only. Our platform is designed for adult entertainment purposes only. We require all players to be of legal age in their jurisdiction. Responsible gaming is important, and we encourage players to play within their limits and understand that all gameplay is for entertainment purposes only."
       },
       {
         question: "What rewards and bonuses does Juwa777 offer?",
-        answer: "Players can enjoy multiple reward features, including: 🎡 Spin Wheel bonuses, 💵 Cashback rewards, ⏰ Hourly Lucky Draws every few hours. These add excitement and extra chances to win beyond regular gameplay."
+        answer: "Juwa777 offers various entertainment features including Spin Wheel bonuses, cashback rewards, and hourly lucky draws. These features add excitement and extra entertainment value to your gaming experience. All rewards and bonuses are part of the free social gaming experience and are for entertainment purposes only. No real-money value or cash payouts are associated with these features."
       },
       {
         question: "How do I get support if I have an issue?",
-        answer: "You can reach out through the Contact Us section on the official website for help with downloads, account issues, or game questions."
+        answer: "If you need support, you can reach out through our Contact page on the website. Fill out the contact form with your question or concern, and our support team will respond within 24-48 hours. You can also check our FAQ page for answers to common questions, or browse our blog posts for detailed guides and troubleshooting tips."
       },
       {
-        question: "Are there risks involved in playing Juwa777?",
-        answer: "Yes. As with any game of chance, there are both potential wins and losses. Play responsibly, understand the odds of each game, and make sure gaming is permitted under your local laws."
+        question: "Is Juwa777 legal to play?",
+        answer: "Juwa777 is a free social gaming platform designed for entertainment purposes only. Since we don't offer real-money gambling, deposits, withdrawals, or cash payouts, our platform operates differently from traditional online casinos. However, gaming laws vary by location, so we recommend checking your local laws to ensure gaming is permitted in your area. All players must be 18 years or older."
+      },
+      {
+        question: "Can I play Juwa777 games offline?",
+        answer: "No, Juwa777 games require an active internet connection to play. Our app needs connectivity to load games and maintain your gaming session. Make sure you have a stable internet connection on your Android or iOS device for the best gaming experience."
+      },
+      {
+        question: "What should I do if a game isn't loading?",
+        answer: "If a game isn't loading, try these troubleshooting steps: Check your internet connection, refresh the page, clear your browser cache, try a different browser, or restart your device. If problems persist, contact our support team through the Contact page with details about the issue, including which game and device you're using."
       }
     ];
 
@@ -2977,6 +3187,9 @@ export default function WebsiteLiveStarter() {
             <span className="text-neutral-600 dark:text-neutral-300">FAQ</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-4">Frequently Asked Questions About Juwa777</h1>
+          <p className="text-center text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto mb-8">
+            Find answers to common questions about Juwa777 free social gaming platform. Learn about our games, how to play, platform features, and more. If you don't find what you're looking for, feel free to <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-600 hover:text-red-700 underline">contact our support team</a>.
+          </p>
               </div>
               <div>
             {faqData.map((item, index) => (
@@ -3005,6 +3218,35 @@ export default function WebsiteLiveStarter() {
                 )}
               </div>
             ))}
+              </div>
+
+              {/* Additional Help Section */}
+              <div className="mt-12 bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4 text-center">Still Have Questions?</h2>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-center mb-6">
+                  If you couldn't find the answer you're looking for, our support team is here to help. Get in touch with us through any of the following methods:
+                </p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="bg-white dark:bg-neutral-800 rounded-lg p-4 text-center hover:shadow-lg transition-shadow">
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Contact Form</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Send us a message and we'll respond within 24-48 hours.</p>
+                  </a>
+                  <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="bg-white dark:bg-neutral-800 rounded-lg p-4 text-center hover:shadow-lg transition-shadow">
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Blog & Guides</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Read detailed guides, tips, and troubleshooting articles.</p>
+                  </a>
+                  <div className="bg-white dark:bg-neutral-800 rounded-lg p-4 text-center">
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Email Support</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Email us at juwa@juwa777.com for assistance.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Important Notice */}
+              <div className="mt-8 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
+                <p className="text-sm text-red-800 dark:text-red-200 text-center">
+                  <strong>Important:</strong> Juwa777 is a free social gaming platform for entertainment purposes only. No real-money gambling, deposits, withdrawals, or cash payouts are available. All gameplay is virtual. 18+ only. Play responsibly.
+                </p>
               </div>
               </div>
       </section>
@@ -3088,7 +3330,7 @@ export default function WebsiteLiveStarter() {
                     <span className="hidden sm:inline-flex items-center justify-center h-12 w-12 rounded-xl bg-white/10"><ShieldCheck className="h-7 w-7" /></span>
                     <div>
                       <div className="text-2xl md:text-3xl font-extrabold tracking-wide">MADE TO PLAY SAFELY</div>
-                      <div className="text-white/90 italic">Playing responsibly within limits.</div>
+                      <div className="text-white/90 italic">Your safety and enjoyment are our priority.</div>
                     </div>
                   </div>
                   <img src={logoUrl} alt="Logo" className="h-10 md:h-12 w-auto" />
@@ -3122,12 +3364,12 @@ export default function WebsiteLiveStarter() {
                     </div>
                   </div>
                 </div>
-                <div className="text-sm text-neutral-600 dark:text-neutral-300 text-center space-y-2">
+                <div className="text-sm text-neutral-600 dark:text-neutral-300 text-center">
                   <div className="font-semibold text-red-600 dark:text-red-400 text-base mb-2">
                     ⚠️ 18+ Only | For Entertainment Purposes Only | Play Responsibly
                   </div>
                   <div>
-                    Copyright 2023, Juwa777 (Juwagame). All rights reserved. This is a free social gaming platform. No real-money gambling, deposits, withdrawals, or cash payouts available. All gameplay is virtual. 18+ only.
+                    Copyright 2023, Juwa777 (Juwagame). All rights reserved.
                   </div>
                 </div>
               </div>
