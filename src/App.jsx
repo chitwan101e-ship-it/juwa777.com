@@ -62,6 +62,12 @@ export default function WebsiteLiveStarter() {
       image: 'https://www.juwa777.com/blog imgae/boost you gaming fun with juwa.png',
       url: 'https://www.juwa777.com/blog-juwa-777-app-troubleshooting'
     },
+    'blog-juwa2-casino': {
+      title: 'Juwa2: Complete Guide to Juwa2.0 Gaming Platform | Juwa777 Blog',
+      description: 'Discover Juwa2 and Juwa2.0 - a comprehensive guide to the gaming platform, features, games, and how to get started. Learn about Juwa2 slots and casino games.',
+      image: 'https://www.juwa777.com/juwa2/juwa2 logo.png',
+      url: 'https://www.juwa777.com/blog-juwa2-casino'
+    },
     'contact': {
       title: 'Contact Juwa777 – Customer Support & Help',
       description: 'Contact Juwa777 support team for help with your free social gaming account. Get customer support and assistance.',
@@ -1083,6 +1089,15 @@ export default function WebsiteLiveStarter() {
   const BlogPage = () => {
     const blogPosts = [
       {
+        id: 'juwa2-casino',
+        title: 'Juwa2: Complete Guide to Juwa2.0 Gaming Platform',
+        category: 'Platform Guides',
+        excerpt: 'Discover Juwa2 and Juwa2.0 - a comprehensive guide to the gaming platform, features, games, and how to get started. Learn about Juwa2 slots and casino games.',
+        date: 'January 13, 2025',
+        readTime: '8 min read',
+        image: '/juwa2/juwa2 logo.png'
+      },
+      {
         id: 'origin-of-juwa',
         title: 'The Origin of Juwa: How Juwa777 Came to Life',
         category: 'Company Story',
@@ -1275,11 +1290,57 @@ export default function WebsiteLiveStarter() {
           </CardContent>
         </Card>
 
+        {/* iOS Section */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
+            <Smartphone className="h-8 w-8 text-red-600" />
+            iOS Installation Instructions
+          </h2>
+          <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+            <CardContent className="p-6">
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
+                For iOS users, the installation process follows a similar pattern but with platform-specific considerations. Download the iOS version directly from our official website. After downloading, you may need to manually trust the application in your iPhone's Settings under General, then Device Management or Profiles & Device Management. Follow the on-screen prompts to complete the installation and begin your gaming journey.
+              </p>
+              
+              {/* iOS Installation Video */}
+              <div className="mt-6 mb-4">
+                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3">Watch the Complete iOS Installation Guide</h3>
+                <div className="rounded-lg overflow-hidden bg-neutral-900 max-w-sm mx-auto" style={{marginBottom: '0'}}>
+                  <div className="relative w-full" style={{height: '500px', maxHeight: '500px'}}>
+                    <iframe
+                      className="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/hiIQrBmtJqg"
+                      title="Juwa777 iOS Installation Guide"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1 text-center" style={{marginTop: '8px'}}>
+                  Follow along with this step-by-step video guide to install Juwa777 on your iOS device.
+                </p>
+              </div>
+
+              <div className="mt-4">
+                <Button 
+                  onClick={() => window.open('https://dl.juwa777.com/', '_blank')}
+                  variant="outline"
+                  className="border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download for iOS
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Download Section */}
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
             <Download className="h-8 w-8 text-red-600" />
-            Download and Installation Process
+            Android Installation Process
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
             Installing Juwa 777 on your device is straightforward and secure when downloaded from our official source. Follow these detailed steps to get started with the latest version of the application.
@@ -1395,31 +1456,6 @@ export default function WebsiteLiveStarter() {
                     After installation completes, locate the Juwa 777 app icon in your device's app drawer or home screen. Tap to launch the application. Upon first launch, you may be prompted to grant certain permissions—these are necessary for the app to function properly. Once you've completed the initial setup, you'll have access to 14+ unique games and start earning real money! Enjoy playing different games in different slots, including slots, fish shooting games, keno, and more. Start exploring and enjoy the exciting world of social casino gaming!
                   </p>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* iOS Section */}
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
-            <Smartphone className="h-8 w-8 text-red-600" />
-            iOS Installation Instructions
-          </h2>
-          <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
-            <CardContent className="p-6">
-              <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
-                For iOS users, the installation process follows a similar pattern but with platform-specific considerations. Download the iOS version directly from our official website. After downloading, you may need to manually trust the application in your iPhone's Settings under General, then Device Management or Profiles & Device Management. Follow the on-screen prompts to complete the installation and begin your gaming journey.
-              </p>
-              <div className="mt-4">
-                <Button 
-                  onClick={() => window.open('https://dl.juwa777.com/', '_blank')}
-                  variant="outline"
-                  className="border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download for iOS
-                </Button>
               </div>
             </CardContent>
           </Card>
@@ -2870,6 +2906,277 @@ export default function WebsiteLiveStarter() {
     </section>
   );
 
+  const Juwa2CasinoBlog = () => (
+    <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-950">
+      <div className="max-w-4xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="mb-6 flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+          <a href="#blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="hover:text-red-600 dark:hover:text-red-400 transition-colors">Blog</a>
+          <span>/</span>
+          <span>Platform Guides</span>
+        </div>
+
+        {/* Header */}
+        <div className="mb-8">
+          <div className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-semibold rounded-full mb-4">
+            Platform Guides
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-4 leading-tight">
+            Juwa2: Complete Guide to Juwa2.0 Gaming Platform
+          </h1>
+          <div className="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4" />
+              <span>8 min read</span>
+            </div>
+            <span>•</span>
+            <span>January 13, 2025</span>
+          </div>
+        </div>
+
+        {/* Hero Image */}
+        <div className="mb-8 rounded-2xl overflow-hidden max-w-md mx-auto">
+          <img 
+            src="/juwa2/juwa2 logo.png" 
+            alt="Juwa2 Logo - Juwa2.0 Gaming Platform"
+            className="w-full h-auto object-contain max-h-64"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+
+        {/* Introduction */}
+        <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
+          <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Juwa2, also known as Juwa2.0, is a popular social gaming platform that offers an extensive collection of casino-style games including slots, fish shooting games, and keno. This comprehensive guide will help you understand what Juwa2 is, its features, game selection, and how to get started with the platform.
+          </p>
+        </div>
+
+        {/* What is Juwa2 Section */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
+            <Package className="h-8 w-8 text-red-600" />
+            What is Juwa2?
+          </h2>
+          <Card className="mb-4 border-l-4 border-l-red-600 dark:border-l-red-500">
+            <CardContent className="p-6">
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
+                Juwa2, commonly referred to as Juwa2.0, is a social gaming platform designed for entertainment purposes. The platform offers a wide variety of casino-style games including slot games, fish shooting games, keno, and other arcade-style games. Juwa2 provides players with an engaging gaming experience through its user-friendly interface and diverse game collection.
+              </p>
+              <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                The platform is accessible through web browsers and mobile apps, making it convenient for players to enjoy games on various devices including Android smartphones, iPhones, and tablets. Juwa2 focuses on providing entertainment through social gaming experiences.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Platform Interface Section */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
+            <Smartphone className="h-8 w-8 text-red-600" />
+            Juwa2.0 Platform Interface
+          </h2>
+          <Card className="mb-4 border border-neutral-200/60 dark:border-neutral-800/60">
+            <CardContent className="p-6">
+              <div className="mb-4">
+                <img 
+                  src="/juwa2/Juwa2.0_interface-1536x691.webp" 
+                  alt="Juwa2.0 gaming platform interface showing game selection and features"
+                  className="w-full h-auto rounded-lg"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
+                The Juwa2.0 platform features a modern, intuitive interface designed for easy navigation. Players can quickly browse through different game categories, access their account settings, and manage their gaming experience. The interface is optimized for both desktop and mobile devices, ensuring a smooth experience across all platforms.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 mt-4">
+                <div className="bg-neutral-50 dark:bg-neutral-900/50 rounded-lg p-4">
+                  <div className="font-semibold text-neutral-900 dark:text-white mb-2">User-Friendly Design</div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">Easy navigation and intuitive controls for all players</p>
+                </div>
+                <div className="bg-neutral-50 dark:bg-neutral-900/50 rounded-lg p-4">
+                  <div className="font-semibold text-neutral-900 dark:text-white mb-2">Mobile Optimized</div>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">Responsive design works seamlessly on smartphones and tablets</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Game Selection Section */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
+            <Gamepad2 className="h-8 w-8 text-red-600" />
+            Game Selection on Juwa2
+          </h2>
+          <Card className="mb-4 border border-neutral-200/60 dark:border-neutral-800/60">
+            <CardContent className="p-6">
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
+                Juwa2 offers a diverse collection of games to suit different player preferences. The platform features various game categories including:
+              </p>
+              <div className="space-y-4 mt-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Slot Games</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Classic and modern slot machines with various themes, paylines, and bonus features</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Fish Shooting Games</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Action-packed arcade-style games featuring underwater worlds and skill-based gameplay</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Keno Games</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Lottery-style number selection games with multiple betting options</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Arcade Games</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Various arcade-style games for quick entertainment</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Getting Started Section */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
+            <Rocket className="h-8 w-8 text-red-600" />
+            How to Get Started with Juwa2
+          </h2>
+          <Card className="mb-4 border-l-4 border-l-blue-600 dark:border-l-blue-500">
+            <CardContent className="p-6">
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
+                Getting started with Juwa2 is straightforward. The platform is designed to be accessible and user-friendly for players of all experience levels. Here's what you need to know:
+              </p>
+              <div className="space-y-3 mt-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Access the Platform</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Visit the official Juwa2 website (juwa2casino.com) or download the mobile app</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Create Your Account</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Register for a free account to access the game library</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Explore Games</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Browse the game collection and select your preferred games to play</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                  <div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Start Playing</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Begin enjoying the games and features available on the platform</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Platform Features Section */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
+            <Sparkles className="h-8 w-8 text-red-600" />
+            Key Features of Juwa2.0
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Shield className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">Secure Platform</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Juwa2 provides a secure gaming environment with account protection and data security measures.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Smartphone className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">Mobile Compatible</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Access Juwa2 on Android and iOS devices for gaming on the go.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Gamepad2 className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">Diverse Game Library</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Extensive collection of slots, fish games, keno, and arcade games.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-3">
+                  <Users className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">Social Gaming</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Connect with other players and enjoy social gaming experiences.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Important Notice */}
+        <div className="mb-8">
+          <Card className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold text-red-800 dark:text-red-200 mb-3">Important Information</h3>
+              <p className="text-red-700 dark:text-red-300 leading-relaxed">
+                Juwa2 is a social gaming platform designed for entertainment purposes only. All gameplay is virtual and for entertainment purposes. Players must be 18 years or older to use the platform. Please play responsibly and within your limits.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Back to Blog */}
+        <div className="mt-8 text-center">
+          <a 
+            href="#blog" 
+            onClick={(e) => { e.preventDefault(); navigate('blog'); }}
+            className="inline-flex items-center gap-2 text-red-600 dark:text-red-400 hover:gap-3 transition-all font-medium"
+          >
+            <ArrowRight className="h-4 w-4 rotate-180" />
+            Back to Blog
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+
   const ContactPage = () => {
     const [name, setName] = useState("");
     const [userEmail, setUserEmail] = useState("");
@@ -3320,6 +3627,7 @@ export default function WebsiteLiveStarter() {
             {route === 'blog-juwa-no-deposit-bonus' && <NoDepositBonusBlog />}
             {route === 'blog-juwa-777-app-troubleshooting' && <TroubleshootingBlog />}
             {route === 'blog-origin-of-juwa' && <OriginOfJuwaBlog />}
+            {route === 'blog-juwa2-casino' && <Juwa2CasinoBlog />}
             {route === 'contact' && <ContactPage />}
             {route === 'faq' && <FAQPage />}
 
