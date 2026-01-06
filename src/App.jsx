@@ -16,13 +16,13 @@ export default function WebsiteLiveStarter() {
   const pageMetadata = {
     'home': {
       title: 'Juwa777 – Free Social Gaming App | Slots, Fish Games & Keno',
-      description: 'Play free Juwa777 games including slots, fish shooting, and keno. Free social gaming app for Android and iOS. Entertainment only. 18+.',
+      description: 'Juwa 777 is a free social gaming app for Android and iOS. Browse free games including slots, fish shooting games, and keno. All gameplay is virtual and for entertainment purposes only. 18+.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/'
     },
     'games': {
       title: 'Juwa777 Games – Free Slots, Fish Shooting & Keno Games',
-      description: 'Play free Juwa777 games: slots, fish shooting games, and keno. No download required. Free social gaming for entertainment. 18+ only.',
+      description: 'Browse Juwa777 game library featuring slots, fish shooting games, and keno. Free social casino games available. Entertainment only. 18+ only.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/games'
     },
@@ -76,7 +76,7 @@ export default function WebsiteLiveStarter() {
     },
     'faq': {
       title: 'Juwa777 FAQ – Frequently Asked Questions',
-      description: 'Find answers to frequently asked questions about Juwa777 free social gaming app. Get help with games, account, and more.',
+      description: 'Get help with Juwa777 login, admin access, app download, and gameplay questions. Find step-by-step guides and troubleshooting tips. Entertainment only. 18+.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/faq'
     }
@@ -146,8 +146,38 @@ export default function WebsiteLiveStarter() {
       const newRoute = path;
       console.log('Route changing to:', newRoute);
       setRoute(newRoute);
-      // Scroll to top when route changes
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Handle hash navigation for intent sections
+      const hash = window.location.hash;
+      if (hash) {
+        // Wait for route to render, then scroll to hash element
+        const scrollToHash = () => {
+          const element = document.querySelector(hash);
+          if (element) {
+            // Account for fixed header (dynamic offset)
+            const headerOffset = document.querySelector('header')?.offsetHeight ?? 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            return true;
+          }
+          return false;
+        };
+        
+        // Try immediately, then retry with requestAnimationFrame (max 10 tries)
+        let attempts = 0;
+        const tryScroll = () => {
+          if (scrollToHash() || attempts >= 10) return;
+          attempts++;
+          requestAnimationFrame(tryScroll);
+        };
+        tryScroll();
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     };
     sync();
     // Listen for popstate (back/forward buttons) and custom pushstate events
@@ -191,6 +221,7 @@ export default function WebsiteLiveStarter() {
           loop 
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{ aspectRatio: '16/9' }}
         >
           <source src="/banner.mp4" type="video/mp4" />
         </video>
@@ -225,7 +256,7 @@ export default function WebsiteLiveStarter() {
             onMouseEnter={() => setPlayNowColor("#dc2626")} // red-600
             onMouseLeave={() => setPlayNowColor("#dc2626")} // default red
           >
-            <div className="text-base opacity-90">1st Deposit Offer</div>
+            <div className="text-base opacity-90">1st Credit Bonus</div>
             <div className="mt-2 font-extrabold text-white leading-[1.1] tracking-tight [text-wrap:balance]" style={{fontSize:'clamp(28px,4.5vw,40px)'}} dangerouslySetInnerHTML={{ __html: '100% Welcome<br/>Bonus' }}></div>
             <div className="mt-6">
               <Button variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('https://www.facebook.com/juwaloot', '_blank')}>Join Now</Button>
@@ -238,7 +269,7 @@ export default function WebsiteLiveStarter() {
             onMouseEnter={() => setPlayNowColor("#ea580c")} // orange-600
             onMouseLeave={() => setPlayNowColor("#dc2626")} // default red
           >
-            <div className="text-base opacity-90">2nd Deposit Offer</div>
+            <div className="text-base opacity-90">2nd Credit Bonus</div>
             <div className="mt-2 font-extrabold text-white leading-[1.1] tracking-tight [text-wrap:balance]" style={{fontSize:'clamp(28px,4.5vw,40px)'}}>50% Reload Bonus</div>
             <div className="mt-6">
               <Button variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => window.open('https://www.facebook.com/JuwaJackpots/', '_blank')}>Join Now</Button>
@@ -265,13 +296,13 @@ export default function WebsiteLiveStarter() {
             const banners = [
               {
                 bg: "from-red-500 to-red-900",
-                subtitle: "1st Deposit Offer",
+                subtitle: "1st Credit Bonus",
                 title: "100% Welcome<br/>Bonus",
                 desc: ""
               },
               {
                 bg: "from-orange-500 to-orange-900", 
-                subtitle: "2nd Deposit Offer",
+                subtitle: "2nd Credit Bonus",
                 title: "50% Reload Bonus",
                 desc: ""
               },
@@ -359,6 +390,11 @@ export default function WebsiteLiveStarter() {
             );
           })()}
         </div>
+        
+        {/* Bonus Disclaimer */}
+        <div className="text-center mt-4 px-6">
+          <p className="text-sm text-neutral-400">Quick in-app rewards and smooth account support. For entertainment purposes only.</p>
+        </div>
       </section>
 
       {/* Introduction Section - Expanded Content */}
@@ -367,10 +403,10 @@ export default function WebsiteLiveStarter() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">Welcome to Juwa777 – Your Free Social Gaming Destination</h2>
           <div className="space-y-4 text-neutral-300 text-base md:text-lg leading-relaxed">
             <p>
-              Juwa777 is a premier free social gaming platform and mobile gaming app designed for Android and iOS devices. Our online gaming platform offers an extensive collection of over 100 exciting casino games and arcade games, including classic slot games, thrilling fish shooting games, and engaging keno experiences. All gameplay is completely free and designed for entertainment purposes only. Experience the best in social casino gaming and free online games.
+              Juwa 777 is a premier free social gaming platform and mobile gaming app designed for Android and iOS devices. Juwa offers an extensive collection of over 100 exciting casino games and arcade games, including classic slot games, thrilling fish shooting games, and engaging keno experiences. All gameplay is completely free and designed for entertainment purposes only. Experience the best in social casino gaming and free online games.
             </p>
             <p>
-              Whether you're a fan of traditional slot machines, enjoy the action-packed excitement of fish shooting games, or prefer the strategic gameplay of keno, Juwa777 has something for every gaming enthusiast. Our mobile gaming platform provides a safe, secure, and enjoyable gaming experience where players can enjoy casino-style games, arcade games, and social gaming without any real-money gambling or cash payouts. Play free games on your smartphone or tablet.
+              Whether you're a fan of traditional slot machines, enjoy the action-packed excitement of fish shooting games, or prefer the strategic gameplay of keno, Juwa has something for every gaming enthusiast. Our mobile gaming platform provides a safe, secure, and enjoyable gaming experience where players can enjoy casino-style games, arcade games, and social gaming without any real-money gambling or cash payouts. Play free games on your smartphone or tablet.
             </p>
             <p>
               To play Juwa777 games, download and install our app on your Android or iOS device. Once you have the app installed, you can access our entire game library and start playing. Simply download the app, create your free account, and begin exploring our vast collection of social gaming experiences. Browse our <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-400 hover:text-red-300 underline">complete games library</a>, learn more <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="text-red-400 hover:text-red-300 underline">about our platform</a>, check our <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-red-400 hover:text-red-300 underline">FAQ page</a> for common questions, or <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-400 hover:text-red-300 underline">contact our support team</a> if you need help.
@@ -408,8 +444,8 @@ export default function WebsiteLiveStarter() {
               <button aria-label="Previous" onClick={() => go(-1)} className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-black/40 hover:bg-black/60 text-white items-center justify-center z-10">‹</button>
               <button aria-label="Next" onClick={() => go(1)} className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-black/40 hover:bg-black/60 text-white items-center justify-center z-10">›</button>
               <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-neutral-900 grid md:grid-cols-2">
-                <div className="flex items-center justify-center bg-black/20">
-                  <img src={current.img} alt="" className="h-full w-full object-cover max-h-[450px] p-2" onError={(e)=>{e.currentTarget.src='/placeholder.jpg';}} />
+                <div className="flex items-center justify-center bg-black/20" style={{ aspectRatio: '16/9', minHeight: '280px' }}>
+                  <img src={current.img} alt="" className="h-full w-full object-cover p-2" style={{ width: '100%', height: '100%' }} onError={(e)=>{e.currentTarget.src='/placeholder.jpg';}} />
                 </div>
                 <div className={`p-6 md:p-10 text-white flex flex-col justify-center items-start gap-5 min-h-[280px] relative ${
                   i === 0 ? 'bg-gradient-to-br from-green-400 to-green-800' : 
@@ -611,10 +647,10 @@ export default function WebsiteLiveStarter() {
             </div>
             <div className="text-center">
               <div className="mx-auto h-36 w-36 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-[0_10px_30px_rgba(245,158,11,0.35)] overflow-hidden">
-                <img src="/payouts.png" alt="Fast Payouts" className="h-44 w-44 object-cover" onError={(e)=>{e.currentTarget.style.display='none'}} />
+                <img src="/payouts.png" alt="Fast Rewards" className="h-44 w-44 object-cover" onError={(e)=>{e.currentTarget.style.display='none'}} />
               </div>
-              <h3 className="mt-5 text-2xl font-extrabold tracking-wide">FAST PAYOUTS</h3>
-              <p className="mt-2 text-neutral-300 leading-relaxed max-w-xs mx-auto">Lightning‑quick redemptions with trusted, transparent processing.</p>
+              <h3 className="mt-5 text-2xl font-extrabold tracking-wide">FAST REWARDS</h3>
+              <p className="mt-2 text-neutral-300 leading-relaxed max-w-xs mx-auto">Quick in-app rewards and virtual credit processing with trusted, transparent processing.</p>
             </div>
             <div className="text-center">
               <div className="mx-auto h-36 w-36 rounded-full bg-gradient-to-br from-indigo-500 to-purple-700 flex items-center justify-center shadow-[0_10px_30px_rgba(99,102,241,0.35)] overflow-hidden">
@@ -770,21 +806,30 @@ export default function WebsiteLiveStarter() {
         <div className="w-full">
           {/* Page H1 */}
           <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-6 text-center">
-            Play Free Juwa777 Games – Slots, Fish Games & Keno
+            Explore Juwa777 Games – Slots, Fish Games & Keno
           </h1>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8 text-center max-w-3xl mx-auto">
-            Discover over 100 exciting free social gaming experiences. Play slots, fish shooting games, and keno for entertainment purposes only. Download our app to start playing.
+            Discover over 100 games available in the Juwa 777 app. Browse our selection of slots, fish shooting games, and keno for entertainment purposes only. Download the Juwa777 app to access the full games library on Android & iOS.
           </p>
+          <div className="text-center mb-8">
+            <a 
+              href="/blog-download-juwa-777" 
+              onClick={(e) => { e.preventDefault(); navigate('blog-download-juwa-777'); }}
+              className="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
+            >
+              Download Juwa777 App
+            </a>
+          </div>
 
           {/* Games Introduction Content */}
           <div className="max-w-4xl mx-auto mb-12 space-y-6">
             <div className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Explore Our Free Social Gaming Collection</h2>
               <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
-                Juwa777 offers an extensive library of over 100 free social casino games and online casino games designed for entertainment purposes only. Our mobile gaming platform features three main categories: classic slot games, action-packed fish shooting games, and strategic keno games. All games are completely free to play. Download our mobile gaming app to access and play all games on your Android or iOS device.
+                Juwa777 offers over 100 games in the app, featuring an extensive library of casino-style social games designed for entertainment purposes only. Our mobile gaming platform features three main categories: classic slot games, action-packed fish shooting games, and strategic keno games. All games are completely free to play. Download the Juwa 777 app to access and play all games on your Android or iOS device.
               </p>
               <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                Whether you enjoy the spinning reels of slot machines, the fast-paced action of fish shooting games, or the strategic number selection of keno, our diverse game collection has something for every gaming enthusiast. Each game category offers unique gameplay mechanics, engaging graphics, and entertaining features that provide hours of fun. Experience the best in free online games and social gaming.
+                Whether you enjoy the spinning reels of slot machines, the fast-paced action of fish shooting games, or the strategic number selection of keno, our diverse game collection has something for every gaming enthusiast. Each game category offers unique gameplay mechanics, engaging graphics, and entertaining features that provide hours of fun. Experience the best in free social gaming.
               </p>
             </div>
 
@@ -822,7 +867,7 @@ export default function WebsiteLiveStarter() {
                   <div>
                     <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Download the App</h3>
                     <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm">
-                      First, download and install the Juwa777 app on your Android or iOS device. The app is required to access and play all games. Visit our website to get the download link for your device.
+                      First, download and install the Juwa 777 app on your Android or iOS device. The app is required to access and play all games. Visit our website to get the download link for your device.
                     </p>
                   </div>
                 </div>
@@ -875,11 +920,13 @@ export default function WebsiteLiveStarter() {
                 return (
                   <div key={index} className="bg-neutral-800 rounded-lg overflow-hidden border border-neutral-700">
                     {/* Game Image */}
-                    <div className="aspect-square relative">
+                    <div className="aspect-square relative" style={{ width: '100%', aspectRatio: '1/1' }}>
                       <img
                         src={`/Games/${image}`}
                         alt={`${gameName} - Free ${selectedFilter === 'All' ? 'social casino' : selectedFilter.toLowerCase()} game on Juwa777 mobile gaming app for Android and iOS`}
                         className="w-full h-full object-contain"
+                        style={{ width: '100%', height: '100%', display: 'block' }}
+                        loading="lazy"
                         onError={(e) => {
                           console.log('Failed to load image:', `/Games/${image}`);
                           e.target.style.display = 'none';
@@ -954,7 +1001,7 @@ export default function WebsiteLiveStarter() {
     <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-900/40">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col items-center mb-8">
-          <img src={logoUrl} alt="Logo" className="h-32 md:h-40 w-auto mb-6" />
+          <img src={logoUrl} alt="Juwa777 logo - free social gaming app" className="h-32 md:h-40 w-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-4">About Juwa777 – Your Free Social Gaming Platform</h1>
           <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white text-center">Safe, Fair & Rewarding</h2>
         </div>
@@ -1155,11 +1202,13 @@ export default function WebsiteLiveStarter() {
               <Card 
                 className="overflow-hidden border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-lg transition-shadow duration-300 group h-full"
               >
-                <div className="h-48 overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative">
+                <div className="h-48 overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative" style={{ aspectRatio: '16/9', minHeight: '192px' }}>
                   <img 
                     src={post.image || '/blog imgae/download juwa now.png'} 
                     alt={post.title}
                     className="w-full h-full object-cover absolute inset-0"
+                    style={{ width: '100%', height: '100%', display: 'block' }}
+                    loading="lazy"
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}
@@ -1225,11 +1274,13 @@ export default function WebsiteLiveStarter() {
         </div>
 
         {/* Hero Image */}
-        <div className="mb-8 rounded-2xl overflow-hidden">
+        <div className="mb-8 rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
           <img 
             src="/blog imgae/download juwa now.png" 
             alt="Download Juwa 777 App"
-            className="w-full h-auto object-cover"
+            className="w-full h-full object-cover"
+            style={{ width: '100%', height: '100%', display: 'block' }}
+            loading="lazy"
             onError={(e) => {
               e.target.style.display = 'none';
             }}
@@ -1242,6 +1293,77 @@ export default function WebsiteLiveStarter() {
             Get ready to experience the ultimate social casino gaming platform with Juwa 777. This comprehensive guide will walk you through downloading and installing the latest version of the Juwa 777 application on both Android and iOS devices. Whether you're a first-time user or looking to update to the newest release, we've got you covered with detailed, step-by-step instructions.
           </p>
         </div>
+
+        {/* Quick Start Block */}
+        <Card className="mb-8 border-2 border-red-200 dark:border-red-800 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20">
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+              <Rocket className="h-6 w-6 text-red-600" />
+              Quick Start
+            </h2>
+            <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+              Jump to the section you need:
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a 
+                href="#android-installation" 
+                onClick={(e) => { e.preventDefault(); const el = document.getElementById('android-installation'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
+              >
+                Android Installation
+              </a>
+              <a 
+                href="#ios-installation" 
+                onClick={(e) => { e.preventDefault(); const el = document.getElementById('ios-installation'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
+              >
+                iOS Installation
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Help Block */}
+        <Card className="mb-8 border border-neutral-200/60 dark:border-neutral-800/60">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+              <HelpCircle className="h-5 w-5 text-red-600" />
+              Related Help
+            </h2>
+            <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+              Need more assistance? Check out these resources:
+            </p>
+            <ul className="space-y-2">
+              <li>
+                <a 
+                  href="/faq#juwa777-login" 
+                  onClick={(e) => { e.preventDefault(); navigate('faq'); setTimeout(() => { const el = document.getElementById('juwa777-login'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}
+                  className="text-red-600 hover:text-red-700 underline"
+                >
+                  How to Login to Juwa777
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/faq#juwa-admin-login" 
+                  onClick={(e) => { e.preventDefault(); navigate('faq'); setTimeout(() => { const el = document.getElementById('juwa-admin-login'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}
+                  className="text-red-600 hover:text-red-700 underline"
+                >
+                  Juwa Admin Login Help
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/blog-juwa-777-app-troubleshooting" 
+                  onClick={(e) => { e.preventDefault(); navigate('blog-juwa-777-app-troubleshooting'); }}
+                  className="text-red-600 hover:text-red-700 underline"
+                >
+                  App Troubleshooting Guide
+                </a>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
 
         {/* App Information Table */}
         <Card className="mb-8 border border-neutral-200/60 dark:border-neutral-800/60">
@@ -1291,7 +1413,7 @@ export default function WebsiteLiveStarter() {
         </Card>
 
         {/* iOS Section */}
-        <div className="mb-8">
+        <div id="ios-installation" className="mb-8">
           <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
             <Smartphone className="h-8 w-8 text-red-600" />
             iOS Installation Instructions
@@ -1306,7 +1428,7 @@ export default function WebsiteLiveStarter() {
               <div className="mt-6 mb-4">
                 <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3">Watch the Complete iOS Installation Guide</h3>
                 <div className="rounded-lg overflow-hidden bg-neutral-900 max-w-sm mx-auto" style={{marginBottom: '0'}}>
-                  <div className="relative w-full" style={{height: '500px', maxHeight: '500px'}}>
+                  <div className="relative w-full" style={{aspectRatio: '9/16', maxHeight: '500px'}}>
                     <iframe
                       className="absolute top-0 left-0 w-full h-full"
                       src="https://www.youtube.com/embed/hiIQrBmtJqg"
@@ -1314,6 +1436,7 @@ export default function WebsiteLiveStarter() {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
+                      loading="lazy"
                     ></iframe>
                   </div>
                 </div>
@@ -1336,8 +1459,8 @@ export default function WebsiteLiveStarter() {
           </Card>
         </div>
 
-        {/* Download Section */}
-        <div className="mb-8">
+        {/* Android Section */}
+        <div id="android-installation" className="mb-8">
           <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
             <Download className="h-8 w-8 text-red-600" />
             Android Installation Process
@@ -1887,11 +2010,13 @@ export default function WebsiteLiveStarter() {
         </div>
 
         {/* Hero Image */}
-        <div className="mb-8 rounded-2xl overflow-hidden">
+        <div className="mb-8 rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
           <img 
             src="/blog imgae/play juwa online.png" 
             alt="Play Juwa Online Games"
-            className="w-full h-auto object-cover"
+            className="w-full h-full object-cover"
+            style={{ width: '100%', height: '100%', display: 'block' }}
+            loading="lazy"
             onError={(e) => {
               e.target.style.display = 'none';
             }}
@@ -2935,11 +3060,13 @@ export default function WebsiteLiveStarter() {
         </div>
 
         {/* Hero Image */}
-        <div className="mb-8 rounded-2xl overflow-hidden max-w-md mx-auto">
+        <div className="mb-8 rounded-2xl overflow-hidden max-w-md mx-auto" style={{ aspectRatio: '16/9', maxHeight: '256px' }}>
           <img 
             src="/juwa2/juwa2 logo.png" 
             alt="Juwa2 Logo - Juwa2.0 Gaming Platform"
-            className="w-full h-auto object-contain max-h-64"
+            className="w-full h-full object-contain"
+            style={{ width: '100%', height: '100%', display: 'block' }}
+            loading="lazy"
             onError={(e) => {
               e.target.style.display = 'none';
             }}
@@ -2979,11 +3106,13 @@ export default function WebsiteLiveStarter() {
           </h2>
           <Card className="mb-4 border border-neutral-200/60 dark:border-neutral-800/60">
             <CardContent className="p-6">
-              <div className="mb-4">
+              <div className="mb-4" style={{ aspectRatio: '1536/691' }}>
                 <img 
                   src="/juwa2/Juwa2.0_interface-1536x691.webp" 
                   alt="Juwa2.0 gaming platform interface showing game selection and features"
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-full rounded-lg object-contain"
+                  style={{ width: '100%', height: '100%', display: 'block' }}
+                  loading="lazy"
                   onError={(e) => {
                     e.target.style.display = 'none';
                   }}
@@ -3251,7 +3380,7 @@ export default function WebsiteLiveStarter() {
     <section className="px-6 md:px-10 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-center mb-8">
-          <img src={logoUrl} alt="Logo" className="h-32 md:h-40 w-auto mb-6" />
+          <img src={logoUrl} alt="Juwa777 logo - free social gaming app" className="h-32 md:h-40 w-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-4">Contact Juwa777 Support Team</h1>
         </div>
         <div className="mb-8 text-center max-w-3xl mx-auto">
@@ -3422,6 +3551,42 @@ export default function WebsiteLiveStarter() {
 
     const faqData = [
       {
+        question: "Is Juwa777 the same as Juwa 777?",
+        answer: "Yes. Juwa777 and Juwa 777 refer to the same app. The name is commonly written in different formats, including Juwa, Juwa777, and Juwa 777. All refer to the same free social gaming platform available for Android and iOS devices. For entertainment purposes only. 18+ only."
+      },
+      {
+        question: "What is Juwa777 used for?",
+        answer: "Juwa777 is a social-style gaming app featuring virtual slot games, fish games, and number-based games intended for entertainment purposes only. The app provides over 100 free games for players to enjoy. All gameplay is virtual and designed for entertainment. No real-money gambling, deposits, withdrawals, or cash payouts are available. 18+ only."
+      },
+      {
+        question: "Can you play Juwa 777 online without downloading?",
+        answer: "Juwa 777 is primarily accessed through a mobile app. Most users need to download the app to play. The app is required to access our game library on Android and iOS devices. Visit our website to get the download link for your device. All games are for entertainment purposes only. 18+ only."
+      },
+      {
+        question: "Is Juwa777 free to play?",
+        answer: "Juwa777 is a free social-style app with virtual gameplay. The app is free to download and all games are free to play. Access and features may vary depending on how users obtain the app. All gameplay is for entertainment purposes only. No real-money gambling, deposits, withdrawals, or cash payouts are available. 18+ only."
+      },
+      {
+        question: "What is Juwa admin login?",
+        answer: "Juwa admin login usually refers to agent-level or administrator access rather than standard player login. Regular players access the app through standard login credentials. For support with login issues, contact our support team through the Contact page. All gameplay is for entertainment purposes only. 18+ only."
+      },
+      {
+        question: "How do I download Juwa 777?",
+        answer: "Most users receive Juwa 777 through a direct app link or APK provided by an agent or distributor. Visit our website to get the download link for your Android or iOS device. Once downloaded and installed, you can access our entire game library. All games are for entertainment purposes only. 18+ only."
+      },
+      {
+        question: "Is Juwa777 available on Google Play?",
+        answer: "Juwa777 is not always listed in official app stores, which is why users often search for Juwa 777 APK options. The app is typically distributed through direct download links. Visit our website to get the download link for your device. All games are for entertainment purposes only. 18+ only."
+      },
+      {
+        question: "Why can't I log in to Juwa777?",
+        answer: "Login issues are often related to incorrect credentials or account access provided by an administrator. Make sure you're using the correct username and password. If problems persist, contact our support team through the Contact page. All gameplay is for entertainment purposes only. 18+ only."
+      },
+      {
+        question: "Do I need an account to log in?",
+        answer: "Yes. Juwa777 login typically requires credentials provided during account setup. You'll need to create an account or receive login credentials to access the app and play games. All games are for entertainment purposes only. 18+ only."
+      },
+      {
         question: "What is Juwa777?",
         answer: "Juwa777 is a free social gaming platform designed for Android and iOS devices. Our platform offers over 100 exciting games including classic slots, action-packed fish shooting games, and strategic keno experiences. All games are completely free to play and designed for entertainment purposes only. No real-money gambling, deposits, withdrawals, or cash payouts are available. Juwa777 provides a safe, secure, and enjoyable gaming environment where players can experience casino-style games without any financial risk."
       },
@@ -3483,11 +3648,48 @@ export default function WebsiteLiveStarter() {
       }
     ];
 
+    // Add FAQPage JSON-LD schema for SEO
+    useEffect(() => {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      };
+
+      // Remove existing FAQPage schema if present
+      const existingScript = document.querySelector('script[data-faq-schema]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      // Add new FAQPage schema
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-faq-schema', 'true');
+      script.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(script);
+
+      // Cleanup on unmount
+      return () => {
+        const scriptToRemove = document.querySelector('script[data-faq-schema]');
+        if (scriptToRemove) {
+          scriptToRemove.remove();
+        }
+      };
+    }, [faqData]);
+
   return (
       <section className="px-6 md:px-10 py-12">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col items-center mb-8">
-          <img src={logoUrl} alt="Logo" className="h-32 md:h-40 w-auto mb-6" />
+          <img src={logoUrl} alt="Juwa777 logo - free social gaming app" className="h-32 md:h-40 w-auto mb-6" />
           <div className="text-sm text-neutral-500 dark:text-neutral-400 mb-4">
             <a href="#contact" className="hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors">Contact</a>
             <span className="mx-2">&gt;</span>
@@ -3498,6 +3700,115 @@ export default function WebsiteLiveStarter() {
             Find answers to common questions about Juwa777 free social gaming platform. Learn about our games, how to play, platform features, and more. If you don't find what you're looking for, feel free to <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-600 hover:text-red-700 underline">contact our support team</a>.
           </p>
               </div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white text-center mb-8 mt-12">Juwa777 Frequently Asked Questions</h2>
+              
+              {/* Intent Hub Sections - Lightweight version (Login & Download expanded, others collapsed) */}
+              <div className="space-y-6 mb-12">
+                
+                {/* Juwa777 Login Section - EXPANDED */}
+                <section id="juwa777-login" className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+                  <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">How to Login to Juwa777</h2>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                    To login to Juwa777, you need to download and install the app first. Once installed, open the app and enter your username and password. If you don't have an account yet, you'll need to create one through the registration process. Login credentials are typically provided during account setup or by your distributor.
+                  </p>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                    Common login issues include incorrect credentials, account access restrictions, or network connectivity problems. Make sure you're using the correct username and password provided during account setup.
+                  </p>
+                  <div className="mt-4">
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Troubleshooting Steps:</h3>
+                    <ul className="list-disc list-inside space-y-2 text-neutral-700 dark:text-neutral-300">
+                      <li>Verify your username and password are correct</li>
+                      <li>Check your internet connection</li>
+                      <li>Ensure the app is updated to the latest version</li>
+                      <li>Try restarting the app</li>
+                      <li>Contact support if issues persist</li>
+                    </ul>
+                  </div>
+                  <div className="mt-4">
+                    <a href="/blog-download-juwa-777" onClick={(e) => { e.preventDefault(); navigate('blog-download-juwa-777'); }} className="text-red-600 hover:text-red-700 underline">Download Juwa 777 app</a> | <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-600 hover:text-red-700 underline">Get login help</a>
+                  </div>
+                </section>
+
+                {/* Juwa 777 Download Section - EXPANDED */}
+                <section id="juwa-777-download" className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+                  <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Download Juwa 777 App</h2>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                    To download Juwa 777, visit our website and get the download link for your device. The app is available for both Android and iOS devices. Most users receive the app through a direct download link or APK file provided by a distributor or agent.
+                  </p>
+                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                    The Juwa777 app is not always available in official app stores like Google Play or Apple App Store, which is why direct download links are commonly used. Once downloaded, follow the installation instructions for your device type.
+                  </p>
+                  <div className="mt-4">
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Download Steps:</h3>
+                    <ul className="list-disc list-inside space-y-2 text-neutral-700 dark:text-neutral-300">
+                      <li>Visit juwa777.com to get download link</li>
+                      <li>Choose Android or iOS version</li>
+                      <li>Download the APK (Android) or installation file (iOS)</li>
+                      <li>Enable installation from unknown sources (Android)</li>
+                      <li>Follow on-screen installation instructions</li>
+                      <li>Trust the app in device settings (iOS)</li>
+                    </ul>
+                  </div>
+                  <div className="mt-4">
+                    <a href="/blog-download-juwa-777" onClick={(e) => { e.preventDefault(); navigate('blog-download-juwa-777'); }} className="text-red-600 hover:text-red-700 underline font-semibold">Complete Download Guide →</a>
+                  </div>
+                </section>
+
+                {/* Juwa Admin Login Section - COLLAPSED (using details) */}
+                <details className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+                  <summary className="cursor-pointer">
+                    <h2 id="juwa-admin-login" className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white inline">Juwa Admin Login</h2>
+                  </summary>
+                  <div className="mt-4">
+                    <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                      Juwa admin login refers to agent-level or administrator access to the Juwa777 platform. This is different from standard player login and is typically used by distributors, agents, or platform administrators who manage accounts, credits, and user access.
+                    </p>
+                    <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                      Admin login credentials are provided separately from player accounts and require special permissions. If you need admin access, contact your distributor or platform administrator for credentials and setup instructions.
+                    </p>
+                    <div className="mt-4">
+                      <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Admin Login Requirements:</h3>
+                      <ul className="list-disc list-inside space-y-2 text-neutral-700 dark:text-neutral-300">
+                        <li>Admin-level credentials from distributor</li>
+                        <li>Special permissions and access rights</li>
+                        <li>Separate login portal or interface</li>
+                        <li>Contact distributor for setup assistance</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                {/* Play Juwa Online Section - COLLAPSED (using details) */}
+                <details className="bg-neutral-50 dark:bg-neutral-900/50 rounded-xl p-6 md:p-8">
+                  <summary className="cursor-pointer">
+                    <h2 id="play-juwa-online" className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white inline">Can You Play Juwa 777 Online Without Downloading?</h2>
+                  </summary>
+                  <div className="mt-4">
+                    <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                      No, you cannot play Juwa 777 online without downloading the app. Juwa777 requires the mobile app to be installed on your Android or iOS device. The app is required to access and play all games - there is no browser-based version available.
+                    </p>
+                    <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                      To play Juwa 777, you must download and install the mobile app first. Once you have the app installed, create an account or login with existing credentials. Then browse the game library, select a game, and start playing. All games are free to play and designed for entertainment purposes only.
+                    </p>
+                    <div className="mt-4">
+                      <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Getting Started:</h3>
+                      <ul className="list-disc list-inside space-y-2 text-neutral-700 dark:text-neutral-300">
+                        <li>Download and install the Juwa777 app</li>
+                        <li>Create your free account</li>
+                        <li>Browse the game library</li>
+                        <li>Select a game to play</li>
+                        <li>Enjoy free social gaming</li>
+                      </ul>
+                    </div>
+                    <div className="mt-4">
+                      <a href="/blog-download-juwa-777" onClick={(e) => { e.preventDefault(); navigate('blog-download-juwa-777'); }} className="text-red-600 hover:text-red-700 underline">Download app</a> | <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="text-red-600 hover:text-red-700 underline">Browse games</a>
+                    </div>
+                  </div>
+                </details>
+
+              </div>
+              
               <div>
             {faqData.map((item, index) => (
               <div key={index} className={`py-4 ${index < faqData.length - 1 ? 'border-b border-neutral-200 dark:border-neutral-700' : ''}`}>
@@ -3567,12 +3878,12 @@ export default function WebsiteLiveStarter() {
           <div className="overflow-hidden rounded-2xl shadow-sm border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900">
             <nav className="flex items-center justify-between px-5 py-3">
               <div className="flex items-center gap-2">
-                <img src={logoUrl} alt="Logo" className="h-10 w-auto" />
+                <img src={logoUrl} alt="Juwa777 logo - free social gaming app" className="h-10 w-auto" />
               </div>
               
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
-                <a href="/home" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
                 <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
                 <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
                 <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
@@ -3609,7 +3920,7 @@ export default function WebsiteLiveStarter() {
             {mobileMenuOpen && (
               <div className="md:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
                 <div className="px-5 py-4 space-y-3">
-                  <a href="/home" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
+                  <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
                   <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Games</a>
                   <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>About</a>
                   <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Blog</a>
@@ -3641,7 +3952,7 @@ export default function WebsiteLiveStarter() {
                       <div className="text-white/90 italic">Your safety and enjoyment are our priority.</div>
                     </div>
                   </div>
-                  <img src={logoUrl} alt="Logo" className="h-10 md:h-12 w-auto" />
+                  <img src={logoUrl} alt="Juwa777 logo - free social gaming app" className="h-10 md:h-12 w-auto" />
                 </div>
               </div>
             </section>
@@ -3651,8 +3962,8 @@ export default function WebsiteLiveStarter() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
                   <div className="flex items-center gap-2">
                     <img src={logoUrl} alt="Juwa777 - Free Social Gaming App Logo" className="h-7 w-auto" />
-                    <span className="text-sm text-neutral-600 dark:text-neutral-300">© 2025 All rights reserved.</span>
-                  </div>
+                  <span className="text-sm text-neutral-600 dark:text-neutral-300">© 2025 All rights reserved.</span>
+                </div>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm mb-4">
                     <div>
                       <div className="font-semibold text-neutral-900 dark:text-white mb-2">Navigation</div>
@@ -3724,7 +4035,7 @@ export default function WebsiteLiveStarter() {
 
         {/* WhatsApp Icon */}
         <a
-          href="https://wa.me/yourwhatsappnumber"
+          href="https://wa.me/qr/JMUAYF2374KRM1"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#25D366] md:border-2 relative"
@@ -3741,7 +4052,7 @@ export default function WebsiteLiveStarter() {
 
         {/* Signal Icon */}
         <a
-          href="https://signal.me/#p/juwabros.777"
+          href="https://signal.me/#eu/H4dqi2VC7E_jEWZQSmddKK1oaARHUxxBPHZ3A_ygWoHK7Opj9L9Ktr3xIKwIxCvd"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#3A76F0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#3A76F0] md:border-2 relative"
