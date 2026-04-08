@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent layout shift from fonts */
+@layer base {
+  * {
+    font-display: swap;
+  }
+  
+  /* Ensure images don't cause layout shift */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Prevent layout shift from iframes */
+  iframe {
+    max-width: 100%;
+  }
+}

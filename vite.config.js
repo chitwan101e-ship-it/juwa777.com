@@ -10,9 +10,10 @@ export default defineConfig({
     }
   },
   server: {
-    host: '0.0.0.0', // Listen on all network interfaces
+    host: 'localhost', // Listen on localhost
     port: 5173,
-    strictPort: false
+    strictPort: false,
+    open: true // Automatically open browser
   },
   base: '/', // Change this to '/JuwaCasino/' if your repo is not using a custom domain
   build: {

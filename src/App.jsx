@@ -62,11 +62,11 @@ export default function WebsiteLiveStarter() {
       image: 'https://www.juwa777.com/blog imgae/boost you gaming fun with juwa.png',
       url: 'https://www.juwa777.com/blog-juwa-777-app-troubleshooting'
     },
-    'blog-juwa2-casino': {
+    'JUWA2': {
       title: 'Juwa2: Complete Guide to Juwa2.0 Gaming Platform | Juwa777 Blog',
       description: 'Discover Juwa2 and Juwa2.0 - a comprehensive guide to the gaming platform, features, games, and how to get started. Learn about Juwa2 slots and casino games.',
       image: 'https://www.juwa777.com/juwa2/juwa2 logo.png',
-      url: 'https://www.juwa777.com/blog-juwa2-casino'
+      url: 'https://www.juwa777.com/JUWA2'
     },
     'contact': {
       title: 'Contact Juwa777 – Customer Support & Help',
@@ -142,6 +142,11 @@ export default function WebsiteLiveStarter() {
       // Handle root path "/" as "home"
       if (path === '' || path === '/') {
         path = 'home';
+      }
+      // Legacy blog URL → clean /JUWA2 path
+      if (path === 'blog-juwa2-casino') {
+        window.history.replaceState({}, '', '/JUWA2');
+        path = 'JUWA2';
       }
       const newRoute = path;
       console.log('Route changing to:', newRoute);
@@ -239,7 +244,7 @@ export default function WebsiteLiveStarter() {
           </h1>
           <p className="mt-4 text-neutral-300 text-base md:text-lg">{heroDesc}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr', '_blank')}>
+            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/JuwaJackpots/', '_blank')}>
               <Sparkles className="h-4 w-4 mr-2" /> Play Now
             </Button>
             <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" onClick={() => window.open('https://dl.juwa777.com/', '_blank')}>Get Started</Button>
@@ -475,7 +480,7 @@ export default function WebsiteLiveStarter() {
                           className="bg-white text-neutral-900 hover:opacity-90 text-sm md:text-base px-4 py-2"
                           onClick={() => {
                             if (b.cta === "JOIN THE FUN") {
-                              window.open('https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr', '_blank');
+                              window.open('https://www.facebook.com/JuwaJackpots/', '_blank');
                             } else if (b.cta === "JOIN NOW") {
                               window.open('https://www.facebook.com/juwaloot', '_blank');
                             } else if (b.cta === "FOLLOW NOW") {
@@ -1195,7 +1200,7 @@ export default function WebsiteLiveStarter() {
               <div
                 key={post.id}
                 onClick={() => {
-                  navigate(`blog-${post.id}`);
+                  navigate(post.id === 'juwa2-casino' ? 'JUWA2' : `blog-${post.id}`);
                 }}
                 className="cursor-pointer"
               >
@@ -3006,7 +3011,7 @@ export default function WebsiteLiveStarter() {
                 Download Juwa777 Now
               </Button>
               <Button 
-                onClick={() => window.open('https://www.facebook.com/people/Fortune-JUWA/61565056061906/?mibextid=wwXIfr&rdid=903GVl4fnaFYCKne&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JNy4sFfi2%2F%3Fmibextid%3DwwXIfr', '_blank')}
+                onClick={() => window.open('https://www.facebook.com/JuwaJackpots/', '_blank')}
                 variant="outline"
                 className="border-white text-white hover:bg-white/10 font-semibold"
               >
@@ -3884,6 +3889,7 @@ export default function WebsiteLiveStarter() {
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
                 <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
+                <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); }} className={route==='JUWA2' ? 'font-bold text-red-600' : 'hover:underline'}>JUWA2</a>
                 <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
                 <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
                 <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
@@ -3895,7 +3901,7 @@ export default function WebsiteLiveStarter() {
                 <Button variant="outline" className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50" onClick={() => navigate('faq')}>
                   FAQ
                 </Button>
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr', '_blank')}>
+                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/JuwaJackpots/', '_blank')}>
                   <Sparkles className="h-4 w-4 mr-2" />
                   Play now
                 </Button>
@@ -3903,7 +3909,7 @@ export default function WebsiteLiveStarter() {
               
               {/* Mobile Navigation */}
               <div className="flex md:hidden items-center gap-3">
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90 px-4 py-2" onClick={() => window.open('https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr', '_blank')}>
+                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90 px-4 py-2" onClick={() => window.open('https://www.facebook.com/JuwaJackpots/', '_blank')}>
                 <Sparkles className="h-4 w-4 mr-2" />
                 Play now
               </Button>
@@ -3921,6 +3927,7 @@ export default function WebsiteLiveStarter() {
               <div className="md:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
                 <div className="px-5 py-4 space-y-3">
                   <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
+                  <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='JUWA2' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>JUWA2</a>
                   <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Games</a>
                   <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>About</a>
                   <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Blog</a>
@@ -3938,7 +3945,7 @@ export default function WebsiteLiveStarter() {
             {route === 'blog-juwa-no-deposit-bonus' && <NoDepositBonusBlog />}
             {route === 'blog-juwa-777-app-troubleshooting' && <TroubleshootingBlog />}
             {route === 'blog-origin-of-juwa' && <OriginOfJuwaBlog />}
-            {route === 'blog-juwa2-casino' && <Juwa2CasinoBlog />}
+            {route === 'JUWA2' && <Juwa2CasinoBlog />}
             {route === 'contact' && <ContactPage />}
             {route === 'faq' && <FAQPage />}
 
@@ -4001,7 +4008,7 @@ export default function WebsiteLiveStarter() {
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-2 md:gap-3">
         {/* Telegram Icon */}
         <a
-          href="https://t.me/Juwabrosofficial"
+          href="https://t.me/JUWA2GO"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#40B3E0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#40B3E0] md:border-2 relative"
@@ -4018,7 +4025,7 @@ export default function WebsiteLiveStarter() {
 
         {/* Messenger Icon */}
         <a
-          href="https://www.facebook.com/share/17aBWNSxLD/?mibextid=wwXIfr"
+          href="https://www.facebook.com/JuwaJackpots/"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#0866ff]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#0866ff] md:border-2 relative"
