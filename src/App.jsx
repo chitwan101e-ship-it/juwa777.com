@@ -244,7 +244,7 @@ export default function WebsiteLiveStarter() {
           </h1>
           <p className="mt-4 text-neutral-300 text-base md:text-lg">{heroDesc}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/share/1Bie9cjV6W/?mibextid=wwXIfr', '_blank')}>
+            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.juwabros.com', '_blank')}>
               <Sparkles className="h-4 w-4 mr-2" /> Play Now
             </Button>
             <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" onClick={() => window.open('https://dl.juwa777.com/', '_blank')}>Get Started</Button>
@@ -3011,7 +3011,7 @@ export default function WebsiteLiveStarter() {
                 Download Juwa777 Now
               </Button>
               <Button 
-                onClick={() => window.open('https://www.facebook.com/share/1Bie9cjV6W/?mibextid=wwXIfr', '_blank')}
+                onClick={() => window.open('https://www.juwabros.com', '_blank')}
                 variant="outline"
                 className="border-white text-white hover:bg-white/10 font-semibold"
               >
@@ -3890,6 +3890,7 @@ export default function WebsiteLiveStarter() {
               <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
                 <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
                 <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); }} className={route==='JUWA2' ? 'font-bold text-red-600' : 'hover:underline'}>JUWA2</a>
+                <a href="https://www.juwabros.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Relay</a>
                 <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
                 <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
                 <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
@@ -3901,7 +3902,7 @@ export default function WebsiteLiveStarter() {
                 <Button variant="outline" className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50" onClick={() => navigate('faq')}>
                   FAQ
                 </Button>
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.facebook.com/share/1Bie9cjV6W/?mibextid=wwXIfr', '_blank')}>
+                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.juwabros.com', '_blank')}>
                   <Sparkles className="h-4 w-4 mr-2" />
                   Play now
                 </Button>
@@ -3909,7 +3910,7 @@ export default function WebsiteLiveStarter() {
               
               {/* Mobile Navigation */}
               <div className="flex md:hidden items-center gap-3">
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90 px-4 py-2" onClick={() => window.open('https://www.facebook.com/share/1Bie9cjV6W/?mibextid=wwXIfr', '_blank')}>
+                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90 px-4 py-2" onClick={() => window.open('https://www.juwabros.com', '_blank')}>
                 <Sparkles className="h-4 w-4 mr-2" />
                 Play now
               </Button>
@@ -3928,6 +3929,7 @@ export default function WebsiteLiveStarter() {
                 <div className="px-5 py-4 space-y-3">
                   <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
                   <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='JUWA2' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>JUWA2</a>
+                  <a href="https://www.juwabros.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white">Relay</a>
                   <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Games</a>
                   <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>About</a>
                   <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Blog</a>
