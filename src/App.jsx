@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
-import { Sparkles, Rocket, LayoutGrid, Settings, ExternalLink, ShieldCheck, Menu, X, CheckCircle, AlertCircle, Download, Smartphone, FileDown, Settings2, Play, ArrowRight, Shield, Clock, Package, Gift, DollarSign, Percent, Users, Info, Globe, Monitor, Lock, Wifi, Gamepad2, LogIn, HelpCircle, Zap, Star, Battery, RefreshCw, Trash2 } from "lucide-react";
+import { Sparkles, Rocket, LayoutGrid, Settings, ExternalLink, ShieldCheck, Menu, X, CheckCircle, AlertCircle, Download, Smartphone, FileDown, Settings2, Play, ArrowRight, Shield, Clock, Package, Gift, DollarSign, Percent, Users, Info, Globe, Monitor, Lock, Wifi, Gamepad2, LogIn, HelpCircle, Zap, Star, Battery, RefreshCw, Trash2, MessageCircle, UserPlus } from "lucide-react";
 
 export default function WebsiteLiveStarter() {
   const [logoUrl] = useState("/logo.png");
@@ -79,6 +79,12 @@ export default function WebsiteLiveStarter() {
       description: 'Get help with Juwa777 login, admin access, app download, and gameplay questions. Find step-by-step guides and troubleshooting tips. Entertainment only. 18+.',
       image: 'https://www.juwa777.com/logo.png',
       url: 'https://www.juwa777.com/faq'
+    },
+    'relay': {
+      title: 'Juwa Bros Relay – Official Customer Support & Freeplay Promos',
+      description: 'Official Juwa customer support on Juwa Bros Relay. Sign up for your account, log in, and get Thursday freeplay promos for verified users.',
+      image: 'https://www.juwa777.com/favicon.svg',
+      url: 'https://www.juwa777.com/relay'
     }
   };
 
@@ -1002,6 +1008,330 @@ export default function WebsiteLiveStarter() {
     );
   };
 
+  const RelayPage = () => (
+    <>
+      <section className="relative overflow-hidden px-6 md:px-10 py-14 md:py-20 bg-gradient-to-br from-[#8d63ff] via-[#6b4fd4] to-[#4c78ff]">
+        <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full blur-3xl opacity-30 bg-white" />
+        <div className="absolute -bottom-16 -right-16 h-72 w-72 rounded-full blur-3xl opacity-20 bg-white" />
+        <div className="relative max-w-6xl mx-auto text-center text-white z-10">
+          <div className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-6 border border-white/20">
+            Official Customer Support
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+            Juwa Bros Relay
+          </h2>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+            Private messaging, beautifully simple. Connect with the official Juwa support team, get verified, and never miss a weekly promo.
+          </p>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-900/40">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col items-center mb-12">
+            <img src="/favicon.svg" alt="Juwa Bros Relay logo" className="h-28 md:h-36 w-28 md:w-36 mb-6 drop-shadow-lg" />
+            <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white text-center mb-3">
+              Juwa Bros Relay – Official Support Hub
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-700 dark:text-neutral-300 text-center mb-6">
+              Private messaging, beautifully simple
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+              <Button
+                style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
+                className="text-white hover:opacity-90 px-8 py-2 text-base"
+                onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+              >
+                <UserPlus className="h-4 w-4 mr-2" />
+                Create account
+              </Button>
+              <Button
+                variant="outline"
+                className="border-[#8d63ff] text-[#6b4fd4] dark:text-[#a78bfa] hover:bg-[#8d63ff]/10 px-8 py-2 text-base"
+                onClick={() => window.open('https://www.juwabros.com/login', '_blank')}
+              >
+                <LogIn className="h-4 w-4 mr-2" />
+                Sign in
+              </Button>
+            </div>
+            <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed text-center max-w-3xl">
+              Juwa Bros Relay is the official Juwa customer support channel. Sign up for your account, message our team securely, and stay connected for account help, verification updates, and exclusive announcements — including the weekly Thursday freeplay promo for verified users.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4 mb-12">
+            <Card className="bg-gradient-to-br from-violet-500 to-violet-700 border-violet-600 overflow-hidden">
+              <CardContent className="p-8 min-h-[180px] flex flex-col justify-between">
+                <MessageCircle className="h-10 w-10 text-white/90 mb-4" />
+                <div>
+                  <div className="font-semibold text-white text-xl mb-2">Official Support</div>
+                  <p className="text-sm text-white/90 leading-relaxed">
+                    Message the Juwa team directly for account help, verification, promos, and gameplay questions — all in one private inbox.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-indigo-500 to-indigo-700 border-indigo-600 overflow-hidden">
+              <CardContent className="p-8 min-h-[180px] flex flex-col justify-between">
+                <ShieldCheck className="h-10 w-10 text-white/90 mb-4" />
+                <div>
+                  <div className="font-semibold text-white text-xl mb-2">Verified Access</div>
+                  <p className="text-sm text-white/90 leading-relaxed">
+                    Staff review every signup before you can sign in. Use your legal first and last name so approval is not delayed.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-purple-500 to-purple-800 border-purple-600 overflow-hidden">
+              <CardContent className="p-8 min-h-[180px] flex flex-col justify-between">
+                <Gift className="h-10 w-10 text-white/90 mb-4" />
+                <div>
+                  <div className="font-semibold text-white text-xl mb-2">Thursday Freeplay</div>
+                  <p className="text-sm text-white/90 leading-relaxed">
+                    Every Thursday, a freeplay promo is announced on Relay for verified users. Stay signed in so you never miss it.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 dark:text-white mb-3">How to Get Started</h2>
+              <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                Follow these steps to create your Relay account and connect with official Juwa customer support.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { step: '1', icon: UserPlus, title: 'Create your account', desc: 'Sign up with your legal name, email, phone, and username.' },
+                { step: '2', icon: Clock, title: 'Wait for approval', desc: 'Staff review every signup. Access requires approval before you can sign in.' },
+                { step: '3', icon: LogIn, title: 'Log in to Relay', desc: 'Once approved, sign in and open your private inbox.' },
+                { step: '4', icon: Gift, title: 'Catch Thursday promos', desc: 'Verified users receive the weekly freeplay promo announcement every Thursday.' },
+              ].map(({ step, icon: Icon, title, desc }) => (
+                <Card key={step} className="border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="flex-shrink-0 w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-full flex items-center justify-center text-violet-700 dark:text-violet-300 font-bold">
+                        {step}
+                      </div>
+                      <div className="flex-shrink-0 w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center">
+                        <Icon className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">{title}</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60 h-full">
+              <CardContent className="p-6 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+                  <MessageCircle className="h-7 w-7 text-violet-600" />
+                  Official Juwa customer support
+                </h2>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                  Relay is Juwa Bros&apos; private messaging platform built for customer support. Instead of scattered emails or social DMs, you get a secure, dedicated channel to reach the team that knows Juwa inside and out.
+                </p>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
+                  Whether you need help with your account, have a verification question, or want details about promos and gameplay, Relay keeps everything in one place.
+                </p>
+                <ul className="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
+                  {['Account and login assistance', 'Verification and approval updates', 'Promo and freeplay announcements', 'General Juwa gameplay questions'].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-violet-600 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60 h-full">
+              <CardContent className="p-6 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+                  <UserPlus className="h-7 w-7 text-violet-600" />
+                  Sign up for your account
+                </h2>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
+                  Create your Relay account on Juwa Bros to connect with support. You will join as a customer — use your legal first and last name; nicknames or fake names may delay approval.
+                </p>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
+                  One customer account per phone number. After staff approve your signup, you can sign in and start messaging the team right away.
+                </p>
+                <div className="space-y-3">
+                  <Button
+                    style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
+                    className="text-white hover:opacity-90 w-full"
+                    onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Create account
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 w-full"
+                    onClick={() => window.open('https://www.juwabros.com/login', '_blank')}
+                  >
+                    <LogIn className="h-4 w-4 mr-2" />
+                    Sign in
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mb-12">
+            <Card className="overflow-hidden border border-violet-200 dark:border-violet-800">
+              <div className="grid md:grid-cols-2">
+                <div className="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 p-8 md:p-10 flex flex-col justify-center text-white">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/15 rounded-full text-sm font-semibold w-fit mb-4">
+                    <Zap className="h-4 w-4" />
+                    Weekly Promo
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Thursday Freeplay Promo</h2>
+                  <p className="text-white/90 leading-relaxed mb-6">
+                    Every Thursday, a freeplay promo is announced on Juwa Bros Relay for verified users. Sign up, complete staff approval, and stay signed in so you never miss the weekly announcement.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 text-center">
+                      <div className="text-2xl font-bold">Every</div>
+                      <div className="text-sm text-white/80">Thursday</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 text-center">
+                      <div className="text-2xl font-bold">Verified</div>
+                      <div className="text-sm text-white/80">Users only</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 text-center hidden sm:block">
+                      <div className="text-2xl font-bold">Freeplay</div>
+                      <div className="text-sm text-white/80">Promo</div>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-8 md:p-10 flex flex-col justify-center bg-white dark:bg-neutral-800">
+                  <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-4">Don&apos;t miss out</h3>
+                  <div className="space-y-4 mb-6">
+                    {[
+                      { icon: CheckCircle, text: 'Sign up and use your legal name for faster approval' },
+                      { icon: ShieldCheck, text: 'Complete staff verification to unlock promo access' },
+                      { icon: Clock, text: 'Check Relay every Thursday for the latest freeplay announcement' },
+                    ].map(({ icon: Icon, text }) => (
+                      <div key={text} className="flex items-start gap-3">
+                        <Icon className="h-5 w-5 text-violet-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed">{text}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Button
+                    style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
+                    className="text-white hover:opacity-90 w-full sm:w-auto"
+                    onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+                  >
+                    <Gift className="h-4 w-4 mr-2" />
+                    Create account
+                  </Button>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+
+          <div className="mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-6 text-center">Why use Juwa Bros Relay?</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { icon: Lock, iconBg: 'bg-violet-100 dark:bg-violet-900/30', title: 'Private & secure', desc: 'Your conversations stay in a dedicated support inbox — not public social feeds.' },
+                { icon: Users, iconBg: 'bg-indigo-100 dark:bg-indigo-900/30', title: 'Official Juwa team', desc: 'Connect directly with staff who handle Juwa accounts, promos, and support.' },
+                { icon: Smartphone, iconBg: 'bg-purple-100 dark:bg-purple-900/30', title: 'Works on any device', desc: 'Access Relay from your phone, tablet, or desktop browser anytime.' },
+                { icon: Star, iconBg: 'bg-fuchsia-100 dark:bg-fuchsia-900/30', title: 'Exclusive promos', desc: 'Verified users get first access to Thursday freeplay announcements.' },
+              ].map(({ icon: Icon, iconBg, title, desc }) => (
+                <Card key={title} className="border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-md transition-shadow">
+                  <CardContent className="p-6">
+                    <div className={`flex-shrink-0 w-12 h-12 ${iconBg} rounded-lg flex items-center justify-center mb-4`}>
+                      <Icon className="h-6 w-6 text-violet-600" />
+                    </div>
+                    <h3 className="font-bold text-neutral-900 dark:text-white mb-2">{title}</h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          <Card className="mb-8 border border-neutral-200/60 dark:border-neutral-800/60">
+            <CardContent className="p-6 md:p-8">
+              <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
+                <HelpCircle className="h-5 w-5 text-violet-600" />
+                Related Help on Juwa777
+              </h2>
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+                Need help with the app or gameplay? These Juwa777 pages may also be useful:
+              </p>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className="text-red-600 hover:text-red-700 underline">
+                    Contact Juwa777 Support
+                  </a>
+                </li>
+                <li>
+                  <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); }} className="text-red-600 hover:text-red-700 underline">
+                    Juwa777 FAQ
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog-download-juwa-777" onClick={(e) => { e.preventDefault(); navigate('blog-download-juwa-777'); }} className="text-red-600 hover:text-red-700 underline">
+                    Download Juwa 777 App Guide
+                  </a>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-r from-violet-50 to-indigo-50 dark:from-violet-900/20 dark:to-indigo-900/20 border border-violet-200 dark:border-violet-800 mb-8">
+            <CardContent className="p-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-3">Ready to connect with Juwa support?</h2>
+              <p className="text-neutral-700 dark:text-neutral-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+                Create your Relay account today, get verified by staff, and join verified users who receive Thursday freeplay promos on Juwa Bros Relay.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <Button
+                  style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
+                  className="text-white hover:opacity-90 px-8"
+                  onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+                >
+                  <UserPlus className="h-4 w-4 mr-2" />
+                  Create account
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 px-8"
+                  onClick={() => window.open('https://www.juwabros.com/login', '_blank')}
+                >
+                  <LogIn className="h-4 w-4 mr-2" />
+                  Sign in
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800">
+            <CardContent className="p-6">
+              <h3 className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2 flex items-center gap-2">
+                <Info className="h-5 w-5" />
+                Important
+              </h3>
+              <p className="text-amber-800 dark:text-amber-200 text-sm leading-relaxed">
+                Access to Juwa Bros Relay requires staff approval. Use your legal first and last name when signing up. One customer account per phone number. Juwa777 is a free social gaming platform for entertainment purposes only. 18+ only. Play responsibly.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+    </>
+  );
   const AboutPage = () => (
     <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-900/40">
       <div className="max-w-5xl mx-auto">
@@ -3890,7 +4220,7 @@ export default function WebsiteLiveStarter() {
               <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
                 <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
                 <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); }} className={route==='JUWA2' ? 'font-bold text-red-600' : 'hover:underline'}>JUWA2</a>
-                <a href="https://www.juwabros.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Relay</a>
+                <a href="/relay" onClick={(e) => { e.preventDefault(); navigate('relay'); }} className={route==='relay' ? 'font-bold text-red-600' : 'hover:underline'}>Relay</a>
                 <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
                 <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
                 <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
@@ -3929,7 +4259,7 @@ export default function WebsiteLiveStarter() {
                 <div className="px-5 py-4 space-y-3">
                   <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
                   <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='JUWA2' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>JUWA2</a>
-                  <a href="https://www.juwabros.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white">Relay</a>
+                  <a href="/relay" onClick={(e) => { e.preventDefault(); navigate('relay'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='relay' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Relay</a>
                   <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Games</a>
                   <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>About</a>
                   <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Blog</a>
@@ -3950,6 +4280,7 @@ export default function WebsiteLiveStarter() {
             {route === 'JUWA2' && <Juwa2CasinoBlog />}
             {route === 'contact' && <ContactPage />}
             {route === 'faq' && <FAQPage />}
+            {route === 'relay' && <RelayPage />}
 
             <section className="px-6 md:px-10 pt-6 pb-6">
               <div className="relative overflow-hidden rounded-3xl">
@@ -3980,6 +4311,7 @@ export default function WebsiteLiveStarter() {
                         <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Home</a>
                         <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Games</a>
                         <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">About</a>
+                        <a href="/relay" onClick={(e) => { e.preventDefault(); navigate('relay'); }} className="block text-neutral-600 dark:text-neutral-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">Relay</a>
                       </div>
                     </div>
                     <div>
