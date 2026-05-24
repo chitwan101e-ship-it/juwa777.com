@@ -13,6 +13,16 @@
     max-width: 100%;
     height: auto;
   }
+
+  /* Fill fixed-aspect containers (blog cards, heroes) without letterboxing */
+  img.img-cover,
+  img.blog-card-cover {
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
   
   /* Prevent layout shift from iframes */
   iframe {

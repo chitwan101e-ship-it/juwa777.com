@@ -64,7 +64,7 @@ export default function WebsiteLiveStarter() {
     },
     'JUWA2': {
       title: 'Juwa2: Complete Guide to Juwa2.0 Gaming Platform | Juwa777 Blog',
-      description: 'Discover Juwa2 and Juwa2.0 - a comprehensive guide to the gaming platform, features, games, and how to get started. Learn about Juwa2 slots and casino games.',
+      description: 'Juwa2.0 guide with play without agent registration, play with agent Facebook support, promotions, and 100+ slots, fish games, and keno.',
       image: 'https://www.juwa777.com/juwa2/juwa2 logo.png',
       url: 'https://www.juwa777.com/JUWA2'
     },
@@ -1518,7 +1518,7 @@ export default function WebsiteLiveStarter() {
     ];
 
     return (
-      <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-950">
+      <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-950 max-xl:pr-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-4">Juwa777 Gaming Blog – Tips, Guides & Latest Updates</h1>
@@ -1535,24 +1535,26 @@ export default function WebsiteLiveStarter() {
                 className="cursor-pointer"
               >
               <Card 
-                className="overflow-hidden border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-lg transition-shadow duration-300 group h-full"
+                className="overflow-hidden border border-neutral-200/60 dark:border-neutral-800/60 hover:shadow-lg transition-shadow duration-300 group h-full flex flex-col"
               >
-                <div className="h-48 overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative" style={{ aspectRatio: '16/9', minHeight: '192px' }}>
+                <div className="relative aspect-video w-full overflow-hidden rounded-t-2xl bg-neutral-900 shrink-0">
                   <img 
                     src={post.image || '/blog imgae/download juwa now.png'} 
                     alt={post.title}
-                    className="w-full h-full object-cover absolute inset-0"
-                    style={{ width: '100%', height: '100%', display: 'block' }}
+                    className="blog-card-cover absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     loading="lazy"
+                    decoding="async"
                     onError={(e) => {
-                      e.target.style.display = 'none';
+                      e.currentTarget.src = '/blog imgae/download juwa now.png';
                     }}
                   />
                   {!post.image && (
-                    <Package className="h-16 w-16 text-white opacity-80 relative z-10" />
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-red-600 via-red-700 to-red-800">
+                      <Package className="h-16 w-16 text-white opacity-80" />
+                    </div>
                   )}
-        </div>
-                <CardContent className="p-6">
+                </div>
+                <CardContent className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-xs font-semibold text-red-600 dark:text-red-400">{post.category}</span>
                     <span className="text-xs text-neutral-500">•</span>
@@ -1561,10 +1563,10 @@ export default function WebsiteLiveStarter() {
                   <CardTitle className="text-xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
                     {post.title}
                   </CardTitle>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4 line-clamp-3 flex-1">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-auto">
                     <span className="text-xs text-neutral-500">{post.date}</span>
                     <div className="flex items-center gap-1 text-sm text-red-600 dark:text-red-400 font-medium group-hover:gap-2 transition-all">
                       Read more <ArrowRight className="h-4 w-4" />
@@ -3366,8 +3368,11 @@ export default function WebsiteLiveStarter() {
     </section>
   );
 
+  const JUWA2_DIRECT_URL = 'https://m.juwa2.xin/v1/user/register?code=1AZu1F';
+  const JUWA2_AGENT_URL = 'https://www.facebook.com/people/Loot-Juwa-Loot/61584567339149/';
+
   const Juwa2CasinoBlog = () => (
-    <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-950">
+    <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-950 max-xl:pr-20">
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
         <div className="mb-6 flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
@@ -3376,42 +3381,122 @@ export default function WebsiteLiveStarter() {
           <span>Platform Guides</span>
         </div>
 
-        {/* Header */}
-        <div className="mb-8">
-          <div className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-semibold rounded-full mb-4">
-            Platform Guides
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white mb-4 leading-tight">
-            Juwa2: Complete Guide to Juwa2.0 Gaming Platform
-          </h1>
-          <div className="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4" />
-              <span>8 min read</span>
+        {/* Hero + primary CTAs */}
+        <div className="mb-10 rounded-2xl overflow-hidden border border-neutral-200/60 dark:border-neutral-800/60 bg-gradient-to-br from-red-700 via-red-800 to-neutral-950 shadow-xl">
+          <div className="p-6 md:p-10">
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+              <div className="relative w-full md:w-48 lg:w-56 shrink-0 aspect-video md:aspect-square rounded-xl overflow-hidden bg-neutral-900/40 border border-white/10">
+                <img
+                  src="/juwa2/juwa2 logo.png"
+                  alt="Juwa2 Logo - Juwa2.0 Gaming Platform"
+                  className="absolute inset-0 w-full h-full object-contain p-3"
+                  loading="eager"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="inline-block px-3 py-1 bg-white/15 text-white text-sm font-semibold rounded-full mb-3">
+                  Platform Guides
+                </div>
+                <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">
+                  Juwa2: Complete Guide to Juwa2.0 Gaming Platform
+                </h1>
+                <p className="text-red-100/90 mb-5 leading-relaxed">
+                  Register instantly or connect with an agent for personalized support. Play 100+ slots, fish games, and keno on Juwa2.0.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={JUWA2_DIRECT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-red-700 font-bold hover:bg-red-50 transition-colors shadow-lg"
+                  >
+                    <Rocket className="h-5 w-5" />
+                    Play Without Agent
+                    <ExternalLink className="h-4 w-4 opacity-70" />
+                  </a>
+                  <a
+                    href={JUWA2_AGENT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0866ff] text-white font-bold hover:bg-[#0756d4] transition-colors shadow-lg border border-white/20"
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                    Play With Agent
+                    <ExternalLink className="h-4 w-4 opacity-80" />
+                  </a>
+                </div>
+                <p className="text-xs text-red-100/70 mt-3">
+                  18+ only. Play responsibly. Links open in a new tab.
+                </p>
+              </div>
             </div>
-            <span>•</span>
-            <span>January 13, 2025</span>
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="mb-8 rounded-2xl overflow-hidden max-w-md mx-auto" style={{ aspectRatio: '16/9', maxHeight: '256px' }}>
-          <img 
-            src="/juwa2/juwa2 logo.png" 
-            alt="Juwa2 Logo - Juwa2.0 Gaming Platform"
-            className="w-full h-full object-contain"
-            style={{ width: '100%', height: '100%', display: 'block' }}
-            loading="lazy"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-neutral-600 dark:text-neutral-400 mb-8">
+          <div className="flex items-center gap-2">
+            <Clock className="h-4 w-4" />
+            <span>8 min read</span>
+          </div>
+          <span>•</span>
+          <span>January 13, 2025</span>
+          <span>•</span>
+          <a href="https://juwa2casino.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 dark:hover:text-red-400 transition-colors inline-flex items-center gap-1">
+            juwa2casino.com <ExternalLink className="h-3 w-3" />
+          </a>
+        </div>
+
+        {/* Play options */}
+        <div className="mb-10 grid md:grid-cols-2 gap-4">
+          <Card className="border-2 border-red-200 dark:border-red-900/50 bg-white dark:bg-neutral-900/50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 rounded-lg bg-red-100 dark:bg-red-900/40">
+                  <Rocket className="h-6 w-6 text-red-600" />
+                </div>
+                <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Play Without Agent</h2>
+              </div>
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed">
+                Create your Juwa2.0 account directly in the browser. Fast signup with your invite code — no middleman needed. Best if you want to start playing right away.
+              </p>
+              <a
+                href={JUWA2_DIRECT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-red-600 dark:text-red-400 hover:gap-3 transition-all"
+              >
+                Register on Juwa2.0 <ArrowRight className="h-4 w-4" />
+              </a>
+            </CardContent>
+          </Card>
+          <Card className="border-2 border-blue-200 dark:border-blue-900/50 bg-white dark:bg-neutral-900/50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/40">
+                  <UserPlus className="h-6 w-6 text-[#0866ff]" />
+                </div>
+                <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Play With Agent</h2>
+              </div>
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed">
+                Connect with a Juwa2 agent on Facebook for guided setup, bonus help, and account support. Recommended if you prefer one-on-one assistance.
+              </p>
+              <a
+                href={JUWA2_AGENT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#0866ff] hover:gap-3 transition-all"
+              >
+                Message on Facebook <ArrowRight className="h-4 w-4" />
+              </a>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Introduction */}
         <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
           <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Juwa2, also known as Juwa2.0, is a popular social gaming platform that offers an extensive collection of casino-style games including slots, fish shooting games, and keno. This comprehensive guide will help you understand what Juwa2 is, its features, game selection, and how to get started with the platform.
+            Juwa2, also known as Juwa2.0, is a popular social gaming platform that offers an extensive collection of casino-style games including slots, fish shooting games, and keno. This guide covers how to get started — whether you register directly or through an agent — plus platform features, games, and promotions.
           </p>
         </div>
 
@@ -3441,15 +3526,14 @@ export default function WebsiteLiveStarter() {
           </h2>
           <Card className="mb-4 border border-neutral-200/60 dark:border-neutral-800/60">
             <CardContent className="p-6">
-              <div className="mb-4" style={{ aspectRatio: '1536/691' }}>
+              <div className="mb-4 relative aspect-[1536/691] w-full overflow-hidden rounded-lg bg-neutral-900">
                 <img 
                   src="/juwa2/Juwa2.0_interface-1536x691.webp" 
                   alt="Juwa2.0 gaming platform interface showing game selection and features"
-                  className="w-full h-full rounded-lg object-contain"
-                  style={{ width: '100%', height: '100%', display: 'block' }}
+                  className="blog-card-cover absolute inset-0 rounded-lg"
                   loading="lazy"
                   onError={(e) => {
-                    e.target.style.display = 'none';
+                    e.currentTarget.style.display = 'none';
                   }}
                 />
               </div>
@@ -3530,8 +3614,13 @@ export default function WebsiteLiveStarter() {
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
                   <div>
-                    <div className="font-semibold text-neutral-900 dark:text-white">Access the Platform</div>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Visit the official Juwa2 website (juwa2casino.com) or download the mobile app</p>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Choose How to Play</div>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                      <a href={JUWA2_DIRECT_URL} target="_blank" rel="noopener noreferrer" className="text-red-600 dark:text-red-400 hover:underline">Register directly</a>
+                      {' '}without an agent, or{' '}
+                      <a href={JUWA2_AGENT_URL} target="_blank" rel="noopener noreferrer" className="text-[#0866ff] hover:underline">connect via Facebook</a>
+                      {' '}for agent-assisted setup.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -3611,6 +3700,73 @@ export default function WebsiteLiveStarter() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Exclusive Promotions */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6 flex items-center gap-3">
+            <Gift className="h-8 w-8 text-red-600" />
+            Exclusive Juwa2 Promotions
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60 bg-gradient-to-br from-red-50 to-white dark:from-red-950/30 dark:to-neutral-900/50">
+              <CardContent className="p-5">
+                <div className="text-xs font-bold uppercase tracking-wide text-red-600 dark:text-red-400 mb-2">Ongoing</div>
+                <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">100% Welcome Bonus</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-300">Deposit on Juwa2 and earn up to $500 in rewards on your first day of membership.</p>
+              </CardContent>
+            </Card>
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+              <CardContent className="p-5">
+                <div className="text-xs font-bold uppercase tracking-wide text-amber-600 dark:text-amber-400 mb-2">Daily</div>
+                <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">Daily Spin Wheel</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-300">Spin the wheel every day for instant bonuses and free spins — win up to $100 bonus daily.</p>
+              </CardContent>
+            </Card>
+            <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+              <CardContent className="p-5">
+                <div className="text-xs font-bold uppercase tracking-wide text-green-600 dark:text-green-400 mb-2">Weekly</div>
+                <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">Cashback Fridays</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-300">Get up to 10% cashback on weekly losses every Friday — a popular perk on juwa2casino.com.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Trending Games */}
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-3">
+            <Star className="h-8 w-8 text-red-600" />
+            Trending on Juwa2.0
+          </h2>
+          <Card className="border border-neutral-200/60 dark:border-neutral-800/60">
+            <CardContent className="p-6">
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4">Popular titles players are enjoying right now:</p>
+              <div className="flex flex-wrap gap-2">
+                {['Mega Money Machine', '777 Lucky', '777 Jackpot Inferno', 'Spin Golden Wheel', 'Black & White Double', "King Kong's Rampage"].map((game) => (
+                  <span key={game} className="px-3 py-1.5 rounded-full text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200/60 dark:border-neutral-700/60">
+                    {game}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Ready to play CTA */}
+        <div className="mb-8 rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900/50 p-6 md:p-8 text-center">
+          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">Ready to Play Juwa2.0?</h2>
+          <p className="text-neutral-600 dark:text-neutral-300 mb-5 max-w-xl mx-auto">
+            Join over 1,000,000 fans in the Juwa2 community. Start directly or get help from an agent — your choice.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href={JUWA2_DIRECT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-colors">
+              Play Without Agent <ExternalLink className="h-4 w-4" />
+            </a>
+            <a href={JUWA2_AGENT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0866ff] text-white font-bold hover:bg-[#0756d4] transition-colors">
+              Play With Agent <ExternalLink className="h-4 w-4" />
+            </a>
           </div>
         </div>
 
