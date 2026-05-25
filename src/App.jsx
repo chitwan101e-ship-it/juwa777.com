@@ -4547,6 +4547,23 @@ export default function WebsiteLiveStarter() {
           <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"></span>
         </a>
 
+        {/* Instagram Icon */}
+        <a
+          href="https://www.instagram.com/phoenixjuwa?igsh=b210bG5mZWFjd2F2&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#E1306C]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#E1306C] md:border-2 relative"
+          aria-label="Follow us on Instagram"
+        >
+          <img 
+            src="/instagram.svg" 
+            alt="Instagram" 
+            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
+          />
+          {/* Pulse animation */}
+          <span className="absolute inset-0 rounded-full bg-[#E1306C] animate-ping opacity-30"></span>
+        </a>
+
         {/* Signal Icon */}
         <a
           href="https://signal.me/#eu/H4dqi2VC7E_jEWZQSmddKK1oaARHUxxBPHZ3A_ygWoHK7Opj9L9Ktr3xIKwIxCvd"
