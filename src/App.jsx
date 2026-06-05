@@ -2077,14 +2077,14 @@ export default function WebsiteLiveStarter() {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3">
-                    200% Welcome Bonus - Up to $500
+                    100% Welcome Bonus - Up to $500
                   </h2>
                   <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
-                    New players at Juwa 777 are greeted with an exceptional welcome offer: a 200% match bonus on your first deposit, with a maximum bonus amount of $500. This means when you make your initial deposit, Juwa 777 will match it by 200%, significantly boosting your starting bankroll.
+                    New players at Juwa 777 are greeted with an exceptional welcome offer: a 100% match bonus on your first deposit, with a maximum bonus amount of $500. This means when you make your initial deposit, Juwa 777 will match it by 100%, significantly boosting your starting bankroll.
                   </p>
                   <div className="bg-white dark:bg-neutral-800 rounded-lg p-4 mt-4">
                     <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                      <strong className="text-red-600 dark:text-red-400">Example:</strong> If you deposit $100, you'll receive an additional $200 in bonus credits, giving you a total of $300 to play with. Deposit $250 or more, and you'll receive the maximum $500 bonus.
+                      <strong className="text-red-600 dark:text-red-400">Example:</strong> If you deposit $100, you'll receive an additional $100 in bonus credits, giving you a total of $200 to play with. Deposit $500 or more, and you'll receive the maximum $500 bonus.
                     </p>
                   </div>
                 </div>
@@ -2103,14 +2103,14 @@ export default function WebsiteLiveStarter() {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3">
-                    50% Reload Bonus on Every Deposit
+                    10% Reload Bonus on Every Deposit
                   </h2>
                   <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
-                    Returning players aren't left out of the bonus action. Juwa 777 offers a 50% reload bonus on every subsequent deposit you make after your initial welcome bonus. This ongoing promotion ensures that your bankroll continues to grow with each deposit, providing sustained value throughout your gaming journey.
+                    Returning players aren't left out of the bonus action. Juwa 777 offers a 10% reload bonus on every subsequent deposit you make after your initial welcome bonus. This ongoing promotion ensures that your bankroll continues to grow with each deposit, providing sustained value throughout your gaming journey.
                   </p>
                   <div className="bg-neutral-50 dark:bg-neutral-900/50 rounded-lg p-4 mt-4">
                     <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                      <strong className="text-orange-600 dark:text-orange-400">Example:</strong> If you deposit $100 on your second or subsequent deposit, you'll receive an extra $50 in bonus credits, bringing your total playable balance to $150.
+                      <strong className="text-orange-600 dark:text-orange-400">Example:</strong> If you deposit $100 on your second or subsequent deposit, you'll receive an extra $10 in bonus credits, bringing your total playable balance to $110.
                     </p>
                   </div>
                 </div>
@@ -2159,20 +2159,20 @@ export default function WebsiteLiveStarter() {
             <CardContent className="p-6">
               <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
                 <Percent className="h-5 w-5 text-red-600" />
-                200% Welcome Bonus Wagering Requirements
+                100% Welcome Bonus Wagering Requirements
               </h3>
               <p className="text-neutral-700 dark:text-neutral-300 mb-4 leading-relaxed">
-                For the 200% Welcome Bonus, the wagering requirement is set at 20 times the combined total of your deposit and bonus amount. This means you need to wager the total amount (deposit + bonus) 20 times before you can withdraw any winnings from the bonus funds.
+                For the 100% Welcome Bonus, the wagering requirement is set at 20 times the combined total of your deposit and bonus amount. This means you need to wager the total amount (deposit + bonus) 20 times before you can withdraw any winnings from the bonus funds.
               </p>
               <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
                 <p className="text-sm text-yellow-800 dark:text-yellow-200 mb-2">
                   <strong>Example Calculation:</strong>
                 </p>
                 <ul className="text-sm text-yellow-800 dark:text-yellow-200 space-y-1 list-disc list-inside">
-                  <li>You deposit $100 and receive a $200 bonus</li>
-                  <li>Total amount subject to wagering: $300 ($100 + $200)</li>
-                  <li>Wagering requirement: $300 × 20 = $6,000</li>
-                  <li>You must wager at least $6,000 before withdrawing bonus winnings</li>
+                  <li>You deposit $100 and receive a $100 bonus</li>
+                  <li>Total amount subject to wagering: $200 ($100 + $100)</li>
+                  <li>Wagering requirement: $200 × 20 = $4,000</li>
+                  <li>You must wager at least $4,000 before withdrawing bonus winnings</li>
                 </ul>
               </div>
             </CardContent>
@@ -2256,7 +2256,7 @@ export default function WebsiteLiveStarter() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">Make Your First Deposit</h3>
-                    <p className="text-neutral-700 dark:text-neutral-300">Complete your first deposit to automatically receive the 200% welcome bonus. The bonus is typically credited immediately or within a few minutes.</p>
+                    <p className="text-neutral-700 dark:text-neutral-300">Complete your first deposit to automatically receive the 100% welcome bonus. The bonus is typically credited immediately or within a few minutes.</p>
                   </div>
                 </div>
               </CardContent>
@@ -2283,7 +2283,7 @@ export default function WebsiteLiveStarter() {
           <CardContent className="p-8">
             <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">Maximize Your Juwa 777 Experience</h2>
             <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
-              Juwa 777's bonus structure is designed to provide exceptional value to both new and returning players. The 200% welcome bonus offers an excellent starting boost, while the 50% reload bonus ensures ongoing value with every deposit. Combined with the referral program, these bonuses create multiple opportunities to enhance your bankroll and extend your gameplay. Remember to review all terms and conditions, understand the wagering requirements, and play responsibly. With these bonuses, you can explore more games, take more chances, and potentially increase your winnings while enjoying the exciting world of social casino gaming at Juwa 777.
+              Juwa 777's bonus structure is designed to provide exceptional value to both new and returning players. The 100% welcome bonus offers an excellent starting boost, while the 10% reload bonus ensures ongoing value with every deposit. Combined with the referral program, these bonuses create multiple opportunities to enhance your bankroll and extend your gameplay. Remember to review all terms and conditions, understand the wagering requirements, and play responsibly. With these bonuses, you can explore more games, take more chances, and potentially increase your winnings while enjoying the exciting world of social casino gaming at Juwa 777.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
@@ -3713,7 +3713,7 @@ export default function WebsiteLiveStarter() {
             <Card className="border border-neutral-200/60 dark:border-neutral-800/60 bg-gradient-to-br from-red-50 to-white dark:from-red-950/30 dark:to-neutral-900/50">
               <CardContent className="p-5">
                 <div className="text-xs font-bold uppercase tracking-wide text-red-600 dark:text-red-400 mb-2">Ongoing</div>
-                <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">100% Welcome Bonus</h3>
+                <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">100% Welcome Bonus (Agent Only)</h3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-300">Deposit on Juwa2 and earn up to $500 in rewards on your first day of membership.</p>
               </CardContent>
             </Card>
