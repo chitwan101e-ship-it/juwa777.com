@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { Sparkles, Rocket, LayoutGrid, Settings, ExternalLink, ShieldCheck, Menu, X, CheckCircle, AlertCircle, Download, Smartphone, FileDown, Settings2, Play, ArrowRight, Shield, Clock, Package, Gift, DollarSign, Percent, Users, Info, Globe, Monitor, Lock, Wifi, Gamepad2, LogIn, HelpCircle, Zap, Star, Battery, RefreshCw, Trash2, MessageCircle, UserPlus } from "lucide-react";
+import AnniversaryGiveawayPopup from "@/components/AnniversaryGiveawayPopup";
+import GiveawayPage from "@/components/GiveawayPage";
 
 export default function WebsiteLiveStarter() {
   const [logoUrl] = useState("/logo.png");
@@ -85,6 +87,12 @@ export default function WebsiteLiveStarter() {
       description: 'Official Juwa customer support on Juwa Bros Relay. Sign up for your account, log in, and get Thursday freeplay promos for verified users.',
       image: 'https://www.juwa777.com/favicon.svg',
       url: 'https://www.juwa777.com/relay'
+    },
+    'giveaway': {
+      title: "America's 250th Anniversary Giveaway – Enter to Win | Juwa777",
+      description: "Register for the Juwa777 July 4th giveaway. Complete the entry form to qualify for the $250K prize pool. 18+.",
+      image: 'https://www.juwa777.com/250.png',
+      url: 'https://www.juwa777.com/giveaway'
     }
   };
 
@@ -4437,7 +4445,9 @@ export default function WebsiteLiveStarter() {
             {route === 'contact' && <ContactPage />}
             {route === 'faq' && <FAQPage />}
             {route === 'relay' && <RelayPage />}
+            {route === 'giveaway' && <GiveawayPage />}
 
+            {route !== 'giveaway' && (
             <section className="px-6 md:px-10 pt-6 pb-6">
               <div className="relative overflow-hidden rounded-3xl">
                 <div className="relative z-10 flex items-center justify-between gap-4 p-6 md:p-8 bg-gradient-to-r from-red-800 to-red-600 text-white">
@@ -4452,9 +4462,12 @@ export default function WebsiteLiveStarter() {
                 </div>
               </div>
             </section>
+            )}
 
-            <footer className="px-6 md:px-10 pb-8">
+            <footer className="px-4 sm:px-6 md:px-10 pb-8">
               <div className="border-t border-neutral-200 dark:border-neutral-800 pt-6">
+                {route !== 'giveaway' ? (
+                <>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
                   <div className="flex items-center gap-2">
                     <img src={logoUrl} alt="Juwa777 - Free Social Gaming App Logo" className="h-7 w-auto" />
@@ -4488,13 +4501,20 @@ export default function WebsiteLiveStarter() {
                     Copyright 2023, Juwa777. All rights reserved.
                   </div>
                 </div>
+                </>
+                ) : (
+                <div className="text-center text-xs text-neutral-500 dark:text-neutral-400 py-2">
+                  © 2025 Juwa777 · 18+ · Entertainment Only
+                </div>
+                )}
               </div>
             </footer>
           </div>
         </main>
       </div>
 
-      {/* Floating Social Icons - Stacked */}
+      {/* Floating Social Icons - hidden on giveaway so they don't cover the form */}
+      {route !== "giveaway" && (
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-2 md:gap-3">
         {/* Telegram Icon */}
         <a
@@ -4581,6 +4601,11 @@ export default function WebsiteLiveStarter() {
           <span className="absolute inset-0 rounded-full bg-[#3A76F0] animate-ping opacity-30"></span>
         </a>
       </div>
+      )}
+
+      {route !== "giveaway" && (
+        <AnniversaryGiveawayPopup onEnterGiveaway={() => navigate("giveaway")} />
+      )}
 
       <style>{` :root { --accent: hsl(${accentHue} 84% 56%); } `}</style>
     </div>
