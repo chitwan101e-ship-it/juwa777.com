@@ -1,7 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { X, Gift, Star } from "lucide-react";
+import { X, Gift, Star, Calendar, Trophy, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GiveawayTermsLink } from "@/components/GiveawayTermsModal";
+
+const ANNOUNCEMENT_ITEMS = [
+  {
+    icon: Trophy,
+    title: "Winner announcement",
+    detail: "The selected winner will be announced on Monday, July 6.",
+  },
+  {
+    icon: Calendar,
+    title: "Prize distribution",
+    detail: "Prizes will be issued to verified winners the following week.",
+  },
+  {
+    icon: Clock,
+    title: "Registration",
+    detail: "Entry remains open until the July 6 announcement.",
+  },
+];
 
 function PatrioticAccent() {
   return (
@@ -99,7 +117,7 @@ export default function AnniversaryGiveawayPopup({ onEnterGiveaway }) {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/90" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
 
-          <div className="relative z-10 flex min-h-0 flex-1 flex-col overflow-hidden px-3.5 py-2.5 text-center text-white sm:px-6 sm:py-4">
+          <div className="relative z-10 flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-3.5 py-3 text-center text-white sm:px-6 sm:py-4">
             <button
               type="button"
               onClick={dismiss}
@@ -111,61 +129,77 @@ export default function AnniversaryGiveawayPopup({ onEnterGiveaway }) {
 
             <div className="giveaway-popup-badge relative mx-auto inline-flex max-w-full shrink-0 items-center gap-1 rounded-full border border-amber-400/40 bg-black/45 px-2.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-amber-300 backdrop-blur-sm sm:text-[10px]">
               <Star className="h-2.5 w-2.5 shrink-0 fill-amber-300 text-amber-300" />
-              <span className="truncate">Limited Announcement</span>
+              <span className="truncate">Official Giveaway Update</span>
               <Star className="h-2.5 w-2.5 shrink-0 fill-amber-300 text-amber-300" />
             </div>
 
-            <p className="giveaway-popup-eyebrow relative mt-1.5 shrink-0 text-[10px] font-medium uppercase tracking-[0.16em] text-red-300 drop-shadow-md sm:text-xs">
-              Get Ready For
+            <p className="giveaway-popup-eyebrow relative mt-2 shrink-0 text-[10px] font-medium uppercase tracking-[0.16em] text-red-300 drop-shadow-md sm:text-xs">
+              America&apos;s 250th Anniversary
             </p>
 
             <h2
               id="giveaway-title"
-              className="giveaway-popup-title relative mt-0.5 shrink-0 px-5 text-[1.05rem] font-extrabold leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] sm:px-0 sm:text-2xl"
+              className="giveaway-popup-title relative mt-0.5 shrink-0 px-4 text-[1.05rem] font-extrabold leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] sm:px-0 sm:text-2xl"
             >
-              America&apos;s Anniversary
+              July 4th Giveaway
               <span className="block bg-gradient-to-r from-white via-red-100 to-white bg-clip-text text-transparent">
-                Biggest Giveaway Ever
+                $250K Prize Pool
               </span>
             </h2>
 
-            <div className="giveaway-popup-prize relative mx-auto my-1.5 flex w-full max-w-[13rem] shrink-0 flex-col items-center rounded-xl border border-amber-400/35 bg-black/45 px-3 py-2 shadow-lg shadow-black/40 backdrop-blur-md sm:my-2 sm:max-w-[15rem] sm:rounded-2xl sm:px-5 sm:py-3">
-              <Gift className="mb-0.5 h-4 w-4 text-amber-400 sm:mb-1 sm:h-5 sm:w-5" />
-              <div className="giveaway-shimmer text-[clamp(1.75rem,7vw,2.5rem)] font-black leading-none tracking-tight text-amber-400 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+            <div className="giveaway-popup-prize relative mx-auto my-2 flex w-full max-w-[12.5rem] shrink-0 flex-col items-center rounded-xl border border-amber-400/35 bg-black/45 px-3 py-2 shadow-lg shadow-black/40 backdrop-blur-md sm:max-w-[14rem] sm:rounded-2xl sm:px-4 sm:py-2.5">
+              <Gift className="mb-0.5 h-4 w-4 text-amber-400" />
+              <div className="giveaway-shimmer text-[clamp(1.65rem,6.5vw,2.25rem)] font-black leading-none tracking-tight text-amber-400 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
                 $250K
               </div>
-              <p className="mt-0.5 text-[9px] font-bold uppercase tracking-widest text-white/90 sm:text-[10px]">
+              <p className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-white/85 sm:text-[10px]">
                 Total Prize Pool
               </p>
             </div>
 
-            <p className="giveaway-popup-status relative shrink-0 text-sm font-semibold text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] sm:text-[15px]">
-              Registration Is Open
-            </p>
-            <p className="giveaway-popup-desc relative mx-auto mt-0.5 max-w-xs shrink-0 px-1 text-[11px] leading-snug text-neutral-200 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] sm:text-xs">
-              Enter now — complete the registration form to qualify.
+            <div className="giveaway-popup-announcement relative mx-auto w-full max-w-sm shrink-0 rounded-xl border border-white/15 bg-black/50 px-3 py-2.5 text-left shadow-lg backdrop-blur-md sm:px-4 sm:py-3">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-200 sm:text-xs">
+                Important Dates
+              </p>
+              <ul className="mt-2 space-y-2">
+                {ANNOUNCEMENT_ITEMS.map(({ icon: Icon, title, detail }) => (
+                  <li key={title} className="flex items-start gap-2.5">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10">
+                      <Icon className="h-3 w-3 text-amber-300" aria-hidden="true" />
+                    </span>
+                    <span className="min-w-0 text-left">
+                      <span className="block text-[11px] font-semibold leading-tight text-white sm:text-xs">{title}</span>
+                      <span className="mt-0.5 block text-[10px] leading-snug text-neutral-300 sm:text-[11px]">{detail}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p className="giveaway-popup-desc relative mx-auto mt-2 max-w-sm shrink-0 px-1 text-[10px] leading-relaxed text-neutral-300 sm:text-[11px]">
+              Additional information will be provided on Monday, July 6. You may register below until the winner is announced.
             </p>
 
-            <div className="giveaway-popup-actions mt-auto shrink-0 pt-2">
+            <div className="giveaway-popup-actions mt-3 shrink-0 pb-0.5 pt-1 sm:mt-4">
               <div className="flex flex-col gap-2 sm:flex-row sm:gap-2.5">
                 <Button
                   style={{ background: "#dc2626", borderColor: "#dc2626" }}
-                  className="h-10 w-full py-2 text-sm text-white hover:opacity-90 sm:flex-1"
+                  className="h-10 w-full py-2 text-sm font-semibold text-white hover:opacity-90 sm:flex-1"
                   onClick={handleEnterGiveaway}
                 >
-                  Enter Giveaway
+                  Register Now
                 </Button>
                 <Button
                   variant="outline"
-                  className="h-10 w-full border-white/30 bg-black/20 py-2 text-sm text-white hover:bg-white/10 sm:flex-1"
+                  className="h-10 w-full border-white/30 bg-black/20 py-2 text-sm font-medium text-white hover:bg-white/10 sm:flex-1"
                   onClick={dismiss}
                 >
-                  Maybe Later
+                  Dismiss
                 </Button>
               </div>
 
               <p className="mt-2 text-center text-[9px] leading-tight text-neutral-400 sm:text-[10px]">
-                18+ Only · For Entertainment Purposes Only ·{" "}
+                18+ only · Entertainment purposes only ·{" "}
                 <GiveawayTermsLink className="text-neutral-400 hover:text-white" />
               </p>
             </div>

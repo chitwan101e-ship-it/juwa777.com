@@ -1,11 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { Gift, Star, ChevronDown } from "lucide-react";
+import { Gift, Star, ChevronDown, Calendar, Trophy, Clock } from "lucide-react";
 import { GiveawayTermsLink } from "@/components/GiveawayTermsModal";
 
 const GIVEAWAY_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSe--S8HtqbX1759yFJ18o9HQw7XCp2nutPjySITZdr7ImGwgg/viewform?embedded=true";
 
 const FORM_IFRAME_DEFAULT = { mobile: 1420, desktop: 1240 };
+
+const ANNOUNCEMENT_ITEMS = [
+  {
+    icon: Trophy,
+    label: "Winner announcement",
+    value: "July 6",
+    detail: "The selected winner will be announced on Monday, July 6.",
+  },
+  {
+    icon: Calendar,
+    label: "Prize distribution",
+    value: "Following week",
+    detail: "Verified winners will receive prizes after the announcement.",
+  },
+  {
+    icon: Clock,
+    label: "Registration",
+    value: "Open now",
+    detail: "Submit your entry before the July 6 announcement.",
+  },
+];
 
 function parseGoogleFormHeight(data) {
   if (typeof data === "number" && data > 200) return data;
@@ -35,18 +56,43 @@ function useIsMobile(breakpoint = 768) {
   return isMobile;
 }
 
+function ImportantDatesCard() {
+  return (
+    <div className="mx-auto max-w-3xl rounded-xl border border-amber-400/30 bg-black/20 px-3 py-3 text-left backdrop-blur-sm sm:rounded-2xl sm:px-5 sm:py-5">
+      <p className="text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-200 sm:text-xs">
+        Important Dates
+      </p>
+      <ul className="mt-3 grid gap-2.5 sm:grid-cols-3 sm:gap-3">
+        {ANNOUNCEMENT_ITEMS.map(({ icon: Icon, label, value, detail }) => (
+          <li
+            key={label}
+            className="flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 sm:flex-col sm:items-center sm:px-3 sm:py-3 sm:text-center"
+          >
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 sm:mx-auto">
+              <Icon className="h-4 w-4 text-amber-300" aria-hidden="true" />
+            </span>
+            <div className="min-w-0 flex-1 sm:w-full">
+              <p className="text-[11px] font-medium uppercase tracking-wide text-white/70 sm:text-xs">{label}</p>
+              <p className="mt-0.5 text-sm font-semibold text-white sm:text-base">{value}</p>
+              <p className="mt-1 text-xs leading-relaxed text-white/80 sm:text-[13px]">{detail}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function RegistrationSteps() {
   return (
-    <div className="giveaway-form-steps border-b border-neutral-200/70 dark:border-neutral-800/70 bg-gradient-to-r from-red-50/90 via-white to-blue-50/90 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900 px-4 py-4 sm:px-6 sm:py-5">
-      <div className="flex items-center justify-center gap-2 max-w-xs mx-auto">
-        <div className="giveaway-step giveaway-step--active flex items-center gap-2.5">
-          <span className="giveaway-step-dot flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full text-xs sm:text-sm font-bold shadow-md shrink-0">
-            1
-          </span>
-          <span className="text-xs sm:text-sm font-semibold text-red-700 dark:text-red-400 leading-tight">
-            Complete the entry form below
-          </span>
-        </div>
+    <div className="giveaway-form-steps border-b border-neutral-200/70 dark:border-neutral-800/70 bg-gradient-to-r from-red-50/90 via-white to-blue-50/90 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900 px-4 py-3.5 sm:px-6 sm:py-5">
+      <div className="mx-auto flex max-w-md items-center justify-center gap-2.5">
+        <span className="giveaway-step-dot flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold shadow-md sm:h-9 sm:w-9 sm:text-sm">
+          1
+        </span>
+        <p className="text-left text-xs font-semibold leading-snug text-red-700 dark:text-red-400 sm:text-sm">
+          Complete the registration form below to submit your official entry.
+        </p>
       </div>
     </div>
   );
@@ -55,10 +101,10 @@ function RegistrationSteps() {
 export default function GiveawayPage() {
   const isMobile = useIsMobile();
   const [rulesOpen, setRulesOpen] = useState(!isMobile);
-  const [iframeHeight, setIframeHeight] = useState(
-    () => (typeof window !== "undefined" && window.innerWidth < 768
+  const [iframeHeight, setIframeHeight] = useState(() =>
+    typeof window !== "undefined" && window.innerWidth < 768
       ? FORM_IFRAME_DEFAULT.mobile
-      : FORM_IFRAME_DEFAULT.desktop)
+      : FORM_IFRAME_DEFAULT.desktop
   );
 
   useEffect(() => {
@@ -83,40 +129,51 @@ export default function GiveawayPage() {
 
   return (
     <div className="giveaway-page">
-      <section className="relative overflow-hidden px-4 sm:px-6 md:px-10 py-6 sm:py-12 md:py-20 bg-gradient-to-br from-red-900 via-red-700 to-blue-900">
-        <div className="absolute -top-20 -left-20 h-48 sm:h-72 w-48 sm:w-72 rounded-full blur-3xl opacity-25 bg-white" />
-        <div className="absolute -bottom-16 -right-16 h-48 sm:h-72 w-48 sm:w-72 rounded-full blur-3xl opacity-20 bg-blue-300" />
-        <div className="relative max-w-4xl mx-auto text-center text-white z-10">
-          <div className="inline-flex items-center gap-1 px-3 sm:px-4 py-1 sm:py-1.5 bg-white/15 backdrop-blur-sm text-amber-200 text-[11px] sm:text-sm font-semibold rounded-full mb-4 sm:mb-6 border border-amber-400/30 max-w-full">
-            <Star className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-amber-300 text-amber-300 shrink-0" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-700 to-blue-900 px-4 py-7 sm:px-6 sm:py-12 md:px-10 md:py-20">
+        <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-white opacity-25 blur-3xl sm:h-72 sm:w-72" />
+        <div className="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-blue-300 opacity-20 blur-3xl sm:h-72 sm:w-72" />
+        <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
+          <div className="mb-4 inline-flex max-w-full items-center gap-1 rounded-full border border-amber-400/30 bg-white/15 px-3 py-1 text-[11px] font-semibold text-amber-200 backdrop-blur-sm sm:mb-6 sm:px-4 sm:py-1.5 sm:text-sm">
+            <Star className="h-3 w-3 shrink-0 fill-amber-300 text-amber-300 sm:h-3.5 sm:w-3.5" />
             <span className="truncate">America&apos;s 250th Anniversary</span>
-            <Star className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-amber-300 text-amber-300 shrink-0" />
+            <Star className="h-3 w-3 shrink-0 fill-amber-300 text-amber-300 sm:h-3.5 sm:w-3.5" />
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight mb-2 sm:mb-4 leading-tight px-1">
+
+          <h1 className="mb-2 px-1 text-2xl font-extrabold leading-tight tracking-tight sm:mb-3 sm:text-3xl md:text-5xl">
             July 4th Giveaway
-            <span className="block text-lg sm:text-2xl md:text-4xl font-bold text-white/95 mt-0.5 sm:mt-1">
-              Registration
+            <span className="mt-0.5 block text-lg font-bold text-white/95 sm:mt-1 sm:text-2xl md:text-4xl">
+              Official Registration
             </span>
           </h1>
-          <p className="text-sm sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed px-1">
-            Win from our $250K prize pool. Complete and submit the form below to enter.
+
+          <p className="mx-auto max-w-2xl px-1 text-sm leading-relaxed text-white/90 sm:text-lg md:text-xl">
+            Enter for your chance to win from our $250,000 prize pool. Additional details will be published on Monday, July 6.
+          </p>
+
+          <div className="mt-5 sm:mt-7">
+            <ImportantDatesCard />
+          </div>
+
+          <p className="mx-auto mt-4 max-w-xl px-2 text-xs leading-relaxed text-white/75 sm:mt-5 sm:text-sm">
+            Registration remains open until the winner announcement. Please review the guidelines below before
+            submitting your entry.
           </p>
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 md:px-10 py-4 sm:py-8 md:py-12">
-        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-6">
-          <div className="rounded-xl sm:rounded-2xl border border-amber-400/25 bg-gradient-to-br from-amber-50 to-red-50 dark:from-neutral-900 dark:to-neutral-900/80 dark:border-amber-400/20 overflow-hidden">
+      <section className="px-4 py-5 sm:px-6 sm:py-8 md:px-10 md:py-12">
+        <div className="mx-auto max-w-3xl space-y-3 sm:space-y-6">
+          <div className="overflow-hidden rounded-xl border border-amber-400/25 bg-gradient-to-br from-amber-50 to-red-50 dark:border-amber-400/20 dark:from-neutral-900 dark:to-neutral-900/80 sm:rounded-2xl">
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-3 p-4 sm:p-6 md:p-8 md:cursor-default text-left"
+              className="flex w-full items-center justify-between gap-3 p-4 text-left sm:p-6 md:cursor-default md:p-8"
               onClick={() => isMobile && setRulesOpen((open) => !open)}
               aria-expanded={rulesOpen}
             >
-              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                <Gift className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600 dark:text-amber-400 shrink-0" />
-                <h2 className="text-base sm:text-xl md:text-2xl font-bold text-neutral-900 dark:text-white">
-                  July 4th Giveaway Rules
+              <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <Gift className="h-5 w-5 shrink-0 text-amber-600 dark:text-amber-400 sm:h-6 sm:w-6" />
+                <h2 className="text-base font-bold text-neutral-900 dark:text-white sm:text-xl md:text-2xl">
+                  Participation Guidelines
                 </h2>
               </div>
               {isMobile && (
@@ -133,29 +190,33 @@ export default function GiveawayPage() {
                 rulesOpen ? "pb-4 sm:pb-6 md:pb-8" : "max-h-0 overflow-hidden md:max-h-none md:overflow-visible md:pb-8"
               }`}
             >
-              <ul className="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed list-disc list-outside pl-4 sm:pl-5">
-                <li>Complete and submit the giveaway registration form below.</li>
-                <li>You must be 18 years or older to enter.</li>
-                <li>One entry per person. Duplicate entries may be disqualified.</li>
+              <ul className="list-outside list-disc space-y-2.5 pl-4 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:space-y-3 sm:pl-5 sm:text-base">
+                <li>
+                  The winner will be announced on Monday, July 6. Full details will be shared at that time, and prizes will be
+                  distributed to verified winners the following week.
+                </li>
+                <li>Complete and submit the registration form below to enter.</li>
+                <li>Participants must be 18 years of age or older.</li>
+                <li>One entry per person. Duplicate submissions may be disqualified.</li>
                 <li>All entries are subject to verification by Juwa777.</li>
               </ul>
             </div>
           </div>
 
-          <div className="giveaway-form-frame -mx-4 sm:mx-0 p-[2px] sm:p-[3px] rounded-none sm:rounded-2xl bg-gradient-to-r from-red-600 via-amber-100 to-blue-600 shadow-xl shadow-red-900/10">
-            <div className="overflow-hidden rounded-none sm:rounded-[13px] bg-white dark:bg-neutral-950">
+          <div className="giveaway-form-frame -mx-4 rounded-none bg-gradient-to-r from-red-600 via-amber-100 to-blue-600 p-[2px] shadow-xl shadow-red-900/10 sm:mx-0 sm:rounded-2xl sm:p-[3px]">
+            <div className="overflow-hidden rounded-none bg-white dark:bg-neutral-950 sm:rounded-[13px]">
               <RegistrationSteps />
-              <div className="hidden sm:block px-4 py-3 border-b border-neutral-200/60 dark:border-neutral-800/60 bg-neutral-50/80 dark:bg-neutral-900/50">
-                <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400 text-center">
-                  Fill out all required fields to enter
+              <div className="hidden border-b border-neutral-200/60 bg-neutral-50/80 px-4 py-3 dark:border-neutral-800/60 dark:bg-neutral-900/50 sm:block">
+                <p className="text-center text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                  Please complete all required fields to submit your entry
                 </p>
               </div>
-              <div className="giveaway-form-embed relative w-full bg-white dark:bg-neutral-950 overflow-hidden">
+              <div className="giveaway-form-embed relative w-full overflow-hidden bg-white dark:bg-neutral-950">
                 <div className="giveaway-form-scroll-fade" aria-hidden="true" />
                 <iframe
                   src={GIVEAWAY_FORM_URL}
                   title="America's 250th anniversary Giveaway registration"
-                  className="w-full border-0 block bg-white dark:bg-neutral-950 transition-[height] duration-300 ease-out"
+                  className="block w-full border-0 bg-white transition-[height] duration-300 ease-out dark:bg-neutral-950"
                   style={{ height: `${iframeHeight}px` }}
                   frameBorder="0"
                   marginHeight={0}
@@ -168,10 +229,10 @@ export default function GiveawayPage() {
             </div>
           </div>
 
-          <p className="text-center text-[11px] sm:text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed px-2">
-            <span className="block sm:inline">18+ Only · For Entertainment Purposes Only</span>
+          <p className="px-2 text-center text-[11px] leading-relaxed text-neutral-500 dark:text-neutral-400 sm:text-xs">
+            <span className="block sm:inline">18+ only · Entertainment purposes only</span>
             <span className="hidden sm:inline"> · </span>
-            <span className="block sm:inline mt-1 sm:mt-0">
+            <span className="mt-1 block sm:mt-0 sm:inline">
               <GiveawayTermsLink className="text-neutral-500 dark:text-neutral-400" />
             </span>
           </p>
