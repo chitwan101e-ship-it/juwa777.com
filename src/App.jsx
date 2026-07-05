@@ -89,8 +89,8 @@ export default function WebsiteLiveStarter() {
       url: 'https://www.juwa777.com/relay'
     },
     'giveaway': {
-      title: "America's 250th Anniversary Giveaway – Enter to Win | Juwa777",
-      description: "Register for the Juwa777 July 4th giveaway. Complete the entry form to qualify for the $250K prize pool. 18+.",
+      title: "America's 250th Anniversary Giveaway – Winner Announcement | Juwa777",
+      description: "July 4th giveaway registration is closed. Winners will be decided Monday, July 6. Prizes distributed in the following days. 18+.",
       image: 'https://www.juwa777.com/250.png',
       url: 'https://www.juwa777.com/giveaway'
     }
