@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Search, Trophy, Sparkles, Heart } from "lucide-react";
+import { Search, Trophy, Sparkles, Heart, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   GIVEAWAY_PRIZE_LABEL,
   GIVEAWAY_WINNER_COUNT,
   GIVEAWAY_CLAIM_PATH,
+  JUWA2_DASHBOARD_URL,
 } from "@/lib/giveawayConstants";
 import { lookupWinner, useGiveawayWinners, useWinnerIndexes } from "@/lib/useGiveawayWinners";
 
@@ -68,6 +69,19 @@ export default function GiveawayWinnerLookup({ onViewAllWinners }) {
         ) : error ? (
           <p className="mt-3 text-xs text-red-600 dark:text-red-400">{error}</p>
         ) : null}
+
+        <p className="mt-4 text-center text-sm text-neutral-600 dark:text-neutral-400">
+          Need more info?{" "}
+          <a
+            href={JUWA2_DASHBOARD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-semibold text-red-600 underline-offset-2 hover:underline dark:text-red-400"
+          >
+            juwa2.com
+            <ExternalLink className="h-3 w-3 opacity-70" aria-hidden="true" />
+          </a>
+        </p>
       </div>
 
       {searched && !loading && !error ? (

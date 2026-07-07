@@ -5,6 +5,7 @@ export const GIVEAWAY_WINNERS_JSON = "/giveaway-winners.json";
 export const GIVEAWAY_PRIZE_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfiW9GwRtnkNTu0mxhzJttENq9nBq5ScwVzPLrNUQfJJyN28w/viewform?embedded=true";
 export const GIVEAWAY_CLAIM_PATH = "/giveaway-claim";
+export const JUWA2_DASHBOARD_URL = "https://www.juwa2.com/dashboard";
 
 export const GIVEAWAY_STATUS_ITEMS = [
   {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Gift, Star, ChevronDown, Calendar, Trophy, Lock, Users, Bitcoin } from "lucide-react";
+import { Gift, Star, ChevronDown, Calendar, Trophy, Lock, Users, Bitcoin, ExternalLink } from "lucide-react";
 import { GiveawayTermsLink } from "@/components/GiveawayTermsModal";
 import GiveawayWinnerLookup from "@/components/GiveawayWinnerLookup";
 import GiveawayWinnersModal from "@/components/GiveawayWinnersModal";
@@ -7,6 +7,7 @@ import {
   GIVEAWAY_PRIZE_LABEL,
   GIVEAWAY_STATUS_ITEMS,
   GIVEAWAY_WINNER_COUNT,
+  JUWA2_DASHBOARD_URL,
 } from "@/lib/giveawayConstants";
 
 const STATUS_ICONS = { winners: Trophy, prizes: Calendar, registration: Lock };
@@ -107,6 +108,18 @@ export default function GiveawayPage() {
             </p>
           </div>
 
+          <p className="mt-4">
+            <a
+              href={JUWA2_DASHBOARD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-200 underline-offset-2 transition-colors hover:text-amber-100 hover:underline"
+            >
+              More info at juwa2.com
+              <ExternalLink className="h-3.5 w-3.5 opacity-80" aria-hidden="true" />
+            </a>
+          </p>
+
           <div className="mt-5 sm:mt-7">
             <StatusCard />
           </div>
@@ -165,6 +178,19 @@ export default function GiveawayPage() {
                     juwa777.com/giveaway-claim
                   </a>{" "}
                   to access the official prize claim form.
+                </li>
+                <li>
+                  For additional details, visit{" "}
+                  <a
+                    href={JUWA2_DASHBOARD_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-semibold text-red-600 underline-offset-2 hover:underline dark:text-red-400"
+                  >
+                    juwa2.com
+                    <ExternalLink className="h-3 w-3 opacity-70" aria-hidden="true" />
+                  </a>
+                  .
                 </li>
                 <li>Bitcoin prizes are distributed after the claim form is submitted and verified.</li>
                 <li>The full winner list is published for transparency. Emails are never shown publicly.</li>
