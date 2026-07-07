@@ -24,11 +24,7 @@ export default function GiveawayWinnersModal({ open, onClose }) {
     const list = data?.winners ?? [];
     const q = filter.trim().toLowerCase();
     if (!q) return list;
-    return list.filter(
-      (w) =>
-        w.account.toLowerCase().includes(q) ||
-        String(w.id).includes(q)
-    );
+    return list.filter((w) => String(w.name ?? "").toLowerCase().includes(q));
   }, [data?.winners, filter]);
 
   if (!open) return null;
@@ -58,7 +54,7 @@ export default function GiveawayWinnersModal({ open, onClose }) {
               {GIVEAWAY_WINNER_COUNT} Giveaway Winners
             </h2>
             <p className="mt-1 text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-sm">
-              Each winner receives {GIVEAWAY_PRIZE_LABEL}. Use the search below to verify any username or user ID.
+              Each winner receives {GIVEAWAY_PRIZE_LABEL}. Winners are listed by name to protect account details.
             </p>
           </div>
           <button
@@ -78,7 +74,7 @@ export default function GiveawayWinnersModal({ open, onClose }) {
               type="search"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              placeholder="Filter by username or user ID…"
+              placeholder="Filter by name…"
               className="w-full rounded-xl border border-neutral-200 bg-neutral-50 py-2.5 pl-9 pr-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
               autoComplete="off"
             />
@@ -98,17 +94,15 @@ export default function GiveawayWinnersModal({ open, onClose }) {
               <thead className="sticky top-0 z-10 bg-neutral-50 text-[11px] font-semibold uppercase tracking-wide text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
                 <tr>
                   <th className="px-4 py-2.5 sm:px-5">#</th>
-                  <th className="px-2 py-2.5">Username</th>
-                  <th className="hidden px-2 py-2.5 sm:table-cell">User ID</th>
+                  <th className="px-2 py-2.5">Winner</th>
                   <th className="px-4 py-2.5 text-right sm:px-5">Prize</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800">
                 {filtered.map((w, i) => (
-                  <tr key={`${w.id}-${w.account}`} className="text-neutral-800 dark:text-neutral-200">
+                  <tr key={`${w.id}-${i}`} className="text-neutral-800 dark:text-neutral-200">
                     <td className="px-4 py-2.5 tabular-nums text-neutral-500 sm:px-5">{i + 1}</td>
-                    <td className="px-2 py-2.5 font-medium">@{w.account}</td>
-                    <td className="hidden px-2 py-2.5 font-mono text-xs tabular-nums sm:table-cell">{w.id}</td>
+                    <td className="px-2 py-2.5 font-medium">{w.name}</td>
                     <td className="px-4 py-2.5 text-right text-xs font-medium text-amber-700 dark:text-amber-300 sm:px-5">
                       {GIVEAWAY_PRIZE_LABEL}
                     </td>
