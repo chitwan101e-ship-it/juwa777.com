@@ -8,6 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { Sparkles, Rocket, LayoutGrid, Settings, ExternalLink, ShieldCheck, Menu, X, CheckCircle, AlertCircle, Download, Smartphone, FileDown, Settings2, Play, ArrowRight, Shield, Clock, Package, Gift, DollarSign, Percent, Users, Info, Globe, Monitor, Lock, Wifi, Gamepad2, LogIn, HelpCircle, Zap, Star, Battery, RefreshCw, Trash2, MessageCircle, UserPlus } from "lucide-react";
 import AnniversaryGiveawayPopup from "@/components/AnniversaryGiveawayPopup";
 import GiveawayPage from "@/components/GiveawayPage";
+import GiveawayWinnerClaimPage from "@/components/GiveawayWinnerClaimPage";
 
 export default function WebsiteLiveStarter() {
   const [logoUrl] = useState("/logo.png");
@@ -89,10 +90,16 @@ export default function WebsiteLiveStarter() {
       url: 'https://www.juwa777.com/relay'
     },
     'giveaway': {
-      title: "America's 250th Anniversary Giveaway – Winner Announcement | Juwa777",
-      description: "July 4th giveaway registration is closed. Winners will be decided Monday, July 6. Prizes distributed in the following days. 18+.",
+      title: "July 4th Giveaway Winners – Check If You Won | Juwa777",
+      description: `500 winners announced July 6. Each receives $500 worth of Bitcoin. Search your username or user ID on juwa777.com/giveaway. Prize distribution details coming soon. 18+.`,
       image: 'https://www.juwa777.com/250.png',
       url: 'https://www.juwa777.com/giveaway'
+    },
+    'giveaway-claim': {
+      title: 'Winner Prize Claim Form – Secure Verification | Juwa777',
+      description: 'Official Juwa777 giveaway winners verify their registration email and account to access the secure Bitcoin prize claim form. 18+ only.',
+      image: 'https://www.juwa777.com/250.png',
+      url: 'https://www.juwa777.com/giveaway-claim'
     }
   };
 
@@ -4446,8 +4453,11 @@ export default function WebsiteLiveStarter() {
             {route === 'faq' && <FAQPage />}
             {route === 'relay' && <RelayPage />}
             {route === 'giveaway' && <GiveawayPage />}
+            {route === 'giveaway-claim' && (
+              <GiveawayWinnerClaimPage onBackToGiveaway={() => navigate('giveaway')} />
+            )}
 
-            {route !== 'giveaway' && (
+            {route !== 'giveaway' && route !== 'giveaway-claim' && (
             <section className="px-6 md:px-10 pt-6 pb-6">
               <div className="relative overflow-hidden rounded-3xl">
                 <div className="relative z-10 flex items-center justify-between gap-4 p-6 md:p-8 bg-gradient-to-r from-red-800 to-red-600 text-white">
@@ -4466,7 +4476,7 @@ export default function WebsiteLiveStarter() {
 
             <footer className="px-4 sm:px-6 md:px-10 pb-8">
               <div className="border-t border-neutral-200 dark:border-neutral-800 pt-6">
-                {route !== 'giveaway' ? (
+                {route !== 'giveaway' && route !== 'giveaway-claim' ? (
                 <>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
                   <div className="flex items-center gap-2">
@@ -4514,7 +4524,7 @@ export default function WebsiteLiveStarter() {
       </div>
 
       {/* Floating Social Icons - hidden on giveaway so they don't cover the form */}
-      {route !== "giveaway" && (
+      {route !== "giveaway" && route !== "giveaway-claim" && (
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-2 md:gap-3">
         {/* Telegram Icon */}
         <a
@@ -4550,23 +4560,6 @@ export default function WebsiteLiveStarter() {
           <span className="absolute inset-0 rounded-full bg-[#0866ff] animate-ping opacity-30"></span>
         </a>
 
-        {/* WhatsApp Icon */}
-        <a
-          href="https://wa.me/qr/JMUAYF2374KRM1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#25D366] md:border-2 relative"
-          aria-label="Contact us on WhatsApp"
-        >
-          <img 
-            src="/whatsapp-white.svg" 
-            alt="WhatsApp" 
-            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
-          />
-          {/* Pulse animation */}
-          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"></span>
-        </a>
-
         {/* Instagram Icon */}
         <a
           href="https://www.instagram.com/phoenixjuwa?igsh=b210bG5mZWFjd2F2&utm_source=qr"
@@ -4584,26 +4577,10 @@ export default function WebsiteLiveStarter() {
           <span className="absolute inset-0 rounded-full bg-[#E1306C] animate-ping opacity-30"></span>
         </a>
 
-        {/* Signal Icon */}
-        <a
-          href="https://signal.me/#eu/H4dqi2VC7E_jEWZQSmddKK1oaARHUxxBPHZ3A_ygWoHK7Opj9L9Ktr3xIKwIxCvd"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#3A76F0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#3A76F0] md:border-2 relative"
-          aria-label="Contact us on Signal"
-        >
-          <img 
-            src="/signal-white.svg" 
-            alt="Signal" 
-            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
-          />
-          {/* Pulse animation */}
-          <span className="absolute inset-0 rounded-full bg-[#3A76F0] animate-ping opacity-30"></span>
-        </a>
       </div>
       )}
 
-      {route !== "giveaway" && (
+      {route !== "giveaway" && route !== "giveaway-claim" && (
         <AnniversaryGiveawayPopup onEnterGiveaway={() => navigate("giveaway")} />
       )}
 

@@ -4,6 +4,10 @@
   "version": "0.0.2",
   "type": "module",
   "scripts": {
+    "build:winners": "python scripts/build-giveaway-winners.py",
+    "build:registry": "python scripts/build-giveaway-winner-registry.py",
+    "setup:local-env": "node scripts/setup-local-env.mjs",
+    "dev:full": "vercel dev",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

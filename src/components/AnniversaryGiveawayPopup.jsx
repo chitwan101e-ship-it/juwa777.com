@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { X, Gift, Star, Calendar, Trophy, Lock } from "lucide-react";
+import { X, Gift, Star, Calendar, Trophy, Bitcoin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GiveawayTermsLink } from "@/components/GiveawayTermsModal";
+import {
+  GIVEAWAY_PRIZE_LABEL,
+  GIVEAWAY_WINNER_COUNT,
+} from "@/lib/giveawayConstants";
 
 const ANNOUNCEMENT_ITEMS = [
   {
     icon: Trophy,
-    title: "Winner selection",
-    detail: "Winners will be decided on Monday, July 6.",
+    title: "Winners announced",
+    detail: `${GIVEAWAY_WINNER_COUNT} winners published on Monday, July 6.`,
+  },
+  {
+    icon: Bitcoin,
+    title: "Your prize",
+    detail: `Each winner receives ${GIVEAWAY_PRIZE_LABEL}.`,
   },
   {
     icon: Calendar,
     title: "Prize distribution",
-    detail: "Prizes will be distributed in the following days.",
-  },
-  {
-    icon: Lock,
-    title: "Registration",
-    detail: "The entry period has closed. No further registrations are accepted.",
+    detail: "Bitcoin payout details will be announced separately.",
   },
 ];
 
@@ -70,7 +74,7 @@ export default function AnniversaryGiveawayPopup({ onEnterGiveaway }) {
     setTimeout(() => setVisible(false), 280);
   };
 
-  const handleViewDetails = () => {
+  const handleCheckWin = () => {
     dismiss();
     onEnterGiveaway?.();
   };
@@ -127,9 +131,9 @@ export default function AnniversaryGiveawayPopup({ onEnterGiveaway }) {
               <X className="h-4 w-4" />
             </button>
 
-            <div className="giveaway-popup-badge relative mx-auto inline-flex max-w-full shrink-0 items-center gap-1 rounded-full border border-amber-400/40 bg-black/45 px-2.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-amber-300 backdrop-blur-sm sm:text-[10px]">
-              <Lock className="h-2.5 w-2.5 shrink-0 text-amber-300" />
-              <span className="truncate">Registration Closed</span>
+            <div className="giveaway-popup-badge relative mx-auto inline-flex max-w-full shrink-0 items-center gap-1 rounded-full border border-emerald-400/40 bg-black/45 px-2.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-emerald-300 backdrop-blur-sm sm:text-[10px]">
+              <Trophy className="h-2.5 w-2.5 shrink-0 text-amber-300" />
+              <span className="truncate">Winners Announced</span>
             </div>
 
             <p className="giveaway-popup-eyebrow relative mt-2 shrink-0 text-[10px] font-medium uppercase tracking-[0.16em] text-red-300 drop-shadow-md sm:text-xs">
@@ -140,25 +144,25 @@ export default function AnniversaryGiveawayPopup({ onEnterGiveaway }) {
               id="giveaway-title"
               className="giveaway-popup-title relative mt-0.5 shrink-0 px-4 text-[1.05rem] font-extrabold leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] sm:px-0 sm:text-2xl"
             >
-              July 4th Giveaway
-              <span className="block bg-gradient-to-r from-white via-red-100 to-white bg-clip-text text-transparent">
-                Winner Announcement
+              {GIVEAWAY_WINNER_COUNT} Winners Selected
+              <span className="block bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent">
+                {GIVEAWAY_PRIZE_LABEL} Each
               </span>
             </h2>
 
-            <div className="giveaway-popup-prize relative mx-auto my-2 flex w-full max-w-[12.5rem] shrink-0 flex-col items-center rounded-xl border border-amber-400/35 bg-black/45 px-3 py-2 shadow-lg shadow-black/40 backdrop-blur-md sm:max-w-[14rem] sm:rounded-2xl sm:px-4 sm:py-2.5">
+            <div className="giveaway-popup-prize relative mx-auto my-2 flex w-full max-w-[13rem] shrink-0 flex-col items-center rounded-xl border border-amber-400/35 bg-black/45 px-3 py-2 shadow-lg shadow-black/40 backdrop-blur-md sm:max-w-[15rem] sm:rounded-2xl sm:px-4 sm:py-2.5">
               <Gift className="mb-0.5 h-4 w-4 text-amber-400" />
-              <div className="giveaway-shimmer text-[clamp(1.65rem,6.5vw,2.25rem)] font-black leading-none tracking-tight text-amber-400 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-                $250K
+              <div className="giveaway-shimmer text-[clamp(1.5rem,6vw,2rem)] font-black leading-none tracking-tight text-amber-400 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+                {GIVEAWAY_WINNER_COUNT}
               </div>
               <p className="mt-0.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-white/85 sm:text-[10px]">
-                Total Prize Pool
+                Winners · {GIVEAWAY_PRIZE_LABEL}
               </p>
             </div>
 
             <div className="giveaway-popup-announcement relative mx-auto w-full max-w-sm shrink-0 rounded-xl border border-white/15 bg-black/50 px-3 py-2.5 text-left shadow-lg backdrop-blur-md sm:px-4 sm:py-3">
               <p className="text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-200 sm:text-xs">
-                What Happens Next
+                Official Update
               </p>
               <ul className="mt-2 space-y-2">
                 {ANNOUNCEMENT_ITEMS.map(({ icon: Icon, title, detail }) => (
@@ -176,7 +180,8 @@ export default function AnniversaryGiveawayPopup({ onEnterGiveaway }) {
             </div>
 
             <p className="giveaway-popup-desc relative mx-auto mt-2 max-w-sm shrink-0 px-1 text-[10px] leading-relaxed text-neutral-300 sm:text-[11px]">
-              Thank you to everyone who entered. Further details will be shared on Monday, July 6.
+              Search your username or user ID on the giveaway page to see if you won. The full list is available for
+              transparency.
             </p>
 
             <div className="giveaway-popup-actions mt-3 shrink-0 pb-0.5 pt-1 sm:mt-4">
@@ -184,9 +189,9 @@ export default function AnniversaryGiveawayPopup({ onEnterGiveaway }) {
                 <Button
                   style={{ background: "#dc2626", borderColor: "#dc2626" }}
                   className="h-10 w-full py-2 text-sm font-semibold text-white hover:opacity-90 sm:flex-1"
-                  onClick={handleViewDetails}
+                  onClick={handleCheckWin}
                 >
-                  View Details
+                  Check If You Won
                 </Button>
                 <Button
                   variant="outline"
