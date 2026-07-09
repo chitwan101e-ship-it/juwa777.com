@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Gift, Star, ChevronDown, Calendar, Trophy, Lock, Users, Bitcoin, ExternalLink } from "lucide-react";
+import { Gift, Star, ChevronDown, Calendar, Trophy, Lock, Users, CircleDollarSign, ExternalLink } from "lucide-react";
 import { GiveawayTermsLink } from "@/components/GiveawayTermsModal";
 import GiveawayWinnerLookup from "@/components/GiveawayWinnerLookup";
 import GiveawayWinnersModal from "@/components/GiveawayWinnersModal";
 import {
+  GIVEAWAY_PAYOUT_METHOD,
   GIVEAWAY_PRIZE_LABEL,
   GIVEAWAY_STATUS_ITEMS,
   GIVEAWAY_WINNER_COUNT,
@@ -102,9 +103,10 @@ export default function GiveawayPage() {
           </p>
 
           <div className="mx-auto mt-4 flex max-w-md items-center justify-center gap-2 rounded-xl border border-amber-400/30 bg-black/25 px-4 py-3 backdrop-blur-sm">
-            <Bitcoin className="h-5 w-5 shrink-0 text-amber-300" />
+            <CircleDollarSign className="h-5 w-5 shrink-0 text-amber-300" />
             <p className="text-left text-xs leading-snug text-white/90 sm:text-sm">
-              Each winner receives <strong className="text-amber-200">{GIVEAWAY_PRIZE_LABEL}</strong>
+              Each winner receives <strong className="text-amber-200">{GIVEAWAY_PRIZE_LABEL}</strong> via{" "}
+              <strong className="text-amber-200">{GIVEAWAY_PAYOUT_METHOD}</strong>
             </p>
           </div>
 
@@ -192,7 +194,10 @@ export default function GiveawayPage() {
                   </a>
                   .
                 </li>
-                <li>Bitcoin prizes are distributed after the claim form is submitted and verified.</li>
+                <li>
+                  {GIVEAWAY_PAYOUT_METHOD} prizes are distributed after the claim form is submitted with your TRC20 USDT
+                  address and verified.
+                </li>
                 <li>The full winner list is published for transparency. Emails are never shown publicly.</li>
                 <li>Participants must have been 18 years of age or older to enter.</li>
               </ul>

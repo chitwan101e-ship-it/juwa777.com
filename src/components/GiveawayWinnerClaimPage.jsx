@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { ShieldCheck, Mail, FileText, CheckCircle2, Loader2, Lock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { GIVEAWAY_PRIZE_FORM_URL, GIVEAWAY_PRIZE_LABEL } from "@/lib/giveawayConstants";
+import {
+  GIVEAWAY_PAYOUT_INSTRUCTION,
+  GIVEAWAY_PAYOUT_METHOD,
+  GIVEAWAY_PRIZE_FORM_URL,
+  GIVEAWAY_PRIZE_LABEL,
+} from "@/lib/giveawayConstants";
 import { fetchWinnerSession, verifyWinnerCredentials } from "@/lib/giveawayClaimApi";
 
 const STEPS = [
@@ -112,7 +117,7 @@ export default function GiveawayWinnerClaimPage({ onBackToGiveaway }) {
           <h1 className="text-2xl font-extrabold sm:text-3xl md:text-4xl">Winner prize claim form</h1>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">
             Confirm the email and account you used when you registered for the giveaway. If you are an official winner,
-            you can complete the claim form to receive your {GIVEAWAY_PRIZE_LABEL} prize.
+            you can complete the claim form to receive your {GIVEAWAY_PRIZE_LABEL} prize via {GIVEAWAY_PAYOUT_METHOD}.
           </p>
         </div>
       </section>
@@ -212,6 +217,9 @@ export default function GiveawayWinnerClaimPage({ onBackToGiveaway }) {
                 </div>
               </div>
               <div className="relative px-2 py-4 sm:px-4 sm:py-6">
+                <div className="mx-2 mb-4 rounded-xl border border-amber-300/60 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-950 dark:border-amber-700/50 dark:bg-amber-950/30 dark:text-amber-100 sm:mx-0">
+                  <strong className="font-semibold">Important:</strong> {GIVEAWAY_PAYOUT_INSTRUCTION}
+                </div>
                 <div className="giveaway-form-embed relative overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900/40">
                   <iframe
                     src={GIVEAWAY_PRIZE_FORM_URL}
@@ -228,8 +236,8 @@ export default function GiveawayWinnerClaimPage({ onBackToGiveaway }) {
                   <span className="giveaway-form-scroll-fade" aria-hidden="true" />
                 </div>
                 <p className="mt-4 px-2 text-center text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  Submit this form once with accurate payout details. Your verified session expires after 4 hours for
-                  security.
+                  Submit this form once with your correct TRC20 USDT address. Double-check the network is TRC20 (Tron).
+                  Your verified session expires after 4 hours for security.
                 </p>
               </div>
             </div>

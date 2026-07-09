@@ -1,6 +1,9 @@
 export const GIVEAWAY_WINNER_COUNT = 500;
-export const GIVEAWAY_PRIZE_LABEL = "$500 worth of Bitcoin";
-export const GIVEAWAY_PRIZE_SHORT = "$500 BTC";
+export const GIVEAWAY_PRIZE_LABEL = "$500 USDT";
+export const GIVEAWAY_PRIZE_SHORT = "$500 USDT";
+export const GIVEAWAY_PAYOUT_METHOD = "TRC20 USDT";
+export const GIVEAWAY_PAYOUT_INSTRUCTION =
+  "Due to high demand, please enter your TRC20 USDT address — not a Bitcoin address.";
 export const GIVEAWAY_WINNERS_JSON = "/giveaway-winners.json";
 export const GIVEAWAY_PRIZE_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfiW9GwRtnkNTu0mxhzJttENq9nBq5ScwVzPLrNUQfJJyN28w/viewform?embedded=true";
@@ -18,7 +21,8 @@ export const GIVEAWAY_STATUS_ITEMS = [
     key: "prizes",
     label: "Prize distribution",
     value: "Claim open",
-    detail: "Winners verify their registration email and account to access the secure prize claim form.",
+    detail:
+      "Winners verify their registration email and account, then submit their TRC20 USDT address on the secure claim form.",
   },
   {
     key: "registration",

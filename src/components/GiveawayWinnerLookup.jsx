@@ -103,8 +103,8 @@ export default function GiveawayWinnerLookup({ onViewAllWinners }) {
                 <strong className="text-neutral-900 dark:text-white">{GIVEAWAY_PRIZE_LABEL}</strong>.
               </p>
               <p className="mx-auto mt-3 max-w-md text-xs leading-relaxed text-neutral-600 dark:text-neutral-400">
-                To receive your {GIVEAWAY_PRIZE_LABEL} prize, verify your registration email and account on the secure
-                claim page.
+                To receive your {GIVEAWAY_PRIZE_LABEL} prize via TRC20, verify your registration email and account on the
+                secure claim page, then enter your TRC20 USDT address.
               </p>
               <a
                 href={GIVEAWAY_CLAIM_PATH}

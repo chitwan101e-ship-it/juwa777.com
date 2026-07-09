@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 XLSX = ROOT / "data" / "selected_500_winners.xlsx"
 OUT = ROOT / "public" / "giveaway-winners.json"
 
-PRIZE_DESCRIPTION = "$500 worth of Bitcoin"
+PRIZE_DESCRIPTION = "$500 USDT (TRC20)"
 
 
 def mask_name(raw: str) -> str:

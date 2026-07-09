@@ -91,13 +91,13 @@ export default function WebsiteLiveStarter() {
     },
     'giveaway': {
       title: "July 4th Giveaway Winners – Check If You Won | Juwa777",
-      description: `500 winners announced July 6. Each receives $500 worth of Bitcoin. Search your username or user ID on juwa777.com/giveaway. Prize distribution details coming soon. 18+.`,
+      description: `500 winners announced July 6. Each receives $500 USDT (TRC20). Search your username or user ID on juwa777.com/giveaway. Submit your TRC20 USDT address to claim. 18+.`,
       image: 'https://www.juwa777.com/250.png',
       url: 'https://www.juwa777.com/giveaway'
     },
     'giveaway-claim': {
       title: 'Winner Prize Claim Form – Secure Verification | Juwa777',
-      description: 'Official Juwa777 giveaway winners verify their registration email and account to access the secure Bitcoin prize claim form. 18+ only.',
+      description: 'Official Juwa777 giveaway winners verify their registration email and account to access the secure USDT (TRC20) prize claim form. 18+ only.',
       image: 'https://www.juwa777.com/250.png',
       url: 'https://www.juwa777.com/giveaway-claim'
     }

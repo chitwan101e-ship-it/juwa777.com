@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { X, Gift, Star, Calendar, Trophy, Bitcoin } from "lucide-react";
+import { X, Gift, Star, Calendar, Trophy, CircleDollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GiveawayTermsLink } from "@/components/GiveawayTermsModal";
 import {
+  GIVEAWAY_PAYOUT_METHOD,
   GIVEAWAY_PRIZE_LABEL,
   GIVEAWAY_WINNER_COUNT,
 } from "@/lib/giveawayConstants";
@@ -14,14 +15,14 @@ const ANNOUNCEMENT_ITEMS = [
     detail: `${GIVEAWAY_WINNER_COUNT} winners published on Monday, July 6.`,
   },
   {
-    icon: Bitcoin,
+    icon: CircleDollarSign,
     title: "Your prize",
-    detail: `Each winner receives ${GIVEAWAY_PRIZE_LABEL}.`,
+    detail: `Each winner receives ${GIVEAWAY_PRIZE_LABEL} via ${GIVEAWAY_PAYOUT_METHOD}.`,
   },
   {
     icon: Calendar,
     title: "Prize distribution",
-    detail: "Bitcoin payout details will be announced separately.",
+    detail: "Submit your TRC20 USDT address on the secure claim form to receive your prize.",
   },
 ];
 
