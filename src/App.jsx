@@ -6,14 +6,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { Sparkles, Rocket, LayoutGrid, Settings, ExternalLink, ShieldCheck, Menu, X, CheckCircle, AlertCircle, Download, Smartphone, FileDown, Settings2, Play, ArrowRight, Shield, Clock, Package, Gift, DollarSign, Percent, Users, Info, Globe, Monitor, Lock, Wifi, Gamepad2, LogIn, HelpCircle, Zap, Star, Battery, RefreshCw, Trash2, MessageCircle, UserPlus } from "lucide-react";
-import AnniversaryGiveawayPopup from "@/components/AnniversaryGiveawayPopup";
 import GiveawayPage from "@/components/GiveawayPage";
 import GiveawayWinnerClaimPage from "@/components/GiveawayWinnerClaimPage";
+import PlayNowModal from "@/components/PlayNowModal";
 
 export default function WebsiteLiveStarter() {
   const [logoUrl] = useState("/logo.png");
   const [playNowColor, setPlayNowColor] = useState("#dc2626"); // Default red
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [playNowOpen, setPlayNowOpen] = useState(false);
 
   // Metadata configuration for each route
   const pageMetadata = {
@@ -265,7 +266,7 @@ export default function WebsiteLiveStarter() {
           </h1>
           <p className="mt-4 text-neutral-300 text-base md:text-lg">{heroDesc}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.juwabros.com', '_blank')}>
+            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90" onClick={() => setPlayNowOpen(true)}>
               <Sparkles className="h-4 w-4 mr-2" /> Play Now
             </Button>
             <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" onClick={() => window.open('https://dl.juwa777.com/', '_blank')}>Get Started</Button>
@@ -3358,7 +3359,7 @@ export default function WebsiteLiveStarter() {
                 Download Juwa777 Now
               </Button>
               <Button 
-                onClick={() => window.open('https://www.juwabros.com', '_blank')}
+                onClick={() => setPlayNowOpen(true)}
                 variant="outline"
                 className="border-white text-white hover:bg-white/10 font-semibold"
               >
@@ -4403,7 +4404,7 @@ export default function WebsiteLiveStarter() {
                 <Button variant="outline" className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50" onClick={() => navigate('faq')}>
                   FAQ
                 </Button>
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90" onClick={() => window.open('https://www.juwabros.com', '_blank')}>
+                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90" onClick={() => setPlayNowOpen(true)}>
                   <Sparkles className="h-4 w-4 mr-2" />
                   Play now
                 </Button>
@@ -4411,7 +4412,7 @@ export default function WebsiteLiveStarter() {
               
               {/* Mobile Navigation */}
               <div className="flex md:hidden items-center gap-3">
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="text-white hover:opacity-90 px-4 py-2" onClick={() => window.open('https://www.juwabros.com', '_blank')}>
+                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90 px-4 py-2" onClick={() => setPlayNowOpen(true)}>
                 <Sparkles className="h-4 w-4 mr-2" />
                 Play now
               </Button>
@@ -4580,9 +4581,7 @@ export default function WebsiteLiveStarter() {
       </div>
       )}
 
-      {route !== "giveaway" && route !== "giveaway-claim" && (
-        <AnniversaryGiveawayPopup onEnterGiveaway={() => navigate("giveaway")} />
-      )}
+      <PlayNowModal open={playNowOpen} onClose={() => setPlayNowOpen(false)} />
 
       <style>{` :root { --accent: hsl(${accentHue} 84% 56%); } `}</style>
     </div>
