@@ -16,6 +16,12 @@ export default function WebsiteLiveStarter() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [playNowOpen, setPlayNowOpen] = useState(false);
 
+  // Hide the static HTML disclaimer once React header mounts (avoids duplicate bars)
+  useEffect(() => {
+    const el = document.getElementById("compliance-disclaimer");
+    if (el) el.style.display = "none";
+  }, []);
+
   // Metadata configuration for each route
   const pageMetadata = {
     'home': {
@@ -265,11 +271,21 @@ export default function WebsiteLiveStarter() {
             Juwa777 – Free Social Gaming App for Android & iOS
           </h1>
           <p className="mt-4 text-neutral-300 text-base md:text-lg">{heroDesc}</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90" onClick={() => setPlayNowOpen(true)}>
-              <Sparkles className="h-4 w-4 mr-2" /> Play Now
+          <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <Button
+              style={{ background: playNowColor, borderColor: playNowColor }}
+              className="play-now-glow text-white hover:opacity-90 w-full sm:w-auto min-h-[56px] md:min-h-[60px] px-10 py-4 text-base md:text-lg font-bold rounded-2xl"
+              onClick={() => setPlayNowOpen(true)}
+            >
+              <Sparkles className="h-5 w-5 md:h-6 md:w-6 mr-2" /> Play Now
             </Button>
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10" onClick={() => window.open('https://dl.juwa777.com/', '_blank')}>Get Started</Button>
+            <Button
+              variant="outline"
+              className="hidden sm:inline-flex border-white/30 text-white hover:bg-white/10 min-h-[56px] md:min-h-[60px] px-8 py-4 text-base md:text-lg font-bold rounded-2xl"
+              onClick={() => window.open('https://dl.juwa777.com/', '_blank')}
+            >
+              Get Started
+            </Button>
           </div>
         </div>
       </section>
@@ -4380,67 +4396,74 @@ export default function WebsiteLiveStarter() {
 
   return (
     <div className={"min-h-screen w-full " + (dark ? "dark" : "")}> 
-      <div className="bg-gray-50 dark:bg-neutral-950 transition-colors">
-        <main className="w-full">
-          <div className="overflow-hidden rounded-2xl shadow-sm border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900">
-            <nav className="flex items-center justify-between px-5 py-3">
-              <div className="flex items-center gap-2">
-                <img src={logoUrl} alt="Juwa777 logo - free social gaming app" className="h-10 w-auto" />
-              </div>
-              
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
-                <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
-                <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); }} className={route==='JUWA2' ? 'font-bold text-red-600' : 'hover:underline'}>JUWA2</a>
-                <a href="/relay" onClick={(e) => { e.preventDefault(); navigate('relay'); }} className={route==='relay' ? 'font-bold text-red-600' : 'hover:underline'}>Relay</a>
-                <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
-                <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
-                <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
-                <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className={route==='contact' ? 'font-bold text-red-600' : 'hover:underline'}>Contact</a>
-              </div>
-              
-              {/* Desktop Buttons */}
-              <div className="hidden md:flex items-center gap-3">
-                <Button variant="outline" className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50" onClick={() => navigate('faq')}>
-                  FAQ
-                </Button>
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90" onClick={() => setPlayNowOpen(true)}>
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  Play now
-                </Button>
-              </div>
-              
-              {/* Mobile Navigation */}
-              <div className="flex md:hidden items-center gap-3">
-                <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90 px-4 py-2" onClick={() => setPlayNowOpen(true)}>
-                <Sparkles className="h-4 w-4 mr-2" />
-                Play now
-              </Button>
-                <button 
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="p-2 rounded-lg border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
-                >
-                  {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                </button>
-              </div>
-            </nav>
-            
-            {/* Mobile Menu Dropdown */}
-            {mobileMenuOpen && (
-              <div className="md:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
-                <div className="px-5 py-4 space-y-3">
-                  <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
-                  <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='JUWA2' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>JUWA2</a>
-                  <a href="/relay" onClick={(e) => { e.preventDefault(); navigate('relay'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='relay' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Relay</a>
-                  <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Games</a>
-                  <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>About</a>
-                  <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Blog</a>
-                  <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='contact' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Contact</a>
-                  <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='faq' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>FAQ</a>
-                </div>
-              </div>
-            )}
+      {/* Fixed top header — stays visible while scrolling on mobile & desktop */}
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <div className="bg-red-600 text-white text-center text-[11px] sm:text-xs font-semibold px-3 py-2.5 leading-snug border-b border-red-800">
+          ⚠️ 18+ Only | For Entertainment Purposes Only | Play Responsibly
+        </div>
+        <nav className="flex items-center justify-between px-5 py-3 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border-b border-neutral-200/60 dark:border-neutral-800/60 shadow-sm">
+          <div className="flex items-center gap-2">
+            <img src={logoUrl} alt="Juwa777 logo - free social gaming app" className="h-10 w-auto" />
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
+            <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className={route==='home' ? 'font-bold text-red-600' : 'hover:underline'}>Home</a>
+            <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); }} className={route==='JUWA2' ? 'font-bold text-red-600' : 'hover:underline'}>JUWA2</a>
+            <a href="/relay" onClick={(e) => { e.preventDefault(); navigate('relay'); }} className={route==='relay' ? 'font-bold text-red-600' : 'hover:underline'}>Relay</a>
+            <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); }} className={route==='games' ? 'font-bold text-red-600' : 'hover:underline'}>Games</a>
+            <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); }} className={route==='about' ? 'font-bold text-red-600' : 'hover:underline'}>About</a>
+            <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className={route==='blog' ? 'font-bold text-red-600' : 'hover:underline'}>Blog</a>
+            <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); }} className={route==='contact' ? 'font-bold text-red-600' : 'hover:underline'}>Contact</a>
+          </div>
+          
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            <Button variant="outline" className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50" onClick={() => navigate('faq')}>
+              FAQ
+            </Button>
+            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90" onClick={() => setPlayNowOpen(true)}>
+              <Sparkles className="h-4 w-4 mr-2" />
+              Play now
+            </Button>
+          </div>
+          
+          {/* Mobile Navigation */}
+          <div className="flex md:hidden items-center gap-3">
+            <Button style={{ background: playNowColor, borderColor: playNowColor }} className="play-now-glow text-white hover:opacity-90 px-4 py-2" onClick={() => setPlayNowOpen(true)}>
+              <Sparkles className="h-4 w-4 mr-2" />
+              Play now
+            </Button>
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-lg border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </nav>
+        
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-lg max-h-[70vh] overflow-y-auto">
+            <div className="px-5 py-4 space-y-3">
+              <a href="/" onClick={(e) => { e.preventDefault(); navigate('home'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='home' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Home</a>
+              <a href="/JUWA2" onClick={(e) => { e.preventDefault(); navigate('JUWA2'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='JUWA2' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>JUWA2</a>
+              <a href="/relay" onClick={(e) => { e.preventDefault(); navigate('relay'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='relay' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Relay</a>
+              <a href="/games" onClick={(e) => { e.preventDefault(); navigate('games'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='games' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Games</a>
+              <a href="/about" onClick={(e) => { e.preventDefault(); navigate('about'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='about' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>About</a>
+              <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='blog' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Blog</a>
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate('contact'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='contact' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>Contact</a>
+              <a href="/faq" onClick={(e) => { e.preventDefault(); navigate('faq'); setMobileMenuOpen(false); }} className={`block py-2 text-sm ${route==='faq' ? 'font-bold text-red-600' : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white'}`}>FAQ</a>
+            </div>
+          </div>
+        )}
+      </header>
 
+      <div className="bg-gray-50 dark:bg-neutral-950 transition-colors pt-[108px]">
+        <main className="w-full">
+          <div className="rounded-2xl shadow-sm border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900">
             {route === 'home' && <HomePage />}
             {route === 'games' && <GamesPage />}
             {route === 'about' && <AboutPage />}
