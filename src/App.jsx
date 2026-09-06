@@ -74,7 +74,7 @@ export default function WebsiteLiveStarter() {
     },
     'JUWA2': {
       title: 'Juwa2: Complete Guide to Juwa2.0 Gaming Platform | Juwa777 Blog',
-      description: 'Juwa2.0 guide with play without agent registration, play with agent Facebook support, promotions, and 100+ slots, fish games, and keno.',
+      description: 'Juwa2.0 guide covering how to play now, promotions, and 100+ slots, fish games, and keno.',
       image: 'https://www.juwa777.com/juwa2/juwa2 logo.png',
       url: 'https://www.juwa777.com/JUWA2'
     },
@@ -3401,7 +3401,6 @@ export default function WebsiteLiveStarter() {
   );
 
   const JUWA2_DIRECT_URL = 'https://m.juwa2.xin/v1/user/register?code=1AZu1F';
-  const JUWA2_AGENT_URL = 'https://www.facebook.com/people/Loot-Juwa-Loot/61584567339149/';
 
   const Juwa2CasinoBlog = () => (
     <section className="px-6 md:px-10 py-12 bg-neutral-50 dark:bg-neutral-950 max-xl:pr-20">
@@ -3434,30 +3433,18 @@ export default function WebsiteLiveStarter() {
                   Juwa2: Complete Guide to Juwa2.0 Gaming Platform
                 </h1>
                 <p className="text-red-100/90 mb-5 leading-relaxed">
-                  Register instantly or connect with an agent for personalized support. Play 100+ slots, fish games, and keno on Juwa2.0.
+                  Create your Juwa2.0 account in seconds and play 100+ slots, fish games, and keno.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={JUWA2_DIRECT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-red-700 font-bold hover:bg-red-50 transition-colors shadow-lg"
-                  >
-                    <Rocket className="h-5 w-5" />
-                    Play Without Agent
-                    <ExternalLink className="h-4 w-4 opacity-70" />
-                  </a>
-                  <a
-                    href={JUWA2_AGENT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0866ff] text-white font-bold hover:bg-[#0756d4] transition-colors shadow-lg border border-white/20"
-                  >
-                    <MessageCircle className="h-5 w-5" />
-                    Play With Agent
-                    <ExternalLink className="h-4 w-4 opacity-80" />
-                  </a>
-                </div>
+                <a
+                  href={JUWA2_DIRECT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-white text-red-700 font-bold hover:bg-red-50 transition-colors shadow-lg"
+                >
+                  <Rocket className="h-5 w-5" />
+                  Play Now
+                  <ExternalLink className="h-4 w-4 opacity-70" />
+                </a>
                 <p className="text-xs text-red-100/70 mt-3">
                   18+ only. Play responsibly. Links open in a new tab.
                 </p>
@@ -3479,48 +3466,33 @@ export default function WebsiteLiveStarter() {
           </a>
         </div>
 
-        {/* Play options */}
-        <div className="mb-10 grid md:grid-cols-2 gap-4">
-          <Card className="border-2 border-red-200 dark:border-red-900/50 bg-white dark:bg-neutral-900/50">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-lg bg-red-100 dark:bg-red-900/40">
-                  <Rocket className="h-6 w-6 text-red-600" />
-                </div>
-                <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Play Without Agent</h2>
-              </div>
-              <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed">
-                Create your Juwa2.0 account directly in the browser. Fast signup with your invite code — no middleman needed. Best if you want to start playing right away.
+        {/* Why Juwa2 */}
+        <div className="mb-10 grid sm:grid-cols-3 gap-4">
+          <Card className="border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900/50">
+            <CardContent className="p-5">
+              <Rocket className="h-6 w-6 text-red-600 mb-3" />
+              <h2 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">Instant signup</h2>
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                Open Juwa2.0 in your browser, create an account, and start playing in minutes.
               </p>
-              <a
-                href={JUWA2_DIRECT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-red-600 dark:text-red-400 hover:gap-3 transition-all"
-              >
-                Register on Juwa2.0 <ArrowRight className="h-4 w-4" />
-              </a>
             </CardContent>
           </Card>
-          <Card className="border-2 border-blue-200 dark:border-blue-900/50 bg-white dark:bg-neutral-900/50">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/40">
-                  <UserPlus className="h-6 w-6 text-[#0866ff]" />
-                </div>
-                <h2 className="text-xl font-bold text-neutral-900 dark:text-white">Play With Agent</h2>
-              </div>
-              <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed">
-                Connect with a Juwa2 agent on Facebook for guided setup, bonus help, and account support. Recommended if you prefer one-on-one assistance.
+          <Card className="border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900/50">
+            <CardContent className="p-5">
+              <Gamepad2 className="h-6 w-6 text-red-600 mb-3" />
+              <h2 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">100+ games</h2>
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                Slots, fish shooting, keno, and arcade titles in one library.
               </p>
-              <a
-                href={JUWA2_AGENT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#0866ff] hover:gap-3 transition-all"
-              >
-                Message on Facebook <ArrowRight className="h-4 w-4" />
-              </a>
+            </CardContent>
+          </Card>
+          <Card className="border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900/50">
+            <CardContent className="p-5">
+              <Smartphone className="h-6 w-6 text-red-600 mb-3" />
+              <h2 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">Play anywhere</h2>
+              <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                Works on Android, iPhone, tablet, and desktop with a mobile-friendly layout.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -3528,7 +3500,7 @@ export default function WebsiteLiveStarter() {
         {/* Introduction */}
         <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
           <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Juwa2, also known as Juwa2.0, is a popular social gaming platform that offers an extensive collection of casino-style games including slots, fish shooting games, and keno. This guide covers how to get started — whether you register directly or through an agent — plus platform features, games, and promotions.
+            Juwa2, also known as Juwa2.0, is a popular social gaming platform that offers an extensive collection of casino-style games including slots, fish shooting games, and keno. This guide covers how to get started, plus platform features, games, and promotions.
           </p>
         </div>
 
@@ -3646,12 +3618,11 @@ export default function WebsiteLiveStarter() {
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
                   <div>
-                    <div className="font-semibold text-neutral-900 dark:text-white">Choose How to Play</div>
+                    <div className="font-semibold text-neutral-900 dark:text-white">Open Juwa2.0</div>
                     <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                      <a href={JUWA2_DIRECT_URL} target="_blank" rel="noopener noreferrer" className="text-red-600 dark:text-red-400 hover:underline">Register directly</a>
-                      {' '}without an agent, or{' '}
-                      <a href={JUWA2_AGENT_URL} target="_blank" rel="noopener noreferrer" className="text-[#0866ff] hover:underline">connect via Facebook</a>
-                      {' '}for agent-assisted setup.
+                      Tap{' '}
+                      <a href={JUWA2_DIRECT_URL} target="_blank" rel="noopener noreferrer" className="text-red-600 dark:text-red-400 hover:underline">Play Now</a>
+                      {' '}to open Juwa2.0 registration in a new tab.
                     </p>
                   </div>
                 </div>
@@ -3659,7 +3630,7 @@ export default function WebsiteLiveStarter() {
                   <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
                   <div>
                     <div className="font-semibold text-neutral-900 dark:text-white">Create Your Account</div>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Register for a free account to access the game library</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Sign up with your details to access the full game library</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -3745,7 +3716,7 @@ export default function WebsiteLiveStarter() {
             <Card className="border border-neutral-200/60 dark:border-neutral-800/60 bg-gradient-to-br from-red-50 to-white dark:from-red-950/30 dark:to-neutral-900/50">
               <CardContent className="p-5">
                 <div className="text-xs font-bold uppercase tracking-wide text-red-600 dark:text-red-400 mb-2">Ongoing</div>
-                <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">100% Welcome Bonus (Agent Only)</h3>
+                <h3 className="font-bold text-lg text-neutral-900 dark:text-white mb-2">100% Welcome Bonus</h3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-300">Deposit on Juwa2 and earn up to $500 in rewards on your first day of membership.</p>
               </CardContent>
             </Card>
@@ -3790,16 +3761,11 @@ export default function WebsiteLiveStarter() {
         <div className="mb-8 rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900/50 p-6 md:p-8 text-center">
           <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">Ready to Play Juwa2.0?</h2>
           <p className="text-neutral-600 dark:text-neutral-300 mb-5 max-w-xl mx-auto">
-            Join over 1,000,000 fans in the Juwa2 community. Start directly or get help from an agent — your choice.
+            Join over 1,000,000 fans in the Juwa2 community. Create your account and start playing today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href={JUWA2_DIRECT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-colors">
-              Play Without Agent <ExternalLink className="h-4 w-4" />
-            </a>
-            <a href={JUWA2_AGENT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0866ff] text-white font-bold hover:bg-[#0756d4] transition-colors">
-              Play With Agent <ExternalLink className="h-4 w-4" />
-            </a>
-          </div>
+          <a href={JUWA2_DIRECT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-colors">
+            Play Now <ExternalLink className="h-4 w-4" />
+          </a>
         </div>
 
         {/* Important Notice */}
@@ -4552,7 +4518,7 @@ export default function WebsiteLiveStarter() {
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-2 md:gap-3">
         {/* Telegram Icon */}
         <a
-          href="https://t.me/JUWA2GO"
+          href="https://t.me/juwaauto"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#40B3E0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#40B3E0] md:border-2 relative"

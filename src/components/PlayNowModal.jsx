@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { X, Sparkles } from "lucide-react";
 
+const JUWA1_URL = "https://m.juwaauto.com/v1/user/register?code=1AZu1S";
 const JUWA2_URL = "https://m.juwa2.xin/v1/user/register?code=1AZu1F";
+const TRP_URL = "https://www.therightpay.com/sign-up?invite_code=1AZu1O";
+const TELEGRAM_URL = "https://t.me/juwaauto";
 const JUWA1_LOGO = "/logo.png";
 const JUWA2_LOGO = "/juwa2/juwa2%20logo.png";
+
+const platformCardClass =
+  "group relative rounded-xl border border-red-500/50 bg-gradient-to-b from-red-600 to-red-800 px-4 py-5 sm:px-3 sm:py-4 shadow-[0_0_24px_rgba(220,38,38,0.35)] hover:shadow-[0_0_36px_rgba(220,38,38,0.55)] hover:border-red-400 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]";
 
 export default function PlayNowModal({ open, onClose }) {
   const [closing, setClosing] = useState(false);
@@ -72,31 +78,31 @@ export default function PlayNowModal({ open, onClose }) {
           </p>
 
           <div className="flex flex-col gap-3 sm:grid sm:grid-cols-2 sm:gap-4">
-            {/* Juwa1 — Coming Soon */}
-            <div
-              className="relative rounded-xl border border-neutral-700/80 bg-neutral-900/90 px-4 py-5 sm:px-3 sm:py-4 opacity-60 cursor-not-allowed select-none"
-              aria-disabled="true"
+            <a
+              href={JUWA1_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={dismiss}
+              className={platformCardClass}
             >
-              <div className="absolute inset-0 rounded-xl bg-neutral-950/30" />
-              <div className="relative flex flex-col items-center text-center gap-3">
+              <div className="flex flex-col items-center text-center gap-3">
                 <img
                   src={JUWA1_LOGO}
                   alt="Juwa1 logo"
-                  className="h-24 sm:h-20 w-auto max-w-full object-contain grayscale brightness-90"
+                  className="h-24 sm:h-20 w-auto max-w-full object-contain drop-shadow-md group-hover:scale-[1.03] transition-transform duration-300"
                 />
-                <span className="inline-flex items-center rounded-lg bg-neutral-800/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-neutral-400 border border-neutral-600">
-                  Coming Soon
+                <span className="inline-flex items-center rounded-lg bg-white/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white border border-white/30 group-hover:bg-white/25 transition-colors">
+                  Play Now
                 </span>
               </div>
-            </div>
+            </a>
 
-            {/* Juwa2 — Live */}
             <a
               href={JUWA2_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={dismiss}
-              className="group relative rounded-xl border border-red-500/50 bg-gradient-to-b from-red-600 to-red-800 px-4 py-5 sm:px-3 sm:py-4 shadow-[0_0_24px_rgba(220,38,38,0.35)] hover:shadow-[0_0_36px_rgba(220,38,38,0.55)] hover:border-red-400 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+              className={platformCardClass}
             >
               <div className="flex flex-col items-center text-center gap-3">
                 <img
@@ -110,6 +116,28 @@ export default function PlayNowModal({ open, onClose }) {
               </div>
             </a>
           </div>
+
+          <a
+            href={TRP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={dismiss}
+            className="mt-3 sm:mt-4 flex w-full items-center justify-center rounded-xl border border-emerald-400/50 bg-gradient-to-b from-emerald-500 to-emerald-700 px-4 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-[0_0_24px_rgba(16,185,129,0.35)] hover:shadow-[0_0_36px_rgba(16,185,129,0.55)] hover:border-emerald-300 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+          >
+            TRP
+          </a>
+
+          <p className="mt-4 text-center text-sm text-neutral-400">
+            For more info contact{" "}
+            <a
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline underline-offset-2 hover:text-[#40B3E0] transition-colors"
+            >
+              Telegram
+            </a>.
+          </p>
         </div>
       </div>
     </div>
