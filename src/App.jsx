@@ -1072,7 +1072,7 @@ export default function WebsiteLiveStarter() {
               <Button
                 style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
                 className="text-white hover:opacity-90 px-8 py-2 text-base"
-                onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+                onClick={() => window.open('https://www.thejuwabros.com/signup', '_blank')}
               >
                 <UserPlus className="h-4 w-4 mr-2" />
                 Create account
@@ -1080,7 +1080,7 @@ export default function WebsiteLiveStarter() {
               <Button
                 variant="outline"
                 className="border-[#8d63ff] text-[#6b4fd4] dark:text-[#a78bfa] hover:bg-[#8d63ff]/10 px-8 py-2 text-base"
-                onClick={() => window.open('https://www.juwabros.com/login', '_blank')}
+                onClick={() => window.open('https://www.thejuwabros.com/login', '_blank')}
               >
                 <LogIn className="h-4 w-4 mr-2" />
                 Sign in
@@ -1199,7 +1199,7 @@ export default function WebsiteLiveStarter() {
                   <Button
                     style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
                     className="text-white hover:opacity-90 w-full"
-                    onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+                    onClick={() => window.open('https://www.thejuwabros.com/signup', '_blank')}
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Create account
@@ -1207,7 +1207,7 @@ export default function WebsiteLiveStarter() {
                   <Button
                     variant="outline"
                     className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 w-full"
-                    onClick={() => window.open('https://www.juwabros.com/login', '_blank')}
+                    onClick={() => window.open('https://www.thejuwabros.com/login', '_blank')}
                   >
                     <LogIn className="h-4 w-4 mr-2" />
                     Sign in
@@ -1261,7 +1261,7 @@ export default function WebsiteLiveStarter() {
                   <Button
                     style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
                     className="text-white hover:opacity-90 w-full sm:w-auto"
-                    onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+                    onClick={() => window.open('https://www.thejuwabros.com/signup', '_blank')}
                   >
                     <Gift className="h-4 w-4 mr-2" />
                     Create account
@@ -1332,7 +1332,7 @@ export default function WebsiteLiveStarter() {
                 <Button
                   style={{ background: '#6b4fd4', borderColor: '#6b4fd4' }}
                   className="text-white hover:opacity-90 px-8"
-                  onClick={() => window.open('https://www.juwabros.com/signup', '_blank')}
+                  onClick={() => window.open('https://www.thejuwabros.com/signup', '_blank')}
                 >
                   <UserPlus className="h-4 w-4 mr-2" />
                   Create account
@@ -1340,7 +1340,7 @@ export default function WebsiteLiveStarter() {
                 <Button
                   variant="outline"
                   className="border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 px-8"
-                  onClick={() => window.open('https://www.juwabros.com/login', '_blank')}
+                  onClick={() => window.open('https://www.thejuwabros.com/login', '_blank')}
                 >
                   <LogIn className="h-4 w-4 mr-2" />
                   Sign in
