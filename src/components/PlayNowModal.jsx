@@ -5,6 +5,7 @@ const JUWA1_URL = "https://m.juwaauto.com/v1/user/register?code=1AZu1S";
 const JUWA2_URL = "https://m.juwa2.xin/v1/user/register?code=1AZu1F";
 const TRP_URL = "https://www.therightpay.com/sign-up?invite_code=1AZu1O";
 const TELEGRAM_URL = "https://t.me/juwaauto";
+const RELAY_URL = "https://www.thejuwabros.com";
 const JUWA1_LOGO = "/logo.png";
 const JUWA2_LOGO = "/juwa2/juwa2%20logo.png";
 
@@ -136,6 +137,15 @@ export default function PlayNowModal({ open, onClose }) {
               className="text-white underline underline-offset-2 hover:text-[#40B3E0] transition-colors"
             >
               Telegram
+            </a>
+            {" or "}
+            <a
+              href={RELAY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline underline-offset-2 hover:text-[#a78bfa] transition-colors"
+            >
+              Relay
             </a>.
           </p>
         </div>
