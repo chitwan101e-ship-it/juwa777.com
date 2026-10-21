@@ -4516,6 +4516,23 @@ export default function WebsiteLiveStarter() {
       {/* Floating Social Icons - hidden on giveaway so they don't cover the form */}
       {route !== "giveaway" && route !== "giveaway-claim" && (
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex flex-col gap-2 md:gap-3">
+        {/* Messenger Icon */}
+        <a
+          href="https://www.facebook.com/share/1Bie9cjV6W/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#0866ff]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#0866ff] md:border-2 relative"
+          aria-label="Chat with us on Messenger"
+        >
+          <img 
+            src="/Messenger_Icon_Primary_Blue.svg" 
+            alt="Messenger" 
+            className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
+          />
+          {/* Pulse animation */}
+          <span className="absolute inset-0 rounded-full bg-[#0866ff] animate-ping opacity-30"></span>
+        </a>
+
         {/* Telegram Icon */}
         <a
           href="https://t.me/juwaauto"
@@ -4533,21 +4550,21 @@ export default function WebsiteLiveStarter() {
           <span className="absolute inset-0 rounded-full bg-[#40B3E0] animate-ping opacity-30"></span>
         </a>
 
-        {/* Messenger Icon */}
+        {/* Signal Icon */}
         <a
-          href="https://www.facebook.com/share/1Bie9cjV6W/?mibextid=wwXIfr"
+          href="https://signal.me/#eu/H4dqi2VC7E_jEWZQSmddKK1oaARHUxxBPHZ3A_ygWoHK7Opj9L9Ktr3xIKwIxCvd"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#0866ff]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#0866ff] md:border-2 relative"
-          aria-label="Chat with us on Messenger"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#3A76F0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#3A76F0] md:border-2 relative"
+          aria-label="Chat with us on Signal"
         >
           <img 
-            src="/Messenger_Icon_Primary_Blue.svg" 
-            alt="Messenger" 
+            src="/signal.svg" 
+            alt="Signal" 
             className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
           />
           {/* Pulse animation */}
-          <span className="absolute inset-0 rounded-full bg-[#0866ff] animate-ping opacity-30"></span>
+          <span className="absolute inset-0 rounded-full bg-[#3A76F0] animate-ping opacity-30"></span>
         </a>
 
         {/* Instagram Icon */}
