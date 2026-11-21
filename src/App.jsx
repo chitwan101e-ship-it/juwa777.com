@@ -4550,38 +4550,38 @@ export default function WebsiteLiveStarter() {
           <span className="absolute inset-0 rounded-full bg-[#40B3E0] animate-ping opacity-30"></span>
         </a>
 
-        {/* Signal Icon */}
+        {/* WhatsApp Icon */}
         <a
-          href="https://signal.me/#eu/H4dqi2VC7E_jEWZQSmddKK1oaARHUxxBPHZ3A_ygWoHK7Opj9L9Ktr3xIKwIxCvd"
+          href="https://wa.me/12148986431?s=t"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#3A76F0]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#3A76F0] md:border-2 relative"
-          aria-label="Chat with us on Signal"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#25D366] md:border-2 relative"
+          aria-label="Chat with us on WhatsApp"
         >
           <img 
-            src="/signal.svg" 
-            alt="Signal" 
+            src="/whatsapp.svg" 
+            alt="WhatsApp" 
             className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
           />
           {/* Pulse animation */}
-          <span className="absolute inset-0 rounded-full bg-[#3A76F0] animate-ping opacity-30"></span>
+          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"></span>
         </a>
 
-        {/* Instagram Icon */}
+        {/* Relay Icon */}
         <a
-          href="https://www.instagram.com/phoenixjuwa?igsh=b210bG5mZWFjd2F2&utm_source=qr"
+          href="https://www.thejuwabros.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#E1306C]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#E1306C] md:border-2 relative"
-          aria-label="Follow us on Instagram"
+          className="bg-white dark:bg-neutral-800 rounded-full p-1.5 md:p-2 shadow-xl md:shadow-2xl hover:shadow-[#8d63ff]/50 transition-all duration-300 hover:scale-110 active:scale-95 group border border-[#8d63ff] md:border-2 relative"
+          aria-label="Chat with us on Relay"
         >
           <img 
-            src="/instagram.svg" 
-            alt="Instagram" 
+            src="/favicon.svg" 
+            alt="Relay" 
             className="w-8 h-8 md:w-10 md:h-10 group-hover:scale-105 transition-transform duration-300"
           />
           {/* Pulse animation */}
-          <span className="absolute inset-0 rounded-full bg-[#E1306C] animate-ping opacity-30"></span>
+          <span className="absolute inset-0 rounded-full bg-[#8d63ff] animate-ping opacity-30"></span>
         </a>
 
       </div>
